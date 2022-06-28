@@ -1,0 +1,55 @@
+{% macro render(elementId = null, dropzone1Id = null, dropzone2Id = null, color = null, width = null, padding = null) %}{% apply spaceless %}
+    {% set elementId = elementId ?: 'col-two-footer-YrjN4A' %}
+    {% set dropzone1Id = dropzone1Id ?: 'col-two-footer-dropzone-1-WJcCmL' %}
+    {% set dropzone2Id = dropzone2Id ?: 'col-two-footer-dropzone-2-qCJrba' %}
+    {% set color = (color ?: properties.footerTextColor) ?: '#ffffff' %}
+    {% set width = (width ?: properties.colTwoFooterWidth) ?: 300 %}
+    {% set widthMSO = width - 80 %}
+    {% set padding = (padding ?: properties.columnFooterPadding) ?: 10 %}
+
+    <div data-bsi-element="{{ elementId }}">
+        <!--[if mso]>
+        <table role="presentation" width="100%">
+        <tr>
+        <td align="left">
+        <table role="presentation" align="left" width="{{ widthMSO }}">
+        <tr>
+        <td align="left" style="width: {{ widthMSO }}px; padding: {{ padding }}px; text-align: left; color: {{ color }}; text-decoration: none;" valign="middle">
+        <![endif]-->
+        <div class="bsi-col-footer bsi-col-footer-left" style="width: 100%; text-align: left; max-width: {{ width }}px; display: inline-block; vertical-align: middle;">
+            <div style="padding: {{ padding }}px;" data-bsi-dropzone="{{ dropzone1Id }}">
+                {% block col_two_footer_dropzone_1 %}
+                    {% include '../../../base/footer-link/template.twig' with {url: properties.addressPhoneURL, text: properties.addressPhoneText} %}
+                    {% include '../../../base/footer-link/template.twig' with {url: properties.addressEmailURL, text: properties.addressEmailText} %}
+                    {% include '../../../base/footer-link/template.twig' with {url: properties.addressWebURL, text: properties.addressWebText} %}
+                {% endblock %}
+            </div>
+        </div>
+        <!--[if mso]>
+        </td>
+        </tr>
+        </table>
+        </td>
+        <td align="right">
+        <table role="presentation" align="right" width="{{ widthMSO }}">
+        <tr>
+        <td align="right" style="width: {{ widthMSO }}px; padding: {{ padding }}px; text-align: right; color: {{ color }}; text-decoration: none;" valign="middle">
+        <![endif]-->
+        <div class="bsi-col-footer bsi-col-footer-right" style="width: 100%; text-align: right; max-width: {{ width }}px; display: inline-block; vertical-align: middle;">
+            <div style="padding: {{ padding }}px;" data-bsi-dropzone="{{ dropzone2Id }}">
+                {% block col_two_footer_dropzone_2 %}
+                    {% include '../../../base/social-media-follow/template.twig' %}
+                {% endblock %}
+            </div>
+        </div>
+        <!--[if mso]>
+        </td>
+        </tr>
+        </table>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+    </div>
+
+{% endapply %}{% endmacro %}

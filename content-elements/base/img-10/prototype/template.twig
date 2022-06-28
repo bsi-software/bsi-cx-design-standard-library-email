@@ -1,0 +1,12 @@
+{% macro render(elementId = null, imagePartId = null, imageSrc = null, marginBottom = null, imageWidth = null) %}{% apply spaceless %}
+    {% set elementId = elementId ?: 'img-10-3Xt35e' %}
+    {% set imagePartId = imagePartId ?: 'img-10-part-4wGyyL' %}
+    {% set imageSrc = imageSrc ?: bsi_cx_asset('../../../../static/image.png') %}
+    {% set marginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
+    {% set imageWidth = (imageWidth ?: properties.imageWidth10Percent) ?: 60 %}
+
+    <div data-bsi-element="{{ elementId }}">
+        <img data-bsi-element-part="{{ imagePartId }}" src="{{ source ?: imageSrc }}" width="{{ imageWidth }}" alt="Image" style="margin-top: 0; margin-bottom: {{ marginBottom }}px; display: block; width: {{ imageWidth }}px; max-width: 100%; height:auto;" />
+    </div>
+
+{% endapply %}{% endmacro %}
