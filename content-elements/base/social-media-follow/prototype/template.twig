@@ -1,45 +1,57 @@
-{% macro render(elementId = null, elementPartId = null, imageSrcLinkedIn = null, imageSrcKununu = null, imageSrcInstagram = null, imageSrcTwitter = null, imageSrcFacebook = null, imageSrcXing = null, marginBottom = null, iconHeight = null) %}{% apply spaceless %}
+{% macro render(elementId = null, elementPartId = null, imageSrcLinkedIn = null, imageSrcTwitter = null, imageSrcYouTube = null, imageSrcFacebook = null, imageSrcInstagram = null, imageSrcPinterest = null, imageSrcSnapchat = null, imageSrcKununu = null, marginBottom = null, iconHeight = null) %}{% apply spaceless %}
     {% set elementId = elementId ?: 'social-media-follow-rbGrIr' %}
     {% set elementPartId = elementPartId ?: 'social-media-follow-part-2PtqkD' %}
     {% set imageSrcLinkedIn = imageSrcLinkedIn ?: bsi_cx_asset('../../../../static/linkedin.png') %}
-    {% set imageSrcKununu = imageSrcKununu ?: bsi_cx_asset('../../../../static/kununu.png') %}
-    {% set imageSrcInstagram = imageSrcInstagram ?: bsi_cx_asset('../../../../static/instagram.png') %}
     {% set imageSrcTwitter = imageSrcTwitter ?: bsi_cx_asset('../../../../static/twitter.png') %}
+    {% set imageSrcYouTube = imageSrcYouTube ?: bsi_cx_asset('../../../../static/youtube.png') %}
     {% set imageSrcFacebook = imageSrcFacebook ?: bsi_cx_asset('../../../../static/facebook.png') %}
-    {% set imageSrcXing = imageSrcXing ?: bsi_cx_asset('../../../../static/xing.png') %}
+    {% set imageSrcInstagram = imageSrcInstagram ?: bsi_cx_asset('../../../../static/instagram.png') %}
+    {% set imageSrcPinterest = imageSrcPinterest ?: bsi_cx_asset('../../../../static/pinterest.png') %}
+    {% set imageSrcSnapchat = imageSrcSnapchat ?: bsi_cx_asset('../../../../static/snapchat.png') %}
+    {% set imageSrcKununu = imageSrcKununu ?: bsi_cx_asset('../../../../static/kununu.png') %}
     {% set marginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
-    {% set iconHeight = (iconHeight ?: properties.socialMediaIconHeight) ?: 21 %}
+    {% set iconHeight = (iconHeight ?: properties.socialMediaIconHeight) ?: 20 %}
 
-    <table data-bsi-element="{{ elementId }}" class="bsi-social-media" width="200" align="center" border="0" cellspacing="0" cellpadding="0">
-        <tr data-bsi-element-part="{{ elementPartId }}" style="width: 200px;" align="left" valign="top">
-            <td data-bsi-social-follow="LinkedIn" align="left" style="float: left; padding-right: 12px;">
+    <table data-bsi-element="{{ elementId }}" class="bsi-social-media" width="265" align="center" border="0" cellspacing="0" cellpadding="0">
+        <tr data-bsi-element-part="{{ elementPartId }}" style="width: 265px;" align="left" valign="top">
+            <td data-bsi-social-follow="LinkedIn" align="left" style="float: left; padding-right: 10px;">
                 <a href="https://www.linkedin.com/" target="_blank" style="text-decoration: none;">
                     <img src="{{ imageSrcLinkedIn }}" height="{{ iconHeight }}" alt="LinkedIn" border="0" style="display: block; width: auto;"/>
                 </a>
             </td>
-            <td data-bsi-social-follow="kununu" align="left" style="float: left; padding-right: 12px;">
-                <a href="https://www.kununu.com/" target="_blank" style="text-decoration: none;">
-                    <img src="{{ imageSrcKununu }}" height="{{ iconHeight }}" alt="kununu" border="0" style="display: block; width: auto;"/>
-                </a>
-            </td>
-            <td data-bsi-social-follow="Instagram" align="left" style="float: left; padding-right: 12px;">
-                <a href="https://www.instagram.com/" target="_blank" style="text-decoration: none;">
-                    <img src="{{ imageSrcInstagram }}" height="{{ iconHeight }}" alt="Instagram" border="0" style="display: block; width: auto;"/>
-                </a>
-            </td>
-            <td data-bsi-social-follow="Twitter" align="left" style="float: left; padding-right: 12px;">
+            <td data-bsi-social-follow="Twitter" align="left" style="float: left; padding-right: 10px;">
                 <a href="https://twitter.com/" target="_blank" style="text-decoration: none;">
                     <img src="{{ imageSrcTwitter }}" height="{{ iconHeight }}" alt="Twitter" border="0" style="display: block; width: auto;"/>
                 </a>
             </td>
-            <td data-bsi-social-follow="Facebook" align="left" style="float: left; padding-right: 12px;">
+            <td data-bsi-social-follow="YouTube" align="left" style="float: left; padding-right: 10px;">
+                <a href="https://www.youtube.com/" target="_blank" style="text-decoration: none;">
+                    <img src="{{ imageSrcYouTube }}" height="{{ iconHeight }}" alt="YouTube" border="0" style="display: block; width: auto;"/>
+                </a>
+            </td>
+            <td data-bsi-social-follow="Facebook" align="left" style="float: left; padding-right: 10px;">
                 <a href="https://www.facebook.com/" target="_blank" style="text-decoration: none;">
                     <img src="{{ imageSrcFacebook }}" height="{{ iconHeight }}" alt="Facebook" border="0" style="display: block; width: auto;"/>
                 </a>
             </td>
-            <td data-bsi-social-follow="Xing" align="left" style="float: left; padding-right: 12px;">
-                <a href="https://www.xing.com/" target="_blank" style="text-decoration: none;">
-                    <img src="{{ imageSrcXing }}" height="{{ iconHeight }}" alt="Xing" border="0" style="display: block; width: auto;"/>
+            <td data-bsi-social-follow="Instagram" align="left" style="float: left; padding-right: 10px;">
+                <a href="https://www.instagram.com/" target="_blank" style="text-decoration: none;">
+                    <img src="{{ imageSrcInstagram }}" height="{{ iconHeight }}" alt="Instagram" border="0" style="display: block; width: auto;"/>
+                </a>
+            </td>
+            <td data-bsi-social-follow="Pinterest" align="left" style="float: left; padding-right: 10px;">
+                <a href="https://www.pinterest.com/" target="_blank" style="text-decoration: none;">
+                    <img src="{{ imageSrcPinterest }}" height="{{ iconHeight }}" alt="Pinterest" border="0" style="display: block; width: auto;"/>
+                </a>
+            </td>
+            <td data-bsi-social-follow="Snapchat" align="left" style="float: left; padding-right: 10px;">
+                <a href="https://www.snapchat.com/" target="_blank" style="text-decoration: none;">
+                    <img src="{{ imageSrcSnapchat }}" height="{{ iconHeight }}" alt="Snapchat" border="0" style="display: block; width: auto;"/>
+                </a>
+            </td>
+            <td data-bsi-social-follow="kununu" align="left" style="float: left; padding-right: 10px;">
+                <a href="https://www.kununu.com/" target="_blank" style="text-decoration: none;">
+                    <img src="{{ imageSrcKununu }}" height="{{ iconHeight }}" alt="kununu" border="0" style="display: block; width: auto;"/>
                 </a>
             </td>
         </tr>

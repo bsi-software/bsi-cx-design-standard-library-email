@@ -1,11 +1,11 @@
 @media screen and (max-width: 673px) {
-  .bsi-col-one img {
+  .bsi-col-one .bsi-image {
     width: 100% !important;
   }
-  .bsi-col-two img {
+  .bsi-col-two .bsi-image {
     width: 100% !important;
   }
-  .bsi-col-three img {
+  .bsi-col-three .bsi-image {
     width: 100% !important;
   }
   .bsi-pbottom {
@@ -84,7 +84,9 @@
 }
 .bsi-col-footer-left .bsi-social-media {
   margin-left: 0;
+  justify-content: flex-start !important;
 }
 .bsi-col-footer-right .bsi-social-media {
   margin-right: 0;
+  justify-content: flex-end !important;
 }
