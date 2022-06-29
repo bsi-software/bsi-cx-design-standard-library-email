@@ -1,0 +1,18 @@
+{% macro render(elementId = null, dropzoneId = null, backgroundColor = null, textColor = null, padding = null, width = null) %}{% apply spaceless %}
+    {% set elementId = elementId ?: 'layout-dark-footer-x1LvCb' %}
+    {% set dropzoneId = dropzoneId ?: 'layout-dark-footer-dropzone-S2Twva' %}
+    {% set backgroundColor = (backgroundColor ?: properties.footerDarkBackgroundColor) ?: '#383e42' %}
+    {% set textColor = (textColor ?: properties.footerDarkTextColor) ?: '#ffffff' %}
+    {% set padding = (padding ?: properties.footerDarkPadding) ?: 30 %}
+    {% set width = (width ?: properties.layoutWidth) ?: 660 %}
+
+    <table data-bsi-element="{{ elementId }}" class="bsi-footer" width="{{ width }}" style="width: {{ width }}px;" bgcolor="{{ backgroundColor }}" align="center">
+        <tr>
+            <td data-bsi-dropzone="{{ dropzoneId }}" align="center" valign="top" style="color: {{ textColor }}; padding: {{ padding }}px 23px;">
+                {% block footer_dark_layout %}
+                {% endblock %}
+            </td>
+        </tr>
+    </table>
+
+{% endapply %}{% endmacro %}

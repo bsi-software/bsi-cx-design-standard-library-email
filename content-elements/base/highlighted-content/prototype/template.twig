@@ -1,0 +1,24 @@
+{% macro render(elementId = null, dropzoneId = null, backgroundColor = null, marginBottom = null) %}{% apply spaceless %}
+    {% set elementId = elementId ?: 'highlighted-content-8lm6Ih' %}
+    {% set dropzoneId = dropzoneId ?: 'highlighted-content-dropzone-4HtYBB' %}
+    {% set backgroundColor = (backgroundColor ?: properties.highlightBackgroundColor) ?: '#93C120' %}
+    {% set marginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
+
+    <div data-bsi-element="{{ elementId }}" style="margin-bottom: {{ marginBottom }}px;">
+        <!--[if mso]>
+        <table role="presentation" width="100%">
+        <tr>
+        <td style="width: 100%; padding: 25px 25px;" valign="middle" bgcolor={{ backgroundColor }}>
+        <![endif]-->
+        <div data-bsi-dropzone="{{ dropzoneId }}" style="background-color: {{ backgroundColor }}; padding: 25px 25px;">
+            {% block highlighted_content_dropzone %}
+            {% endblock %}
+        </div>
+        <!--[if mso]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+    </div>
+
+{% endapply %}{% endmacro %}
