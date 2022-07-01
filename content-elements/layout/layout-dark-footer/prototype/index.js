@@ -6,6 +6,7 @@ const {footerLayoutElements} = require('../../../layout');
  * @param {string} elementId
  * @param {string} elementLabel
  * @param {string} dropzoneId
+ * @param {[ContentElement]} dropzoneAllowedElements
  * @returns {ContentElement}
  */
 module.exports = (
@@ -13,6 +14,7 @@ module.exports = (
   elementId = 'layout-dark-footer-x1LvCb',
   elementLabel = 'Layout dark',
   dropzoneId = 'layout-dark-footer-dropzone-S2Twva',
+  dropzoneAllowedElements= [require('../../../base/spacer'), require('../../../base/divider'), ...footerLayoutElements]
 ) => cx
   .contentElement
   .withFile(template)
@@ -22,7 +24,4 @@ module.exports = (
   .withDropzones(
     cx.dropzone
       .withDropzone(dropzoneId)
-      .withAllowedElements(
-        require('../../../base/spacer'),
-        require('../../../base/divider'),
-        ...footerLayoutElements));
+      .withAllowedElements(...dropzoneAllowedElements));

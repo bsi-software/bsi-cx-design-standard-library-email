@@ -1,5 +1,5 @@
 const {cx, Icon} = require('@bsi-cx/design-build');
-const {colThreeElements} = require('../../../base');
+const {contentElements} = require('../../../base');
 
 /**
  * @param {string} template
@@ -8,6 +8,9 @@ const {colThreeElements} = require('../../../base');
  * @param {string} dropzone1Id
  * @param {string} dropzone2Id
  * @param {string} dropzone3Id
+ * @param {[ContentElement]} dropzone1AllowedElements
+ * @param {[ContentElement]} dropzone2AllowedElements
+ * @param {[ContentElement]} dropzone3AllowedElements
  * @returns {ContentElement}
  */
 module.exports = (
@@ -17,6 +20,9 @@ module.exports = (
   dropzone1Id = 'col-three-dropzone-1-mxExhj',
   dropzone2Id = 'col-three-dropzone-2-23ir6r',
   dropzone3Id = 'col-three-dropzone-3-ajc3B6',
+  dropzone1AllowedElements= [...contentElements],
+  dropzone2AllowedElements= [...contentElements],
+  dropzone3AllowedElements= [...contentElements]
 ) => cx
   .contentElement
   .withFile(template)
@@ -26,13 +32,10 @@ module.exports = (
   .withDropzones(
     cx.dropzone
       .withDropzone(dropzone1Id)
-      .withAllowedElements(
-        ...colThreeElements),
+      .withAllowedElements(...dropzone1AllowedElements),
     cx.dropzone
       .withDropzone(dropzone2Id)
-      .withAllowedElements(
-        ...colThreeElements),
+      .withAllowedElements(...dropzone2AllowedElements),
     cx.dropzone
       .withDropzone(dropzone3Id)
-      .withAllowedElements(
-        ...colThreeElements));
+      .withAllowedElements(...dropzone3AllowedElements));

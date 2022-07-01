@@ -1,9 +1,5 @@
-const titleElements = [
-  require('./title-h1')
-];
-
 const contentElements = [
-  ...titleElements,
+  require('./title-h1'),
   require('./text'),
   require('./cta'),
   require('./highlighted-content'),
@@ -20,22 +16,6 @@ const colOneElements = [
   require('./event')
 ];
 
-const colTwoElements = [
-  ...contentElements
-];
-
-const colTwoSlimElements = [
-  ...contentElements
-];
-
-const colTwoWideElements = [
-  ...contentElements
-];
-
-const colThreeElements = [
-  ...contentElements
-];
-
 const footerElements = [
   require('./footer-link'),
   require('./social-media-follow'),
@@ -44,11 +24,6 @@ const footerElements = [
   require('./spacer')
 ];
 
-module.exports.titleElements = titleElements;
 module.exports.contentElements = contentElements;
 module.exports.colOneElements = colOneElements;
-module.exports.colTwoElements = colTwoElements;
-module.exports.colTwoSlimElements = colTwoSlimElements;
-module.exports.colTwoWideElements = colTwoWideElements;
-module.exports.colThreeElements = colThreeElements;
 module.exports.footerElements = footerElements;

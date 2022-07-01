@@ -7,6 +7,8 @@ const {footerElements} = require('../../../base');
  * @param {string} elementLabel
  * @param {string} dropzone1Id
  * @param {string} dropzone2Id
+ * @param {[ContentElement]} dropzone1AllowedElements
+ * @param {[ContentElement]} dropzone2AllowedElements
  * @returns {ContentElement}
  */
 module.exports = (
@@ -15,6 +17,8 @@ module.exports = (
   elementLabel = '2 Columns',
   dropzone1Id = 'col-two-footer-dropzone-1-WJcCmL',
   dropzone2Id = 'col-two-footer-dropzone-2-qCJrba',
+  dropzone1AllowedElements= [...footerElements],
+  dropzone2AllowedElements= [...footerElements]
 ) => cx
   .contentElement
   .withFile(template)
@@ -24,9 +28,7 @@ module.exports = (
   .withDropzones(
     cx.dropzone
       .withDropzone(dropzone1Id)
-      .withAllowedElements(
-        ...footerElements),
+      .withAllowedElements(...dropzone1AllowedElements),
     cx.dropzone
       .withDropzone(dropzone2Id)
-      .withAllowedElements(
-        ...footerElements));
+      .withAllowedElements(...dropzone2AllowedElements));

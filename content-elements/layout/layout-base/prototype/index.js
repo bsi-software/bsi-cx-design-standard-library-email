@@ -6,6 +6,7 @@ const {layoutElements} = require('../../../layout');
  * @param {string} elementId
  * @param {string} elementLabel
  * @param {string} dropzoneId
+ * @param {[ContentElement]} dropzoneAllowedElements
  * @returns {ContentElement}
  */
 module.exports = (
@@ -13,6 +14,7 @@ module.exports = (
   elementId = 'layout-base-dziMWZ',
   elementLabel = 'Layout base',
   dropzoneId = 'layout-base-dropzone-7nPzXF',
+  dropzoneAllowedElements= [require('../../../base/spacer'), require('../../../base/divider'), ...layoutElements]
 ) => cx
   .contentElement
   .withFile(template)
@@ -22,7 +24,4 @@ module.exports = (
   .withDropzones(
     cx.dropzone
       .withDropzone(dropzoneId)
-      .withAllowedElements(
-        require('../../../base/spacer'),
-        require('../../../base/divider'),
-        ...layoutElements));
+      .withAllowedElements(...dropzoneAllowedElements));

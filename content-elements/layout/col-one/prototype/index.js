@@ -6,6 +6,7 @@ const {colOneElements} = require('../../../base');
  * @param {string} elementId
  * @param {string} elementLabel
  * @param {string} dropzoneId
+ * @param {[ContentElement]} dropzoneAllowedElements
  * @returns {ContentElement}
  */
 module.exports = (
@@ -13,6 +14,7 @@ module.exports = (
   elementId = 'col-one-DMfkNr',
   elementLabel = '1 Column',
   dropzoneId = 'col-one-dropzone-GYTnrx',
+  dropzoneAllowedElements= [...colOneElements]
 ) => cx
   .contentElement
   .withFile(template)
@@ -22,5 +24,4 @@ module.exports = (
   .withDropzones(
     cx.dropzone
       .withDropzone(dropzoneId)
-      .withAllowedElements(
-        ...colOneElements));
+      .withAllowedElements(...dropzoneAllowedElements));
