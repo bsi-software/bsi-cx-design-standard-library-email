@@ -1,0 +1,47 @@
+{% apply spaceless %}
+    {% set elementId = elementId ?: 'table-2idv5Y' %}
+    {% set elementPartId = elementPartId ?: 'table-part-slyKhe' %}
+    {% set textColor = (textColor ?: properties.baseTextColor) ?: '#000000' %}
+    {% set fontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
+    {% set fontSize = (fontSize ?: properties.baseFontSize) ?: 14 %}
+    {% set lineHeight = lineHeight ?: fontSize %}
+    {% set marginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
+
+    <div data-bsi-element="{{ elementId }}">
+        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td data-bsi-element-part="{{ elementPartId }}" align="left" style="font-family: {{ fontFamily }}; color: {{ textColor }}; font-size: {{ fontSize }}px; line-height: {{ lineHeight }}px; text-align: left;">
+                    <table class="table" border="0" cellpadding="10" width="100%" align="left" style="font-family: {{ fontFamily }}; color: {{ textColor }}; font-size: {{ fontSize }}px; line-height: {{ lineHeight }}px; text-align: left;">
+                        <thead>
+                        <tr>
+                            <th>Column 1</th>
+                            <th>Column 2</th>
+                            <th>Column 3</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Text column 1</td>
+                            <td>Text column 1</td>
+                            <td>Text column 1</td>
+                        </tr>
+                        <tr>
+                            <td>Text column 2</td>
+                            <td>Text column 2</td>
+                            <td>Text column 2</td>
+                        </tr>
+                        <tr>
+                            <td>Text column 3</td>
+                            <td>Text column 3</td>
+                            <td>Text column 3</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td height="{{ marginBottom }}" style="height: {{ marginBottom }}px;">&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+{% endapply %}

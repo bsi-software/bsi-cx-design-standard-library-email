@@ -1,0 +1,19 @@
+{% apply spaceless %}
+    {% set elementId = elementId ?: 'image-zLBggA' %}
+    {% set imagePartId = imagePartId ?: 'image-part-image-uzAw5t' %}
+    {% set textPartId = textPartId ?: 'image-part-text-ykSmGi' %}
+    {% set imageSrc = imageSrc ?: bsi_cx_asset('../../../../static/image.png') %}
+    {% set textColor = (textColor ?: properties.baseTextColor) ?: '#000000' %}
+    {% set fontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
+    {% set fontSize = (fontSize ?: properties.baseFontSize) ?: 14 %}
+    {% set lineHeight = fontSize + 4 %}
+    {% set marginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
+    {% set imageWidth = (imageWidth ?: properties.imageWidth100Percent) ?: 640 %}
+
+    <div data-bsi-element="{{ elementId }}">
+        <img data-bsi-element-part="{{ imagePartId }}" class="bsi-image" src="{{ imageSrc }}" width="{{ imageWidth }}" alt="Image" style="margin-top: 0; margin-bottom: 6px; display: block; width: {{ imageWidth }}px; max-width: 100%; height:auto;" />
+        <div data-bsi-element-part="{{ textPartId }}" style="font-family: {{ fontFamily }}; color: {{ textColor }}; font-size: {{ fontSize }}px; line-height: {{ lineHeight }}px; text-align: left !important; margin-bottom: {{ marginBottom }}px;">
+            Image caption
+        </div>
+    </div>
+{% endapply %}

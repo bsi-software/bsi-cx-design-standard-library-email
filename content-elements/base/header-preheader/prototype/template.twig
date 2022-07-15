@@ -1,28 +1,4 @@
 {% macro render(elementId = null, previewPartId = null, textPartId = null, textColor = null, linkColor = null, fontFamily = null, fontSize = null, marginBottom = null) %}{% apply spaceless %}
-    {% set elementId = elementId ?: 'header-preheader-cVwk8f' %}
-    {% set previewPartId = previewPartId ?: 'header-preheader-part-preview-rWi96c' %}
-    {% set textPartId = textPartId ?: 'header-preheader-part-text-dpjafj' %}
-    {% set textColor = (textColor ?: properties.baseTextColor) ?: '#000000' %}
-    {% set linkColor = (linkColor ?: properties.linkColor) ?: '#93C120' %}
-    {% set fontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
-    {% set fontSize = (fontSize ?: properties.baseFontSize) ?: 14 %}
-    {% set lineHeight = fontSize + 4 %}
-    {% set marginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
-
-    <div data-bsi-element="{{ elementId }}" style="text-align: center; margin-top: 0; margin-bottom: {{ marginBottom }}px; font-size: {{ fontSize }}px; line-height: {{ lineHeight }}px; font-family: {{ fontFamily }};">
-        <div data-bsi-element-part="{{ previewPartId }}" style="display: none;">Preview text for e-mail client here</div>
-        <div data-bsi-element-part="{{ textPartId }}" style="color: {{ textColor }};">Pre-header text here. |&nbsp;
-            <span style="color: {{ linkColor }};">
-                <a href="[Webversion]" target="_blank" style="text-decoration: underline; color: {{ linkColor }};">View in Browser</a>
-            </span>
-        </div>
-        <!--[if mso]>
-        <table width="100%">
-        <tr>
-        <td height="{{ marginBottom }}" style="height: {{ marginBottom }}px;">&nbsp;</td>
-        </tr>
-        </table>
-        <![endif]-->
-    </div>
-
+    {% deprecated 'The "prototype/template.twig" file is deprecated, use "prototype/library.twig" instead and make sure that you change your reference from "import ... as element / element.render" to "embed ... with { ... }"' %}
+    {% import './library.twig' with _context %}
 {% endapply %}{% endmacro %}

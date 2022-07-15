@@ -1,21 +1,4 @@
 {% macro render(elementId = null, titlePartId = null, color = null, fontFamily = null, fontSize = null, lineHeight = null, marginBottom = null, titleText = null, titleType = null) %}{% apply spaceless %}
-    {% set elementId = elementId ?: 'title-h1-Iv89q4' %}
-    {% set titlePartId = titlePartId ?: 'title-h1-part-agD9FX' %}
-    {% set color = (color ?: properties.titleTextColor) ?: '#2F4E66' %}
-    {% set fontFamily = (fontFamily ?: properties.titleFontFamily) ?: 'Calibri, Carlito, PT Sans, Trebuchet MS, sans‑serif' %}
-    {% set fontSize = (fontSize ?: properties.fontSizeH1) ?: 28 %}
-    {% set lineHeight = (lineHeight ?: properties.lineHeightH1) ?: 32 %}
-    {% set marginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
-    {% set titleText = titleText ?: bsi_cx_lorem(3) %}
-
-    {% if titleType == 1 or titleType == 2 or titleType == 3 or titleType == 4 or titleType == 5 or titleType == 6 %}
-        {% set titleType = titleType %}
-    {% else %}
-        {% set titleType = 1 %}
-    {% endif %}
-
-    <div data-bsi-element="{{ elementId }}">
-        <h{{ titleType }} data-bsi-element-part="{{ titlePartId }}" style="color: {{ color }}; font-family: {{ fontFamily }}; text-align: left; margin-top: 0; margin-bottom: {{ marginBottom }}px; font-size: {{ fontSize }}px; line-height: {{ lineHeight }}px; font-weight: normal;">{{ titleText }}</h{{ titleType }}>
-    </div>
-
+    {% deprecated 'The "prototype/template.twig" file is deprecated, use "prototype/library.twig" instead and make sure that you change your reference from "import ... as element / element.render" to "embed ... with { ... }"' %}
+    {% import './library.twig' with _context %}
 {% endapply %}{% endmacro %}

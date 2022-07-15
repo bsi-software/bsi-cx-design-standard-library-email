@@ -1,7 +1,4 @@
 {% macro render(elementId = null, spacerHeight = null) %}{% apply spaceless %}
-    {% set elementId = elementId ?: 'spacer-HqlX1L' %}
-    {% set spacerHeight = (spacerHeight ?: properties.spacerHeightMedium) ?: 25 %}
-
-    <div data-bsi-element="{{ elementId }}" style="line-height: {{ spacerHeight }}px; height: {{ spacerHeight }}px; mso-line-height-rule: exactly;">&nbsp;</div>
-
+    {% deprecated 'The "prototype/template.twig" file is deprecated, use "prototype/library.twig" instead and make sure that you change your reference from "import ... as element / element.render" to "embed ... with { ... }"' %}
+    {% import './library.twig' with _context %}
 {% endapply %}{% endmacro %}
