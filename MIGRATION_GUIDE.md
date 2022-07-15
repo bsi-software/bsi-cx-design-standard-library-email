@@ -7,7 +7,7 @@ If you are migrating from an earlier version of the [@bsi-cx/design-master-templ
 If you were an early adapter of our new templates, a refactoring may be needed. Content elements that have been overwritten in your template and are referring to the _standard-libary_, may need a migration. If your content elements are using the `element.render(...)` function, those content elements need a rewrite. 
 
 A content element that used to look like this:
-```
+```twig
 {% apply spaceless %}
     {% import '@bsi-cx/design-standard-library-email/content-elements/base/cta/prototype/template.twig' as element %}
 
@@ -16,7 +16,7 @@ A content element that used to look like this:
 ```
 
 must be rewritten to:
-```
+```twig
 {% apply spaceless %}
     {% include '@bsi-cx/design-standard-library-email/content-elements/base/cta/prototype/library.twig' with {
         elementId: 'cta-center-CLc9J9',
@@ -33,7 +33,7 @@ Make sure to:
 
 The customized variables can be picked from the content element implementation in the _standard-library_. In case of our example above, it looks like the following:
 
-```
+```twig
 {% apply spaceless %}
     {% set elementId = elementId ?: 'cta-eoRgSU' %}
     {% set elementPartId = elementPartId ?: 'cta-part-YgQ87c' %}
