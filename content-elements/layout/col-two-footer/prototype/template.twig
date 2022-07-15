@@ -1,4 +1,4 @@
 {% macro render(elementId = null, dropzone1Id = null, dropzone2Id = null, color = null, width = null, padding = null) %}{% apply spaceless %}
-    {% deprecated 'The "prototype/template.twig" file is deprecated, use "prototype/library.twig" instead and make sure that you change your reference from "import ... as element / element.render" to "embed ... with { ... }"' %}
+    {% deprecated 'The "prototype/template.twig" file is deprecated, use "prototype/library.twig" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.twig"' %}
     {% import './library.twig' with _context %}
 {% endapply %}{% endmacro %}
