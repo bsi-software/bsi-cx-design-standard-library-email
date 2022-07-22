@@ -8,8 +8,8 @@
     {% set dropzone1Id = dropzone1Id ?: 'col-three-dropzone-1-mxExhj' %}
     {% set dropzone2Id = dropzone2Id ?: 'col-three-dropzone-2-23ir6r' %}
     {% set dropzone3Id = dropzone3Id ?: 'col-three-dropzone-3-ajc3B6' %}
-    {% set width = (width ?: properties.width) ?: 218 %}
-    {% set padding = (padding ?: properties.padding) ?: 10 %}
+    {% set width = (width ?: properties.colThreeWidth) ?: 218 %}
+    {% set padding = (padding ?: properties.columnPadding) ?: 10 %}
 
     <div data-bsi-element="{{ elementId }}" class="bsi-col-three">
         <!--[if mso]>

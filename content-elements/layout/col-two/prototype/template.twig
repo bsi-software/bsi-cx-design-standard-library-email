@@ -7,8 +7,8 @@
     {% set elementId = elementId ?: 'col-two-qiB14A' %}
     {% set dropzone1Id = dropzone1Id ?: 'col-two-dropzone-1-rRaE9R' %}
     {% set dropzone2Id = dropzone2Id ?: 'col-two-dropzone-2-K1vkFU' %}
-    {% set width = (width ?: properties.width) ?: 328 %}
-    {% set padding = (padding ?: properties.padding) ?: 10 %}
+    {% set width = (width ?: properties.colTwoWidth) ?: 328 %}
+    {% set padding = (padding ?: properties.columnPadding) ?: 10 %}
 
     <div data-bsi-element="{{ elementId }}" class="bsi-col-two">
         <!--[if mso]>
