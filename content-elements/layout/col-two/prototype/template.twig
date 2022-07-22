@@ -1,4 +1,4 @@
-{% macro render(elementId = null, dropzone1Id = null, dropzone2Id = null, colTwoWidth = null, columnPadding = null) %}{% apply spaceless %}
+{% macro render(elementId = null, dropzone1Id = null, dropzone2Id = null, width = null, padding = null) %}{% apply spaceless %}
     {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
     {% include './template.twig' %}
 {% endapply %}{% endmacro %}
@@ -7,8 +7,8 @@
     {% set elementId = elementId ?: 'col-two-qiB14A' %}
     {% set dropzone1Id = dropzone1Id ?: 'col-two-dropzone-1-rRaE9R' %}
     {% set dropzone2Id = dropzone2Id ?: 'col-two-dropzone-2-K1vkFU' %}
-    {% set width = (colTwoWidth ?: properties.colTwoWidth) ?: 328 %}
-    {% set padding = (columnPadding ?: properties.columnPadding) ?: 10 %}
+    {% set width = (width ?: properties.width) ?: 328 %}
+    {% set padding = (padding ?: properties.padding) ?: 10 %}
 
     <div data-bsi-element="{{ elementId }}" class="bsi-col-two">
         <!--[if mso]>
