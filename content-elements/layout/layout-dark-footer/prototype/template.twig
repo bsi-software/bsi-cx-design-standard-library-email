@@ -1,4 +1,23 @@
 {% macro render(elementId = null, dropzoneId = null, backgroundColor = null, textColor = null, padding = null, width = null) %}{% apply spaceless %}
-    {% deprecated 'The "prototype/template.twig" file is deprecated, use "prototype/library.twig" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
-    {% include './library.twig' with _context %}
+    {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
+    {% include './template.twig' %}
 {% endapply %}{% endmacro %}
+
+{% apply spaceless %}
+    {% set innerElementId = elementId ?: 'layout-dark-footer-x1LvCb' %}
+    {% set innerDropzoneId = dropzoneId ?: 'layout-dark-footer-dropzone-S2Twva' %}
+    {% set backgroundColor = (backgroundColor ?: properties.footerDarkBackgroundColor) ?: '#383e42' %}
+    {% set textColor = (textColor ?: properties.footerDarkTextColor) ?: '#ffffff' %}
+    {% set padding = (padding ?: properties.footerDarkPadding) ?: 30 %}
+    {% set width = (width ?: properties.layoutWidth) ?: 660 %}
+
+    <table data-bsi-element="{{ innerElementId }}" class="bsi-footer" width="{{ width }}" style="width: {{ width }}px;" bgcolor="{{ backgroundColor }}" align="center">
+        <tr>
+            <td data-bsi-dropzone="{{ innerDropzoneId }}" align="center" valign="top" style="color: {{ textColor }}; padding: {{ padding }}px 23px;">
+                {% block footer_dark_layout %}
+                    {% include '../../col-one-footer/template.twig' only %}
+                {% endblock %}
+            </td>
+        </tr>
+    </table>
+{% endapply %}

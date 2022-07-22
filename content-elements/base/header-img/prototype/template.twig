@@ -1,4 +1,16 @@
 {% macro render(elementId = null, imagePartId = null, imageSrc = null, headerHeight = null, marginBottom = null) %}{% apply spaceless %}
-    {% deprecated 'The "prototype/template.twig" file is deprecated, use "prototype/library.twig" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
-    {% include './library.twig' %}
+    {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
+    {% include './template.twig' %}
 {% endapply %}{% endmacro %}
+
+{% apply spaceless %}
+    {% set elementId = elementId ?: 'header-img-cftPW6' %}
+    {% set imagePartId = imagePartId ?: 'header-img-part-CrwKWp' %}
+    {% set imageSrc = imageSrc ?: bsi_cx_asset('../../../../static/image_660x320.png') %}
+    {% set headerHeight = (headerHeight ?: properties.headerHeight) ?: 320 %}
+    {% set marginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
+
+    <div data-bsi-element="{{ elementId }}" class="bsi-header-img">
+        <img data-bsi-element-part="{{ imagePartId }}" src="{{ imageSrc }}" width="660" height="{{ headerHeight }}" alt="Header image" style="margin-top :0; margin-bottom: {{ marginBottom }}px; display: block; width: 660px; max-width: 100%; height: {{ headerHeight }}px;" />
+    </div>
+{% endapply %}

@@ -1,4 +1,33 @@
 {% macro render(elementId = null, dropzoneId = null, color = null, width = null) %}{% apply spaceless %}
-    {% deprecated 'The "prototype/template.twig" file is deprecated, use "prototype/library.twig" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
-    {% include './library.twig' with _context %}
+    {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
+    {% include './template.twig' %}
 {% endapply %}{% endmacro %}
+
+{% apply spaceless %}
+    {% set innerElementId = elementId ?: 'layout-base-dziMWZ' %}
+    {% set innerDropzoneId = dropzoneId ?: 'layout-base-dropzone-7nPzXF' %}
+    {% set color = (color ?: properties.layoutBaseBackgroundColor) ?: '#ffffff' %}
+    {% set width = (width ?: properties.layoutWidth) ?: 660 %}
+
+    <table data-bsi-element="{{ innerElementId }}" role="presentation" style="width: 100%; border: 0; border-spacing: 0; background-color: {{ color }};">
+        <tr>
+            <td align="center">
+                <!--[if mso]>
+                <table role="presentation" align="center" style="width: {{ width }}px;">
+                <tr>
+                <td style="padding: 20px 0;">
+                <![endif]-->
+                <div class="outer" style="width: 96%; max-width: {{ width }}px; margin: 0 auto;" data-bsi-dropzone="{{ innerDropzoneId }}">
+                    {% block layout_base_dropzone %}
+                        {% include '../../col-one/prototype/template.twig' only %}
+                    {% endblock %}
+                </div>
+                <!--[if mso]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+            </td>
+        </tr>
+    </table>
+{% endapply %}

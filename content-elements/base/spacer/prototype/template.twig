@@ -1,4 +1,11 @@
 {% macro render(elementId = null, spacerHeight = null) %}{% apply spaceless %}
-    {% deprecated 'The "prototype/template.twig" file is deprecated, use "prototype/library.twig" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
-    {% include './library.twig' %}
+    {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
+    {% include './template.twig' %}
 {% endapply %}{% endmacro %}
+
+{% apply spaceless %}
+    {% set elementId = elementId ?: 'spacer-HqlX1L' %}
+    {% set spacerHeight = (spacerHeight ?: properties.spacerHeightMedium) ?: 25 %}
+
+    <div data-bsi-element="{{ elementId }}" style="line-height: {{ spacerHeight }}px; height: {{ spacerHeight }}px; mso-line-height-rule: exactly;">&nbsp;</div>
+{% endapply %}

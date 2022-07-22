@@ -1,4 +1,19 @@
 {% macro render(elementId = null, textPartId = null, textColor = null, fontFamily = null, fontSize = null, lineHeight = null, marginBottom = null, text = null) %}{% apply spaceless %}
-    {% deprecated 'The "prototype/template.twig" file is deprecated, use "prototype/library.twig" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
-    {% include './library.twig' %}
+    {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
+    {% include './template.twig' %}
 {% endapply %}{% endmacro %}
+
+{% apply spaceless %}
+    {% set elementId = elementId ?: 'text-Or4N33' %}
+    {% set textPartId = textPartId ?: 'text-part-5njcDS' %}
+    {% set textColor = (textColor ?: properties.baseTextColor) ?: '#000000' %}
+    {% set fontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
+    {% set fontSize = (fontSize ?: properties.baseFontSize) ?: 14 %}
+    {% set lineHeight = (lineHeight ?: properties.textLineHeight) ?: 22 %}
+    {% set marginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
+    {% set text = text ?: bsi_cx_lorem(75) %}
+
+    <div data-bsi-element="{{ elementId }}" data-bsi-element-part="{{ textPartId }}" style="text-align: left; margin-top: 0; margin-bottom: {{ marginBottom }}px; font-size: {{ fontSize }}px; line-height: {{ lineHeight }}px; color: {{ textColor }}; font-family: {{ fontFamily }};">
+        <p>{{ text }}</p>
+    </div>
+{% endapply %}

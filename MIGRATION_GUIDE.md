@@ -18,7 +18,7 @@ A content element that used to look like this:
 must be rewritten to:
 ```twig
 {% apply spaceless %}
-    {% include '@bsi-cx/design-standard-library-email/content-elements/base/cta/prototype/library.twig' with {
+    {% include '@bsi-cx/design-standard-library-email/content-elements/base/cta/prototype/template.twig' with {
         elementId: 'cta-center-CLc9J9',
         elementPartId: 'cta-center-part-qt8DLo',
         alignment: properties.buttonAlignmentCenter
@@ -27,9 +27,8 @@ must be rewritten to:
 ```
 
 Make sure to:
-- Switch form `import` to `include`
-- Switch from `prototype/template.twig` to `prototype/library.twig` 
-- Instead of `element.render(...)`, use `with` and pass in all customized variables
+- Switch from `import` to `include`
+- Use `with` and pass in all customized variables instead of using `element.render(...)`
 
 The customized variables can be picked from the content element implementation in the _standard-library_. In case of our example above, it looks like the following:
 
