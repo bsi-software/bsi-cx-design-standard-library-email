@@ -1,4 +1,9 @@
 {% macro render(elementId = null, dropzoneId = null, color = null, width = null, padding = null) %}{% apply spaceless %}
+    {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
+    {% include './template.twig' %}
+{% endapply %}{% endmacro %}
+
+{% apply spaceless %}
     {% set elementId = elementId ?: 'col-one-footer-68T94f' %}
     {% set dropzoneId = dropzoneId ?: 'col-one-footer-dropzone-jaZSq2' %}
     {% set color = (color ?: properties.footerTextColor) ?: '#ffffff' %}
@@ -14,7 +19,7 @@
         <div class="bsi-column" style="width: 100%; max-width: {{ width }}px; display: inline-block; vertical-align: middle;">
             <div style="padding: {{ padding }}px;" data-bsi-dropzone="{{ dropzoneId }}">
                 {% block col_one_footer_dropzone %}
-                    {% include '../../../base/social-media-follow/template.twig' %}
+                    {% include '../../../base/social-media-follow/template.twig' only %}
                 {% endblock %}
             </div>
         </div>
@@ -24,5 +29,4 @@
         </table>
         <![endif]-->
     </div>
-
-{% endapply %}{% endmacro %}
+{% endapply %}

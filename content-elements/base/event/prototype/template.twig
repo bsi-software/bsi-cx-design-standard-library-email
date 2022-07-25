@@ -1,4 +1,9 @@
 {% macro render(elementId = null, locationIconPartId = null, locationTextPartId = null, dateIconPartId = null, dateTextPartId = null, locationIconSrc = null, dateIconSrc = null, backgroundColor = null, textColor = null, fontFamily = null, fontSize = null, marginBottom = null) %}{% apply spaceless %}
+    {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
+    {% include './template.twig' %}
+{% endapply %}{% endmacro %}
+
+{% apply spaceless %}
     {% set elementId = elementId ?: 'event-5yyfwR' %}
     {% set locationIconPartId = locationIconPartId ?: 'event-part-location-icon-x2nxDL' %}
     {% set locationTextPartId = locationTextPartId ?: 'event-part-location-text-7612sK' %}
@@ -44,5 +49,4 @@
             </td>
         </tr>
     </table>
-
-{% endapply %}{% endmacro %}
+{% endapply %}

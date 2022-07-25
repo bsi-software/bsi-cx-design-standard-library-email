@@ -1,4 +1,9 @@
 {% macro render(elementId = null, titlePartId = null, color = null, fontFamily = null, fontSize = null, lineHeight = null, marginBottom = null, titleText = null, titleType = null) %}{% apply spaceless %}
+    {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
+    {% include './template.twig' %}
+{% endapply %}{% endmacro %}
+
+{% apply spaceless %}
     {% set elementId = elementId ?: 'title-h1-Iv89q4' %}
     {% set titlePartId = titlePartId ?: 'title-h1-part-agD9FX' %}
     {% set color = (color ?: properties.titleTextColor) ?: '#2F4E66' %}
@@ -17,5 +22,4 @@
     <div data-bsi-element="{{ elementId }}">
         <h{{ titleType }} data-bsi-element-part="{{ titlePartId }}" style="color: {{ color }}; font-family: {{ fontFamily }}; text-align: left; margin-top: 0; margin-bottom: {{ marginBottom }}px; font-size: {{ fontSize }}px; line-height: {{ lineHeight }}px; font-weight: normal;">{{ titleText }}</h{{ titleType }}>
     </div>
-
-{% endapply %}{% endmacro %}
+{% endapply %}

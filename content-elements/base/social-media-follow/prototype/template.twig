@@ -1,4 +1,9 @@
 {% macro render(elementId = null, elementPartId = null, imageSrcLinkedIn = null, imageSrcTwitter = null, imageSrcYouTube = null, imageSrcFacebook = null, imageSrcInstagram = null, imageSrcPinterest = null, imageSrcSnapchat = null, imageSrcKununu = null, marginBottom = null, iconHeight = null) %}{% apply spaceless %}
+    {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
+    {% include './template.twig' %}
+{% endapply %}{% endmacro %}
+
+{% apply spaceless %}
     {% set elementId = elementId ?: 'social-media-follow-rbGrIr' %}
     {% set elementPartId = elementPartId ?: 'social-media-follow-part-2PtqkD' %}
     {% set imageSrcLinkedIn = imageSrcLinkedIn ?: bsi_cx_asset('../../../../static/linkedin.png') %}
@@ -59,5 +64,4 @@
             <td height="{{ marginBottom }}" style="height: {{ marginBottom }}px;">&nbsp;</td>
         </tr>
     </table>
-
-{% endapply %}{% endmacro %}
+{% endapply %}

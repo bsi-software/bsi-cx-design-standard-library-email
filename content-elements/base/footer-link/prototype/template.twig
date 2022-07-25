@@ -1,4 +1,9 @@
 {% macro render(elementId = null, elementPartId = null, linkText = null, linkURL = null, color = null, fontFamily = null, fontSize = null, paddingBottom = null) %}{% apply spaceless %}
+    {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
+    {% include './template.twig' %}
+{% endapply %}{% endmacro %}
+
+{% apply spaceless %}
     {% set elementId = elementId ?: 'footer-link-vc1KI1' %}
     {% set elementPartId = elementPartId ?: 'footer-link-part-gN7hhF' %}
     {% set linkText = (linkText ?: properties.addressEmailText) ?: 'info@example.com' %}
@@ -11,5 +16,4 @@
     <div data-bsi-element="{{ elementId }}" data-bsi-element-part="{{ elementPartId }}" style="padding-bottom: {{ paddingBottom }}px; min-width: 196px;">
         <a href="{{ url ?: linkURL }}" style="font-family: {{ fontFamily }}; font-size: {{ fontSize }}px;  line-height: {{ fontSize }}px; color: {{ color }}; text-decoration: none;">{{ text ?: linkText }}</a>
     </div>
-
-{% endapply %}{% endmacro %}
+{% endapply %}

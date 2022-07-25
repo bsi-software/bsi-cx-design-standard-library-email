@@ -1,4 +1,9 @@
 {% macro render(elementId = null, dropzone1Id = null, dropzone2Id = null, dropzone3Id = null, dropzone4Id = null, dropzone5Id = null, image1Src = null, image2Src = null, image3Src = null, image4Src = null, image5Src = null) %}{% apply spaceless %}
+    {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
+    {% include './template.twig' %}
+{% endapply %}{% endmacro %}
+
+{% apply spaceless %}
     {% set elementId = elementId ?: 'smiley-rating-r74TPz' %}
     {% set dropzone1Id = dropzone1Id ?: 'smiley-rating-dropzone-1-otTRwZ' %}
     {% set dropzone2Id = dropzone2Id ?: 'smiley-rating-dropzone-2-aRGgs6' %}
@@ -18,31 +23,31 @@
                     <tr>
                         <td data-bsi-dropzone="{{ dropzone1Id }}" align="center" valign="top">
                             {% block smiley_rating_dropzone_one %}
-                                {% include '../../img-10/template.twig' with {source: image1Src} %}
+                                {% include '../../img-10/template.twig' with {source: image1Src} only %}
                             {% endblock %}
                         </td>
                         <td width="16" style="width:16px;font-size: 1px; line-height: 1px;">&nbsp;</td>
                         <td data-bsi-dropzone="{{ dropzone2Id }}" align="left" valign="top">
                             {% block smiley_rating_dropzone_two %}
-                                {% include '../../img-10/template.twig' with {source: image2Src} %}
+                                {% include '../../img-10/template.twig' with {source: image2Src} only %}
                             {% endblock %}
                         </td>
                         <td width="16" style="width:16px;font-size: 1px; line-height: 1px;">&nbsp;</td>
                         <td data-bsi-dropzone="{{ dropzone3Id }}" align="left" valign="top">
                             {% block smiley_rating_dropzone_three %}
-                                {% include '../../img-10/template.twig' with {source: image3Src} %}
+                                {% include '../../img-10/template.twig' with {source: image3Src} only %}
                             {% endblock %}
                         </td>
                         <td width="16" style="width:16px;font-size: 1px; line-height: 1px;">&nbsp;</td>
                         <td data-bsi-dropzone="{{ dropzone4Id }}" align="left" valign="top">
                             {% block smiley_rating_dropzone_four %}
-                                {% include '../../img-10/template.twig' with {source: image4Src} %}
+                                {% include '../../img-10/template.twig' with {source: image4Src} only %}
                             {% endblock %}
                         </td>
                         <td width="16" style="width:16px;font-size: 1px; line-height: 1px;">&nbsp;</td>
                         <td data-bsi-dropzone="{{ dropzone5Id }}" align="left" valign="top">
                             {% block smiley_rating_dropzone_five %}
-                                {% include '../../img-10/template.twig' with {source: image5Src} %}
+                                {% include '../../img-10/template.twig' with {source: image5Src} only %}
                             {% endblock %}
                         </td>
                     </tr>
@@ -50,5 +55,4 @@
             </td>
         </tr>
     </table>
-
-{% endapply %}{% endmacro %}
+{% endapply %}

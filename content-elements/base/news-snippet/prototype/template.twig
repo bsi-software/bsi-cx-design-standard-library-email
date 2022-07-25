@@ -1,4 +1,9 @@
 {% macro render(elementId = null, elementPartId = null, imageSrc = null, textColor = null, fontFamily = null, fontSizeTitle = null, fontSizeHeadline = null, fontSizeText = null, marginBottom = null) %}{% apply spaceless %}
+    {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
+    {% include './template.twig' %}
+{% endapply %}{% endmacro %}
+
+{% apply spaceless %}
     {% set elementId = elementId ?: 'news-snippet-vR9oxJ' %}
     {% set elementPartId = elementPartId ?: 'news-snippet-part-gqB9Yz' %}
     {% set imageSrc = imageSrc ?: bsi_cx_asset('../../../../static/image.png') %}
@@ -35,5 +40,4 @@
             <![endif]-->
         </div>
     </div>
-
-{% endapply %}{% endmacro %}
+{% endapply %}

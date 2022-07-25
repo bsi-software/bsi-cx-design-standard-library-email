@@ -1,4 +1,9 @@
 {% macro render(elementId = null, dropzoneId = null, backgroundColor = null, marginBottom = null) %}{% apply spaceless %}
+    {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
+    {% include './template.twig' %}
+{% endapply %}{% endmacro %}
+
+{% apply spaceless %}
     {% set elementId = elementId ?: 'highlighted-content-8lm6Ih' %}
     {% set dropzoneId = dropzoneId ?: 'highlighted-content-dropzone-4HtYBB' %}
     {% set backgroundColor = (backgroundColor ?: properties.highlightBackgroundColor) ?: '#93C120' %}
@@ -20,5 +25,4 @@
         </table>
         <![endif]-->
     </div>
-
-{% endapply %}{% endmacro %}
+{% endapply %}

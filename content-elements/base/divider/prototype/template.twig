@@ -1,4 +1,9 @@
 {% macro render(elementId = null, color = null, height = null, marginBottom = null) %}{% apply spaceless %}
+    {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
+    {% include './template.twig' %}
+{% endapply %}{% endmacro %}
+
+{% apply spaceless %}
     {% set elementId = elementId ?: 'divider-LQi2yS' %}
     {% set color = (color ?: properties.dividerColor) ?: '#e6e6e6' %}
     {% set height = (height ?: properties.dividerHeight) ?: 1 %}
@@ -7,5 +12,4 @@
     <div data-bsi-element="{{ elementId }}">
         <div style="margin-bottom: {{ marginBottom }}px; width: 100%; max-width: 640px; line-height: {{ height }}px; height: {{ height }}px; font-size: {{ height }}px; background-color: {{ color }}; mso-line-height-rule: exactly;">&nbsp;</div>
     </div>
-
-{% endapply %}{% endmacro %}
+{% endapply %}

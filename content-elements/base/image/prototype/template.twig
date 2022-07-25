@@ -1,4 +1,9 @@
 {% macro render(elementId = null, imagePartId = null, textPartId = null, imageSrc = null, textColor = null, fontFamily = null, fontSize = null, marginBottom = null, imageWidth = null) %}{% apply spaceless %}
+    {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
+    {% include './template.twig' %}
+{% endapply %}{% endmacro %}
+
+{% apply spaceless %}
     {% set elementId = elementId ?: 'image-zLBggA' %}
     {% set imagePartId = imagePartId ?: 'image-part-image-uzAw5t' %}
     {% set textPartId = textPartId ?: 'image-part-text-ykSmGi' %}
@@ -16,5 +21,4 @@
             Image caption
         </div>
     </div>
-
-{% endapply %}{% endmacro %}
+{% endapply %}

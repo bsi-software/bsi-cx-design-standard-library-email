@@ -1,4 +1,9 @@
 {% macro render(elementId = null, dropzone1Id = null, dropzone2Id = null, widthSlim = null, widthWide = null, padding = null) %}{% apply spaceless %}
+    {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
+    {% include './template.twig' %}
+{% endapply %}{% endmacro %}
+
+{% apply spaceless %}
     {% set elementId = elementId ?: 'col-two-ratio-1-2-v52yUl' %}
     {% set dropzone1Id = dropzone1Id ?: 'col-two-ratio-1-2-dropzone-1-7yehp5' %}
     {% set dropzone2Id = dropzone2Id ?: 'col-two-ratio-1-2-dropzone-2-zcjnWE' %}
@@ -14,7 +19,8 @@
         <![endif]-->
         <div class="bsi-column bsi-col-small" style="width: 100%; max-width: {{ widthSlim }}px; display: inline-block; vertical-align: middle;">
             <div style="padding: {{ padding }}px;" data-bsi-dropzone="{{ dropzone1Id }}">
-                {% block col_two_ratio_1_2_dropzone_1 %}{% endblock %}
+                {% block col_two_ratio_1_2_dropzone_1 %}
+                {% endblock %}
             </div>
         </div>
         <!--[if mso]>
@@ -23,7 +29,8 @@
         <![endif]-->
         <div class="bsi-column bsi-col-large" style="width: 100%; max-width: {{ widthWide }}px; display: inline-block; vertical-align: middle;">
             <div style="padding: {{ padding }}px;" data-bsi-dropzone="{{ dropzone2Id }}">
-                {% block col_two_ratio_1_2_dropzone_2 %}{% endblock %}
+                {% block col_two_ratio_1_2_dropzone_2 %}
+                {% endblock %}
             </div>
         </div>
         <!--[if mso]>
@@ -32,5 +39,4 @@
         </table>
         <![endif]-->
     </div>
-
-{% endapply %}{% endmacro %}
+{% endapply %}
