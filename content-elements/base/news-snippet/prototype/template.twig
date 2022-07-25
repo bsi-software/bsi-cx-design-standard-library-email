@@ -4,17 +4,17 @@
 {% endapply %}{% endmacro %}
 
 {% apply spaceless %}
-    {% set elementId = elementId ?: 'news-snippet-vR9oxJ' %}
-    {% set elementPartId = elementPartId ?: 'news-snippet-part-gqB9Yz' %}
-    {% set imageSrc = imageSrc ?: bsi_cx_asset('../../../../static/image.png') %}
-    {% set textColor = (textColor ?: properties.baseTextColor) ?: '#000000' %}
-    {% set fontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
-    {% set fontSizeTitle = (fontSizeTitle ?: properties.fontSizeNewsTitle) ?: 28 %}
-    {% set fontSizeHeadline = (fontSizeHeadline ?: properties.fontSizeNewsHeadline) ?: 14 %}
-    {% set fontSizeText = (fontSizeText ?: properties.fontSizeNewsText) ?: 14 %}
-    {% set marginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
+    {% set newsSnippetElementId = elementId ?: 'news-snippet-vR9oxJ' %}
+    {% set newsSnippetElementPartId = elementPartId ?: 'news-snippet-part-gqB9Yz' %}
+    {% set newsSnippetImageSrc = imageSrc ?: bsi_cx_asset('../../../../static/image.png') %}
+    {% set newsSnippetTextColor = (textColor ?: properties.baseTextColor) ?: '#000000' %}
+    {% set newsSnippetFontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
+    {% set newsSnippetFontSizeTitle = (fontSizeTitle ?: properties.fontSizeNewsTitle) ?: 28 %}
+    {% set newsSnippetFontSizeHeadline = (fontSizeHeadline ?: properties.fontSizeNewsHeadline) ?: 14 %}
+    {% set newsSnippetFontSizeText = (fontSizeText ?: properties.fontSizeNewsText) ?: 14 %}
+    {% set newsSnippetMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
 
-    <div data-bsi-element="{{ elementId }}" data-bsi-element-part="{{ elementPartId }}" class="bsi-col-two">
+    <div data-bsi-element="{{ newsSnippetElementId }}" data-bsi-element-part="{{ newsSnippetElementPartId }}" class="bsi-col-two">
         <div data-bsi-news-snippet>
             <!--[if mso]>
             <table role="presentation" width="100%">
@@ -22,16 +22,16 @@
                     <td style="width: 400px; padding-right: 10px; text-align: center;" valign="middle">
             <![endif]-->
             <div class="bsi-column bsi-col-large" style="width: 100%; max-width: 400px; display: inline-block; vertical-align: middle; padding-right: 10px;">
-                <h2 data-bsi-property="title" style="font-family: {{ fontFamily }}; color: {{ textColor }}; font-size: {{ fontSizeTitle }}px; line-height: {{ fontSizeTitle + 4 }}px; text-align: left; margin-top: 0;">{{ bsi_cx_lorem(3) }}</h2>
-                <p data-bsi-property="headline" style="font-family: {{ fontFamily }}; color: {{ textColor }}; font-size: {{ fontSizeHeadline }}px; line-height: {{ fontSizeHeadline + 4 }}px; font-weight: bold; text-align: left; margin-top: 0;">{{ bsi_cx_lorem(9) }}</p>
-                <p data-bsi-property="text" style="font-family: {{ fontFamily }}; color: {{ textColor }}; font-size: {{ fontSizeText }}px; line-height: {{ fontSizeText + 4 }}px; text-align: left; margin-block-end: {{ marginBottom }}px; margin-top: 0;">{{ bsi_cx_lorem(40) }}</p>
+                <h2 data-bsi-property="title" style="font-family: {{ newsSnippetFontFamily }}; color: {{ newsSnippetTextColor }}; font-size: {{ newsSnippetFontSizeTitle }}px; line-height: {{ newsSnippetFontSizeTitle + 4 }}px; text-align: left; margin-top: 0;">{{ bsi_cx_lorem(3) }}</h2>
+                <p data-bsi-property="headline" style="font-family: {{ newsSnippetFontFamily }}; color: {{ newsSnippetTextColor }}; font-size: {{ newsSnippetFontSizeHeadline }}px; line-height: {{ newsSnippetFontSizeHeadline + 4 }}px; font-weight: bold; text-align: left; margin-top: 0;">{{ bsi_cx_lorem(9) }}</p>
+                <p data-bsi-property="text" style="font-family: {{ newsSnippetFontFamily }}; color: {{ newsSnippetTextColor }}; font-size: {{ newsSnippetFontSizeText }}px; line-height: {{ newsSnippetFontSizeText + 4 }}px; text-align: left; margin-block-end: {{ newsSnippetMarginBottom }}px; margin-top: 0;">{{ bsi_cx_lorem(40) }}</p>
             </div>
             <!--[if mso]>
             </td>
             <td style="width: 210px; padding-left: 10px; text-align: center;" valign="middle">
             <![endif]-->
             <div class="bsi-column bsi-col-small" style="width: 100%; max-width: 210px; display: inline-block; vertical-align: middle; padding-left: 10px;">
-                <img data-bsi-property="image" src="{{ imageSrc }}" width="210" alt="News image" style="margin-top: 0; margin-bottom: {{ marginBottom }}px; display: block; width: 210px; max-width: 100%; height:auto;" />
+                <img data-bsi-property="image" src="{{ newsSnippetImageSrc }}" width="210" alt="News image" style="margin-top: 0; margin-bottom: {{ newsSnippetMarginBottom }}px; display: block; width: 210px; max-width: 100%; height:auto;" />
             </div>
             <!--[if mso]>
             </td>

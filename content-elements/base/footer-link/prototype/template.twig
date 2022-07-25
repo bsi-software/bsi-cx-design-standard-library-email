@@ -4,16 +4,16 @@
 {% endapply %}{% endmacro %}
 
 {% apply spaceless %}
-    {% set elementId = elementId ?: 'footer-link-vc1KI1' %}
-    {% set elementPartId = elementPartId ?: 'footer-link-part-gN7hhF' %}
-    {% set linkText = (linkText ?: properties.addressEmailText) ?: 'info@example.com' %}
-    {% set linkURL = (linkURL ?: properties.addressEmailURL) ?: 'mailto:info@example.com' %}
-    {% set color = (color ?: properties.footerTextColor) ?: '#ffffff' %}
-    {% set fontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
-    {% set fontSize = (fontSize ?: properties.baseFontSize) ?: 14 %}
-    {% set paddingBottom = (paddingBottom ?: properties.footerLinkPaddingBottom) ?: 10 %}
+    {% set footerLinkElementId = elementId ?: 'footer-link-vc1KI1' %}
+    {% set footerLinkElementPartId = elementPartId ?: 'footer-link-part-gN7hhF' %}
+    {% set footerLinkText = (linkText ?: properties.addressEmailText) ?: 'info@example.com' %}
+    {% set footerLinkURL = (linkURL ?: properties.addressEmailURL) ?: 'mailto:info@example.com' %}
+    {% set footerLinkColor = (color ?: properties.footerTextColor) ?: '#ffffff' %}
+    {% set footerLinkFontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
+    {% set footerLinkFontSize = (fontSize ?: properties.baseFontSize) ?: 14 %}
+    {% set footerLinkPaddingBottom = (paddingBottom ?: properties.footerLinkPaddingBottom) ?: 10 %}
 
-    <div data-bsi-element="{{ elementId }}" data-bsi-element-part="{{ elementPartId }}" style="padding-bottom: {{ paddingBottom }}px; min-width: 196px;">
-        <a href="{{ url ?: linkURL }}" style="font-family: {{ fontFamily }}; font-size: {{ fontSize }}px;  line-height: {{ fontSize }}px; color: {{ color }}; text-decoration: none;">{{ text ?: linkText }}</a>
+    <div data-bsi-element="{{ footerLinkElementId }}" data-bsi-element-part="{{ footerLinkElementPartId }}" style="padding-bottom: {{ footerLinkPaddingBottom }}px; min-width: 196px;">
+        <a href="{{ url ?: footerLinkURL }}" style="font-family: {{ footerLinkFontFamily }}; font-size: {{ footerLinkFontSize }}px;  line-height: {{ footerLinkFontSize }}px; color: {{ footerLinkColor }}; text-decoration: none;">{{ text ?: footerLinkText }}</a>
     </div>
 {% endapply %}

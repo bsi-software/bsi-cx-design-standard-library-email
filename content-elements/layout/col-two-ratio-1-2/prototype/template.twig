@@ -4,31 +4,31 @@
 {% endapply %}{% endmacro %}
 
 {% apply spaceless %}
-    {% set elementId = elementId ?: 'col-two-ratio-1-2-v52yUl' %}
-    {% set dropzone1Id = dropzone1Id ?: 'col-two-ratio-1-2-dropzone-1-7yehp5' %}
-    {% set dropzone2Id = dropzone2Id ?: 'col-two-ratio-1-2-dropzone-2-zcjnWE' %}
-    {% set widthSlim = (widthSlim ?: properties.colTwoSlimWidth) ?: 218 %}
-    {% set widthWide = (widthWide ?: properties.colTwoWideWidth) ?: 438 %}
-    {% set padding = (padding ?: properties.columnPadding) ?: 10 %}
+    {% set colTwoRatio1ElementId = elementId ?: 'col-two-ratio-1-2-v52yUl' %}
+    {% set colTwoRatio1Dropzone1Id = dropzone1Id ?: 'col-two-ratio-1-2-dropzone-1-7yehp5' %}
+    {% set colTwoRatio1Dropzone2Id = dropzone2Id ?: 'col-two-ratio-1-2-dropzone-2-zcjnWE' %}
+    {% set colTwoRatio1WidthSlim = (widthSlim ?: properties.colTwoSlimWidth) ?: 218 %}
+    {% set colTwoRatio1WidthWide = (widthWide ?: properties.colTwoWideWidth) ?: 438 %}
+    {% set colTwoRatio1Padding = (padding ?: properties.columnPadding) ?: 10 %}
 
-    <div data-bsi-element="{{ elementId }}" class="bsi-col-two">
+    <div data-bsi-element="{{ colTwoRatio1ElementId }}" class="bsi-col-two">
         <!--[if mso]>
         <table role="presentation" width="100%">
         <tr>
-        <td style="width: {{ widthSlim }}px; padding: {{ padding }}px; text-align: center;" valign="middle">
+        <td style="width: {{ colTwoRatio1WidthSlim }}px; padding: {{ colTwoRatio1Padding }}px; text-align: center;" valign="middle">
         <![endif]-->
-        <div class="bsi-column bsi-col-small" style="width: 100%; max-width: {{ widthSlim }}px; display: inline-block; vertical-align: middle;">
-            <div style="padding: {{ padding }}px;" data-bsi-dropzone="{{ dropzone1Id }}">
+        <div class="bsi-column bsi-col-small" style="width: 100%; max-width: {{ colTwoRatio1WidthSlim }}px; display: inline-block; vertical-align: middle;">
+            <div style="padding: {{ colTwoRatio1Padding }}px;" data-bsi-dropzone="{{ colTwoRatio1Dropzone1Id }}">
                 {% block col_two_ratio_1_2_dropzone_1 %}
                 {% endblock %}
             </div>
         </div>
         <!--[if mso]>
         </td>
-        <td style="width: {{ widthWide }}px; padding: {{ padding }}px; text-align: center;" valign="middle">
+        <td style="width: {{ colTwoRatio1WidthWide }}px; padding: {{ colTwoRatio1Padding }}px; text-align: center;" valign="middle">
         <![endif]-->
-        <div class="bsi-column bsi-col-large" style="width: 100%; max-width: {{ widthWide }}px; display: inline-block; vertical-align: middle;">
-            <div style="padding: {{ padding }}px;" data-bsi-dropzone="{{ dropzone2Id }}">
+        <div class="bsi-column bsi-col-large" style="width: 100%; max-width: {{ colTwoRatio1WidthWide }}px; display: inline-block; vertical-align: middle;">
+            <div style="padding: {{ colTwoRatio1Padding }}px;" data-bsi-dropzone="{{ colTwoRatio1Dropzone2Id }}">
                 {% block col_two_ratio_1_2_dropzone_2 %}
                 {% endblock %}
             </div>

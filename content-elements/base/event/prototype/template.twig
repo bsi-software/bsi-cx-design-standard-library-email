@@ -4,32 +4,32 @@
 {% endapply %}{% endmacro %}
 
 {% apply spaceless %}
-    {% set elementId = elementId ?: 'event-5yyfwR' %}
-    {% set locationIconPartId = locationIconPartId ?: 'event-part-location-icon-x2nxDL' %}
-    {% set locationTextPartId = locationTextPartId ?: 'event-part-location-text-7612sK' %}
-    {% set dateIconPartId = dateIconPartId ?: 'event-part-date-icon-aJBaMj' %}
-    {% set dateTextPartId = dateTextPartId ?: 'event-part-date-text-x1Vpp0' %}
-    {% set locationIconSrc = locationIconSrc ?: bsi_cx_asset('../../../../static/location.png') %}
-    {% set dateIconSrc = dateIconSrc ?: bsi_cx_asset('../../../../static/date.png') %}
-    {% set backgroundColor = (backgroundColor ?: properties.eventBackgroundColor) ?: '#ff7d00' %}
-    {% set textColor = (textColor ?: properties.eventTextColor) ?: '#ffffff' %}
-    {% set fontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
-    {% set fontSize = (fontSize ?: properties.fontSizeEventText) ?: 16 %}
-    {% set lineHeight = fontSize + 4 %}
-    {% set marginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
+    {% set eventElementId = elementId ?: 'event-5yyfwR' %}
+    {% set eventLocationIconPartId = locationIconPartId ?: 'event-part-location-icon-x2nxDL' %}
+    {% set eventLocationTextPartId = locationTextPartId ?: 'event-part-location-text-7612sK' %}
+    {% set eventDateIconPartId = dateIconPartId ?: 'event-part-date-icon-aJBaMj' %}
+    {% set eventDateTextPartId = dateTextPartId ?: 'event-part-date-text-x1Vpp0' %}
+    {% set eventLocationIconSrc = locationIconSrc ?: bsi_cx_asset('../../../../static/location.png') %}
+    {% set eventDateIconSrc = dateIconSrc ?: bsi_cx_asset('../../../../static/date.png') %}
+    {% set eventBackgroundColor = (backgroundColor ?: properties.eventBackgroundColor) ?: '#ff7d00' %}
+    {% set eventTextColor = (textColor ?: properties.eventTextColor) ?: '#ffffff' %}
+    {% set eventFontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
+    {% set eventFontSize = (fontSize ?: properties.fontSizeEventText) ?: 16 %}
+    {% set eventLineHeight = fontSize + 4 %}
+    {% set eventMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
 
-    <table data-bsi-element="{{ elementId }}" width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="padding-bottom: {{ marginBottom }}px;">
+    <table data-bsi-element="{{ eventElementId }}" width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="padding-bottom: {{ eventMarginBottom }}px;">
         <tr>
-            <td align="center" valign="top" style="padding:25px 50px 25px 25px;" bgcolor="{{ backgroundColor }}" class="bsi-event-padding">
+            <td align="center" valign="top" style="padding:25px 50px 25px 25px;" bgcolor="{{ eventBackgroundColor }}" class="bsi-event-padding">
                 <table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
                     <tr>
                         <td align="center" valign="top">
                             <table cellpadding="0" cellspacing="0" border="0" align="left">
                                 <tr>
                                     <td align="left" valign="top" style="padding-right: 12px;">
-                                        <img data-bsi-element-part="{{ locationIconPartId }}" src="{{ locationIconSrc }}" height="25" alt="Location" border="0" style="display: block; width: auto;"/>
+                                        <img data-bsi-element-part="{{ eventLocationIconPartId }}" src="{{ eventLocationIconSrc }}" height="25" alt="Location" border="0" style="display: block; width: auto;"/>
                                     </td>
-                                    <td data-bsi-element-part="{{ locationTextPartId }}" class="bsi-event-text" align="left" valign="top" style="font-family: {{ fontFamily }}; color: {{ textColor }}; font-size: {{ fontSize }}px; line-height: {{ lineHeight }}px; vertical-align: middle;">Online</td>
+                                    <td data-bsi-element-part="{{ eventLocationTextPartId }}" class="bsi-event-text" align="left" valign="top" style="font-family: {{ eventFontFamily }}; color: {{ eventTextColor }}; font-size: {{ eventFontSize }}px; line-height: {{ eventLineHeight }}px; vertical-align: middle;">Online</td>
                                 </tr>
                             </table>
                         </td>
@@ -38,9 +38,9 @@
                             <table cellpadding="0" cellspacing="0" border="0" align="left">
                                 <tr>
                                     <td align="left" valign="top" style="padding-right: 12px;">
-                                        <img data-bsi-element-part="{{ dateIconPartId }}" src="{{ dateIconSrc }}" height="25" alt="Date" border="0" style="display: block; width: auto;"/>
+                                        <img data-bsi-element-part="{{ eventDateIconPartId }}" src="{{ eventDateIconSrc }}" height="25" alt="Date" border="0" style="display: block; width: auto;"/>
                                     </td>
-                                    <td data-bsi-element-part="{{ dateTextPartId }}" class="bsi-event-text" align="left" valign="top" style="font-family: {{ fontFamily }}; color: {{ textColor }}; font-size: {{ fontSize }}px; line-height: {{ lineHeight }}px; vertical-align: middle;">16.03.2023, 18:00-20:00</td>
+                                    <td data-bsi-element-part="{{ eventDateTextPartId }}" class="bsi-event-text" align="left" valign="top" style="font-family: {{ eventFontFamily }}; color: {{ eventTextColor }}; font-size: {{ eventFontSize }}px; line-height: {{ eventLineHeight }}px; vertical-align: middle;">16.03.2023, 18:00-20:00</td>
                                 </tr>
                             </table>
                         </td>

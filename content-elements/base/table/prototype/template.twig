@@ -4,19 +4,19 @@
 {% endapply %}{% endmacro %}
 
 {% apply spaceless %}
-    {% set elementId = elementId ?: 'table-2idv5Y' %}
-    {% set elementPartId = elementPartId ?: 'table-part-slyKhe' %}
-    {% set textColor = (textColor ?: properties.baseTextColor) ?: '#000000' %}
-    {% set fontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
-    {% set fontSize = (fontSize ?: properties.baseFontSize) ?: 14 %}
-    {% set lineHeight = lineHeight ?: fontSize %}
-    {% set marginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
+    {% set tableElementId = elementId ?: 'table-2idv5Y' %}
+    {% set tableElementPartId = elementPartId ?: 'table-part-slyKhe' %}
+    {% set tableTextColor = (textColor ?: properties.baseTextColor) ?: '#000000' %}
+    {% set tableFontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
+    {% set tableFontSize = (fontSize ?: properties.baseFontSize) ?: 14 %}
+    {% set tableLineHeight = lineHeight ?: fontSize %}
+    {% set tableMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
 
-    <div data-bsi-element="{{ elementId }}">
+    <div data-bsi-element="{{ tableElementId }}">
         <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
             <tr>
-                <td data-bsi-element-part="{{ elementPartId }}" align="left" style="font-family: {{ fontFamily }}; color: {{ textColor }}; font-size: {{ fontSize }}px; line-height: {{ lineHeight }}px; text-align: left;">
-                    <table class="table" border="0" cellpadding="10" width="100%" align="left" style="font-family: {{ fontFamily }}; color: {{ textColor }}; font-size: {{ fontSize }}px; line-height: {{ lineHeight }}px; text-align: left;">
+                <td data-bsi-element-part="{{ tableElementPartId }}" align="left" style="font-family: {{ tableFontFamily }}; color: {{ tableTextColor }}; font-size: {{ tableFontSize }}px; line-height: {{ tableLineHeight }}px; text-align: left;">
+                    <table class="table" border="0" cellpadding="10" width="100%" align="left" style="font-family: {{ tableFontFamily }}; color: {{ tableTextColor }}; font-size: {{ tableFontSize }}px; line-height: {{ tableLineHeight }}px; text-align: left;">
                         <thead>
                         <tr>
                             <th>Column 1</th>
@@ -45,7 +45,7 @@
                 </td>
             </tr>
             <tr>
-                <td height="{{ marginBottom }}" style="height: {{ marginBottom }}px;">&nbsp;</td>
+                <td height="{{ tableMarginBottom }}" style="height: {{ tableMarginBottom }}px;">&nbsp;</td>
             </tr>
         </table>
     </div>

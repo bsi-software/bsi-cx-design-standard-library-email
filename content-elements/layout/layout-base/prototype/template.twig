@@ -4,20 +4,20 @@
 {% endapply %}{% endmacro %}
 
 {% apply spaceless %}
-    {% set elementId = elementId ?: 'layout-base-dziMWZ' %}
-    {% set dropzoneId = dropzoneId ?: 'layout-base-dropzone-7nPzXF' %}
-    {% set color = (color ?: properties.layoutBaseBackgroundColor) ?: '#ffffff' %}
-    {% set width = (width ?: properties.layoutWidth) ?: 660 %}
+    {% set layoutBaseElementId = elementId ?: 'layout-base-dziMWZ' %}
+    {% set layoutBaseDropzoneId = dropzoneId ?: 'layout-base-dropzone-7nPzXF' %}
+    {% set layoutBaseColor = (color ?: properties.layoutBaseBackgroundColor) ?: '#ffffff' %}
+    {% set layoutBaseWidth = (width ?: properties.layoutWidth) ?: 660 %}
 
-    <table data-bsi-element="{{ elementId }}" role="presentation" style="width: 100%; border: 0; border-spacing: 0; background-color: {{ color }};">
+    <table data-bsi-element="{{ layoutBaseElementId }}" role="presentation" style="width: 100%; border: 0; border-spacing: 0; background-color: {{ layoutBaseColor }};">
         <tr>
             <td align="center">
                 <!--[if mso]>
-                <table role="presentation" align="center" style="width: {{ width }}px;">
+                <table role="presentation" align="center" style="width: {{ layoutBaseWidth }}px;">
                 <tr>
                 <td style="padding: 20px 0;">
                 <![endif]-->
-                <div class="outer" style="width: 96%; max-width: {{ width }}px; margin: 0 auto;" data-bsi-dropzone="{{ dropzoneId }}">
+                <div class="outer" style="width: 96%; max-width: {{ layoutBaseWidth }}px; margin: 0 auto;" data-bsi-dropzone="{{ layoutBaseDropzoneId }}">
                     {% block layout_base_dropzone %}
                         {% include '../../col-one/prototype/template.twig' only %}
                     {% endblock %}
