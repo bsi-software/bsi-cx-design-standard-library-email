@@ -4,41 +4,41 @@
 {% endapply %}{% endmacro %}
 
 {% apply spaceless %}
-    {% set elementId = elementId ?: 'col-three-P2iWWk' %}
-    {% set dropzone1Id = dropzone1Id ?: 'col-three-dropzone-1-mxExhj' %}
-    {% set dropzone2Id = dropzone2Id ?: 'col-three-dropzone-2-23ir6r' %}
-    {% set dropzone3Id = dropzone3Id ?: 'col-three-dropzone-3-ajc3B6' %}
-    {% set width = (width ?: properties.colThreeWidth) ?: 218 %}
-    {% set padding = (padding ?: properties.columnPadding) ?: 10 %}
+    {% set colThreeElementId = elementId ?: 'col-three-P2iWWk' %}
+    {% set colThreeDropzone1Id = dropzone1Id ?: 'col-three-dropzone-1-mxExhj' %}
+    {% set colThreeDropzone2Id = dropzone2Id ?: 'col-three-dropzone-2-23ir6r' %}
+    {% set colThreeDropzone3Id = dropzone3Id ?: 'col-three-dropzone-3-ajc3B6' %}
+    {% set colThreeWidth = (width ?: properties.colThreeWidth) ?: 218 %}
+    {% set colThreePadding = (padding ?: properties.columnPadding) ?: 10 %}
 
-    <div data-bsi-element="{{ elementId }}" class="bsi-col-three">
+    <div data-bsi-element="{{ colThreeElementId }}" class="bsi-col-three">
         <!--[if mso]>
         <table role="presentation" width="100%" style="text-align:center;">
         <tr>
-        <td style="width: {{ width }}px; padding: {{ padding }}px;" valign="top">
+        <td style="width: {{ colThreeWidth }}px; padding: {{ colThreePadding }}px;" valign="top">
         <![endif]-->
-        <div class="bsi-column" style="width: 100%; max-width: {{ width }}px; display: inline-block; vertical-align: top;">
-            <div style="padding: {{ padding }}px;" data-bsi-dropzone="{{ dropzone1Id }}">
+        <div class="bsi-column" style="width: 100%; max-width: {{ colThreeWidth }}px; display: inline-block; vertical-align: top;">
+            <div style="padding: {{ colThreePadding }}px;" data-bsi-dropzone="{{ colThreeDropzone1Id }}">
                 {% block col_three_dropzone_1 %}
                 {% endblock %}
             </div>
         </div>
         <!--[if mso]>
         </td>
-        <td style="width: {{ width }}px; padding: {{ padding }}px;" valign="top">
+        <td style="width: {{ colThreeWidth }}px; padding: {{ colThreePadding }}px;" valign="top">
         <![endif]-->
-        <div class="bsi-column" style="width: 100%; max-width: {{ width }}px; display: inline-block; vertical-align: top;">
-            <div style="padding: {{ padding }}px;" data-bsi-dropzone="{{ dropzone2Id }}">
+        <div class="bsi-column" style="width: 100%; max-width: {{ colThreeWidth }}px; display: inline-block; vertical-align: top;">
+            <div style="padding: {{ colThreePadding }}px;" data-bsi-dropzone="{{ colThreeDropzone2Id }}">
                 {% block col_three_dropzone_2 %}
                 {% endblock %}
             </div>
         </div>
         <!--[if mso]>
         </td>
-        <td style="width: {{ width }}px; padding: {{ padding }}px;" valign="top">
+        <td style="width: {{ colThreeWidth }}px; padding: {{ colThreePadding }}px;" valign="top">
         <![endif]-->
-        <div class="bsi-column" style="width: 100%; max-width: {{ width }}px; display: inline-block; vertical-align: top;">
-            <div style="padding: {{ padding }}px;" data-bsi-dropzone="{{ dropzone3Id }}">
+        <div class="bsi-column" style="width: 100%; max-width: {{ colThreeWidth }}px; display: inline-block; vertical-align: top;">
+            <div style="padding: {{ colThreePadding }}px;" data-bsi-dropzone="{{ colThreeDropzone3Id }}">
                 {% block col_three_dropzone_3 %}
                 {% endblock %}
             </div>

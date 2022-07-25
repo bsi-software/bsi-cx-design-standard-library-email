@@ -4,16 +4,16 @@
 {% endapply %}{% endmacro %}
 
 {% apply spaceless %}
-    {% set elementId = elementId ?: 'text-Or4N33' %}
+    {% set textElementId = elementId ?: 'text-Or4N33' %}
     {% set textPartId = textPartId ?: 'text-part-5njcDS' %}
     {% set textColor = (textColor ?: properties.baseTextColor) ?: '#000000' %}
-    {% set fontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
-    {% set fontSize = (fontSize ?: properties.baseFontSize) ?: 14 %}
-    {% set lineHeight = (lineHeight ?: properties.textLineHeight) ?: 22 %}
-    {% set marginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
+    {% set textFontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
+    {% set textFontSize = (fontSize ?: properties.baseFontSize) ?: 14 %}
+    {% set textLineHeight = (lineHeight ?: properties.textLineHeight) ?: 22 %}
+    {% set textMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
     {% set text = text ?: bsi_cx_lorem(75) %}
 
-    <div data-bsi-element="{{ elementId }}" data-bsi-element-part="{{ textPartId }}" style="text-align: left; margin-top: 0; margin-bottom: {{ marginBottom }}px; font-size: {{ fontSize }}px; line-height: {{ lineHeight }}px; color: {{ textColor }}; font-family: {{ fontFamily }};">
+    <div data-bsi-element="{{ textElementId }}" data-bsi-element-part="{{ textPartId }}" style="text-align: left; margin-top: 0; margin-bottom: {{ textMarginBottom }}px; font-size: {{ textFontSize }}px; line-height: {{ textLineHeight }}px; color: {{ textColor }}; font-family: {{ textFontFamily }};">
         <p>{{ text }}</p>
     </div>
 {% endapply %}

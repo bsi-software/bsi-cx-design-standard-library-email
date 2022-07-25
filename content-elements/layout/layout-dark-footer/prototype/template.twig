@@ -4,16 +4,16 @@
 {% endapply %}{% endmacro %}
 
 {% apply spaceless %}
-    {% set elementId = elementId ?: 'layout-dark-footer-x1LvCb' %}
-    {% set dropzoneId = dropzoneId ?: 'layout-dark-footer-dropzone-S2Twva' %}
-    {% set backgroundColor = (backgroundColor ?: properties.footerDarkBackgroundColor) ?: '#383e42' %}
-    {% set textColor = (textColor ?: properties.footerDarkTextColor) ?: '#ffffff' %}
-    {% set padding = (padding ?: properties.footerDarkPadding) ?: 30 %}
-    {% set width = (width ?: properties.layoutWidth) ?: 660 %}
+    {% set layoutDarkFooterElementId = elementId ?: 'layout-dark-footer-x1LvCb' %}
+    {% set layoutDarkFooterDropzoneId = dropzoneId ?: 'layout-dark-footer-dropzone-S2Twva' %}
+    {% set layoutDarkFooterBackgroundColor = (backgroundColor ?: properties.footerDarkBackgroundColor) ?: '#383e42' %}
+    {% set layoutDarkFooterTextColor = (textColor ?: properties.footerDarkTextColor) ?: '#ffffff' %}
+    {% set layoutDarkFooterPadding = (padding ?: properties.footerDarkPadding) ?: 30 %}
+    {% set layoutDarkFooterWidth = (width ?: properties.layoutWidth) ?: 660 %}
 
-    <table data-bsi-element="{{ elementId }}" class="bsi-footer" width="{{ width }}" style="width: {{ width }}px;" bgcolor="{{ backgroundColor }}" align="center">
+    <table data-bsi-element="{{ layoutDarkFooterElementId }}" class="bsi-footer" width="{{ layoutDarkFooterWidth }}" style="width: {{ layoutDarkFooterWidth }}px;" bgcolor="{{ layoutDarkFooterBackgroundColor }}" align="center">
         <tr>
-            <td data-bsi-dropzone="{{ dropzoneId }}" align="center" valign="top" style="color: {{ textColor }}; padding: {{ padding }}px 23px;">
+            <td data-bsi-dropzone="{{ layoutDarkFooterDropzoneId }}" align="center" valign="top" style="color: {{ layoutDarkFooterTextColor }}; padding: {{ layoutDarkFooterPadding }}px 23px;">
                 {% block footer_dark_layout %}
                     {% include '../../col-one-footer/template.twig' only %}
                 {% endblock %}

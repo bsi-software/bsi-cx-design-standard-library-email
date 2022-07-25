@@ -4,30 +4,30 @@
 {% endapply %}{% endmacro %}
 
 {% apply spaceless %}
-    {% set elementId = elementId ?: 'cta-eoRgSU' %}
-    {% set elementPartId = elementPartId ?: 'cta-part-YgQ87c' %}
-    {% set backgroundColor = (backgroundColor ?: properties.buttonBackgroundColor) ?: '#2F4E66' %}
-    {% set borderColor = (borderColor ?: properties.buttonBorderColor) ?: '#2F4E66' %}
-    {% set textColor = (textColor ?: properties.buttonTextColor) ?: '#ffffff' %}
-    {% set fontFamily = (fontFamily ?: properties.buttonFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
-    {% set fontSize = (fontSize ?: properties.baseFontSize) ?: 14 %}
-    {% set borderRadius = (borderRadius ?: properties.buttonBorderRadius) ?: 5 %}
-    {% set marginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
-    {% set alignment = (alignment ?: properties.buttonAlignmentLeft) ?: 'left' %}
+    {% set ctaElementId = elementId ?: 'cta-eoRgSU' %}
+    {% set ctaElementPartId = elementPartId ?: 'cta-part-YgQ87c' %}
+    {% set ctaBackgroundColor = (backgroundColor ?: properties.buttonBackgroundColor) ?: '#2F4E66' %}
+    {% set ctaBorderColor = (borderColor ?: properties.buttonBorderColor) ?: '#2F4E66' %}
+    {% set ctaTextColor = (textColor ?: properties.buttonTextColor) ?: '#ffffff' %}
+    {% set ctaFontFamily = (fontFamily ?: properties.buttonFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
+    {% set ctaFontSize = (fontSize ?: properties.baseFontSize) ?: 14 %}
+    {% set ctaBorderRadius = (borderRadius ?: properties.buttonBorderRadius) ?: 5 %}
+    {% set ctaMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
+    {% set ctaAlignment = (alignment ?: properties.buttonAlignmentLeft) ?: 'left' %}
 
-    <div data-bsi-element="{{ elementId }}" style="height: 38px">
-        <table border="0" cellpadding="0" cellspacing="0" align="{{ alignment }}" width="100%">
+    <div data-bsi-element="{{ ctaElementId }}" style="height: 38px">
+        <table border="0" cellpadding="0" cellspacing="0" align="{{ ctaAlignment }}" width="100%">
             <tr>
-                <td align="{{ alignment }}" data-bsi-element-part="{{ elementPartId }}">
+                <td align="{{ ctaAlignment }}" data-bsi-element-part="{{ ctaElementPartId }}">
                     <!--[if mso]>
                     <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                     <tr>
-                    <td style="padding-bottom: {{ marginBottom }}px;" align="{{ alignment }}">
-                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:30pt; width:110pt; v-text-anchor:middle;" arcsize="{{ borderRadius }}%" strokeweight="2px" strokecolor="{{ borderColor }}" fillcolor="{{ backgroundColor }}"><w:anchorlock/>
+                    <td style="padding-bottom: {{ ctaMarginBottom }}px;" align="{{ ctaAlignment }}">
+                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:30pt; width:110pt; v-text-anchor:middle;" arcsize="{{ ctaBorderRadius }}%" strokeweight="2px" strokecolor="{{ ctaBorderColor }}" fillcolor="{{ ctaBackgroundColor }}"><w:anchorlock/>
                     <v:textbox inset="0,0,0,0">
-                    <center style="color: {{ textColor }}; font-family: {{ fontFamily }}">
+                    <center style="color: {{ ctaTextColor }}; font-family: {{ ctaFontFamily }}">
                     <![endif]-->
-                    <a href="#" target="_blank" class="bsi-cta" style="background-color: {{ backgroundColor }}; border: 2px solid {{ borderColor }}; color: {{ textColor }}; font-family: {{ fontFamily }}; font-size: {{ fontSize }}px; line-height: {{ fontSize }}px; mso-line-height-alt: 40px; padding: 10px 30px; border-radius: {{ borderRadius }}px; display: inline-block; margin-bottom: {{ marginBottom }}px; -webkit-border-radius: {{ borderRadius }}px; -moz-border-radius: {{ borderRadius }}px; text-align: center; text-decoration: none; -webkit-text-size-adjust: none; mso-border-alt: none; word-break: keep-all;">Read more</a>
+                    <a href="#" target="_blank" class="bsi-cta" style="background-color: {{ ctaBackgroundColor }}; border: 2px solid {{ ctaBorderColor }}; color: {{ ctaTextColor }}; font-family: {{ ctaFontFamily }}; font-size: {{ ctaFontSize }}px; line-height: {{ ctaFontSize }}px; mso-line-height-alt: 40px; padding: 10px 30px; border-radius: {{ ctaBorderRadius }}px; display: inline-block; margin-bottom: {{ ctaMarginBottom }}px; -webkit-border-radius: {{ ctaBorderRadius }}px; -moz-border-radius: {{ ctaBorderRadius }}px; text-align: center; text-decoration: none; -webkit-text-size-adjust: none; mso-border-alt: none; word-break: keep-all;">Read more</a>
                     <!--[if mso]>
                     </center>
                     </v:textbox>
