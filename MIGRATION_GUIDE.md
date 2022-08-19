@@ -11,7 +11,7 @@ A content element that used to look like this:
 {% apply spaceless %}
     {% import '@bsi-cx/design-standard-library-email/content-elements/base/cta/prototype/template.twig' as element %}
 
-    {{ element.render('cta-center-CLc9J9', 'cta-center-part-qt8DLo', '', '', '', '', '', '', '', properties.buttonAlignmentCenter) }}
+    {{ element.render('cta-center-CLc9J9', 'cta-center-part-qt8DLo', '', '', '', '', '', '', '', properties.alignmentCenter) }}
 {% endapply %} 
 ```
 
@@ -21,7 +21,7 @@ must be rewritten to:
     {% include '@bsi-cx/design-standard-library-email/content-elements/base/cta/prototype/template.twig' with {
         elementId: 'cta-center-CLc9J9',
         elementPartId: 'cta-center-part-qt8DLo',
-        alignment: properties.buttonAlignmentCenter
+        alignment: properties.alignmentCenter
     } %}
 {% endapply %} 
 ```
@@ -37,7 +37,7 @@ The customized variables can be picked from the content element implementation i
     {% set elementId = elementId ?: 'cta-eoRgSU' %}
     {% set elementPartId = elementPartId ?: 'cta-part-YgQ87c' %}
     ...    
-    {% set alignment = (alignment ?: properties.buttonAlignmentLeft) ?: 'left' %}
+    {% set alignment = (alignment ?: properties.alignmentLeft) ?: 'left' %}
 
     <div data-bsi-element="{{ elementId }}" style="height: 38px">
         <table border="0" cellpadding="0" cellspacing="0" align="{{ alignment }}" 

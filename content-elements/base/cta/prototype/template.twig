@@ -13,27 +13,28 @@
     {% set ctaFontSize = (fontSize ?: properties.baseFontSize) ?: 14 %}
     {% set ctaBorderRadius = (borderRadius ?: properties.buttonBorderRadius) ?: 5 %}
     {% set ctaMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
-    {% set ctaAlignment = (alignment ?: properties.buttonAlignmentLeft) ?: 'left' %}
+    {% set ctaAlignment = (alignment ?: properties.alignmentLeft) ?: 'left' %}
 
-    <div data-bsi-element="{{ ctaElementId }}" style="height: 38px">
+    <div data-bsi-element="{{ ctaElementId }}" style="margin-bottom: {{ ctaMarginBottom }}px; height: 38px;">
         <table border="0" cellpadding="0" cellspacing="0" align="{{ ctaAlignment }}" width="100%">
             <tr>
                 <td align="{{ ctaAlignment }}" data-bsi-element-part="{{ ctaElementPartId }}">
                     <!--[if mso]>
                     <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                     <tr>
-                    <td style="padding-bottom: {{ ctaMarginBottom }}px;" align="{{ ctaAlignment }}">
+                    <td align="{{ ctaAlignment }}">
                     <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:30pt; width:110pt; v-text-anchor:middle;" arcsize="{{ ctaBorderRadius }}%" strokeweight="2px" strokecolor="{{ ctaBorderColor }}" fillcolor="{{ ctaBackgroundColor }}"><w:anchorlock/>
                     <v:textbox inset="0,0,0,0">
                     <center style="color: {{ ctaTextColor }}; font-family: {{ ctaFontFamily }}">
                     <![endif]-->
-                    <a href="#" target="_blank" class="bsi-cta" style="background-color: {{ ctaBackgroundColor }}; border: 2px solid {{ ctaBorderColor }}; color: {{ ctaTextColor }}; font-family: {{ ctaFontFamily }}; font-size: {{ ctaFontSize }}px; line-height: {{ ctaFontSize }}px; mso-line-height-alt: 40px; padding: 10px 30px; border-radius: {{ ctaBorderRadius }}px; display: inline-block; margin-bottom: {{ ctaMarginBottom }}px; -webkit-border-radius: {{ ctaBorderRadius }}px; -moz-border-radius: {{ ctaBorderRadius }}px; text-align: center; text-decoration: none; -webkit-text-size-adjust: none; mso-border-alt: none; word-break: keep-all;">Read more</a>
+                    <a href="https://example.org/" target="_blank" class="bsi-cta" style="background-color: {{ ctaBackgroundColor }}; border: 2px solid {{ ctaBorderColor }}; color: {{ ctaTextColor }}; font-family: {{ ctaFontFamily }}; font-size: {{ ctaFontSize }}px; line-height: {{ ctaFontSize }}px; mso-line-height-alt: 40px; padding: 10px 30px; border-radius: {{ ctaBorderRadius }}px; display: inline-block; -webkit-border-radius: {{ ctaBorderRadius }}px; -moz-border-radius: {{ ctaBorderRadius }}px; text-align: center; text-decoration: none; -webkit-text-size-adjust: none; mso-border-alt: none; word-break: keep-all;">Read more</a>
                     <!--[if mso]>
                     </center>
                     </v:textbox>
                     </v:roundrect>
                     </td>
                     </tr>
+                    <tr height="{{ ctaMarginBottom }}" style="height:{{ ctaMarginBottom }}px;">&nbsp;</tr>
                     </table>
                     <![endif]-->
                 </td>

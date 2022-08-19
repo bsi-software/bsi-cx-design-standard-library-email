@@ -11,10 +11,10 @@
     {% set layoutDarkFooterPadding = (padding ?: properties.footerDarkPadding) ?: 30 %}
     {% set layoutDarkFooterWidth = (width ?: properties.layoutWidth) ?: 660 %}
 
-    <table data-bsi-element="{{ layoutDarkFooterElementId }}" class="bsi-footer" width="{{ layoutDarkFooterWidth }}" style="width: {{ layoutDarkFooterWidth }}px;" bgcolor="{{ layoutDarkFooterBackgroundColor }}" align="center">
+    <table data-bsi-element="{{ layoutDarkFooterElementId }}" class="bsi-footer bsi-dm-bg-color-footer" width="{{ layoutDarkFooterWidth }}" style="width: {{ layoutDarkFooterWidth }}px;" bgcolor="{{ layoutDarkFooterBackgroundColor }}" align="center">
         <tr>
             <td data-bsi-dropzone="{{ layoutDarkFooterDropzoneId }}" align="center" valign="top" style="color: {{ layoutDarkFooterTextColor }}; padding: {{ layoutDarkFooterPadding }}px 23px;">
-                {% block footer_dark_layout %}
+                {% block layout_dark_footer_dropzone %}
                     {% include '../../col-one-footer/template.twig' only %}
                 {% endblock %}
             </td>

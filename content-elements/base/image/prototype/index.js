@@ -14,12 +14,16 @@ const {cx, Icon} = require('@bsi-cx/design-build');
 module.exports = (
   template = require('../template.twig'),
   elementId = 'image-zLBggA',
-  elementLabel = 'Image',
-  elementDescription = '100% width',
+  /*elementLabel = 'Image',*/
+  elementLabel = 'Bild',
+  /*elementDescription = '100% width',*/
+  elementDescription = '100% Breite',
   imagePartId = 'image-part-image-uzAw5t',
-  imagePartLabel = 'Image',
+  /*imagePartLabel = 'Image',*/
+  imagePartLabel = 'Bild',
   textPartId = 'image-part-text-ykSmGi',
-  textPartLabel = 'Caption',
+  /*textPartLabel = 'Caption',*/
+  textPartLabel = 'Bildunterschrift',
 ) => cx
   .contentElement
   .withFile(template)

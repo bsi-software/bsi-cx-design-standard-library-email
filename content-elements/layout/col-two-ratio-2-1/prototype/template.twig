@@ -1,34 +1,36 @@
-{% macro render(elementId = null, dropzone1Id = null, dropzone2Id = null, widthWide = null, widthSlim = null, padding = null) %}{% apply spaceless %}
+{% macro render(elementId = null, dropzone1Id = null, dropzone2Id = null, layoutLeft = null, layoutRight = null, widthLeft = null, widthRight = null, padding = null) %}{% apply spaceless %}
     {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
     {% include './template.twig' %}
 {% endapply %}{% endmacro %}
 
 {% apply spaceless %}
-    {% set colTwoRatio2ElementId = elementId ?: 'col-two-ratio-2-1-b694Yt' %}
-    {% set colTwoRatio2Dropzone1Id = dropzone1Id ?: 'col-two-ratio-2-1-dropzone-1-7xstGU' %}
-    {% set colTwoRatio2Dropzone2Id = dropzone2Id ?: 'col-two-ratio-2-1-dropzone-2-N4gT0V' %}
-    {% set colTwoRatio2WidthWide = (widthWide ?: properties.colTwoWideWidth) ?: 438 %}
-    {% set colTwoRatio2WidthSlim = (widthSlim ?: properties.colTwoSlimWidth) ?: 218 %}
-    {% set colTwoRatio2Padding = (padding ?: properties.columnPadding) ?: 10 %}
+    {% set colTwoRatioElementId = elementId ?: 'col-two-ratio-2-1-b694Yt' %}
+    {% set colTwoRatioDropzone1Id = dropzone1Id ?: 'col-two-ratio-2-1-dropzone-1-7xstGU' %}
+    {% set colTwoRatioDropzone2Id = dropzone2Id ?: 'col-two-ratio-2-1-dropzone-2-N4gT0V' %}
+    {% set colTwoRatioLayoutLeft = layoutLeft ?: 'wide' %}
+    {% set colTwoRatioLayoutRight = layoutRight ?: 'slim' %}
+    {% set colTwoRatioWidthLeft = ((widthLeft ?: properties.colTwoWideWidth) ?: 440) - 4 %}
+    {% set colTwoRatioWidthRight = ((widthRight ?: properties.colTwoSlimWidth) ?: 220) - 4 %}
+    {% set colTwoRatioPadding = (padding ?: properties.columnPadding) ?: 10 %}
 
-    <div data-bsi-element="{{ colTwoRatio2ElementId }}" class="bsi-col-two">
+    <div data-bsi-element="{{ colTwoRatioElementId }}" class="bsi-col-two">
         <!--[if mso]>
         <table role="presentation" width="100%">
         <tr>
-        <td style="width: {{ colTwoRatio2WidthWide }}px; padding: {{ colTwoRatio2Padding }}px; text-align: center;" valign="middle">
+        <td style="width: {{ colTwoRatioWidthLeft }}px; padding: {{ colTwoRatioPadding }}px; text-align: center;" valign="top">
         <![endif]-->
-        <div class="bsi-column bsi-col-large" style="width: 100%; max-width: {{ colTwoRatio2WidthWide }}px; display: inline-block; vertical-align: middle;">
-            <div style="padding: {{ colTwoRatio2Padding }}px;" data-bsi-dropzone="{{ colTwoRatio2Dropzone1Id }}">
+        <div class="bsi-column bsi-col-{{ colTwoRatioLayoutLeft }}" style="width: 100%; max-width: {{ colTwoRatioWidthLeft }}px; display: inline-block; vertical-align: top;">
+            <div style="padding: {{ colTwoRatioPadding }}px;" data-bsi-dropzone="{{ colTwoRatioDropzone1Id }}">
                 {% block col_two_ratio_2_1_dropzone_1 %}
                 {% endblock %}
             </div>
         </div>
         <!--[if mso]>
         </td>
-        <td style="width: {{ colTwoRatio2WidthSlim }}px; padding: {{ colTwoRatio2Padding }}px; text-align: center;" valign="middle">
+        <td style="width: {{ colTwoRatioWidthRight }}px; padding: {{ colTwoRatioPadding }}px; text-align: center;" valign="top">
         <![endif]-->
-        <div class="bsi-column bsi-col-small" style="width: 100%; max-width: {{ colTwoRatio2WidthSlim }}px; display: inline-block; vertical-align: middle;">
-            <div style="padding: {{ colTwoRatio2Padding }}px;" data-bsi-dropzone="{{ colTwoRatio2Dropzone2Id }}">
+        <div class="bsi-column bsi-col-{{ colTwoRatioLayoutRight }}" style="width: 100%; max-width: {{ colTwoRatioWidthRight }}px; display: inline-block; vertical-align: top;">
+            <div style="padding: {{ colTwoRatioPadding }}px;" data-bsi-dropzone="{{ colTwoRatioDropzone2Id }}">
                 {% block col_two_ratio_2_1_dropzone_2 %}
                 {% endblock %}
             </div>

@@ -11,12 +11,12 @@
     {% set preHeaderLinkColor = (linkColor ?: properties.linkColor) ?: '#93C120' %}
     {% set preHeaderFontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
     {% set preHeaderFontSize = (fontSize ?: properties.baseFontSize) ?: 14 %}
-    {% set preHeaderLineHeight = fontSize + 4 %}
+    {% set preHeaderLineHeight = preHeaderFontSize + 4 %}
     {% set preHeaderMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
 
     <div data-bsi-element="{{ preHeaderElementId }}" style="text-align: center; margin-top: 0; margin-bottom: {{ preHeaderMarginBottom }}px; font-size: {{ preHeaderFontSize }}px; line-height: {{ preHeaderLineHeight }}px; font-family: {{ preHeaderFontFamily }};">
         <div data-bsi-element-part="{{ preHeaderPreviewPartId }}" style="display: none;">Preview text for e-mail client here</div>
-        <div data-bsi-element-part="{{ preHeaderTextPartId }}" style="color: {{ preHeaderTextColor }};">Pre-header text here. |&nbsp;
+        <div data-bsi-element-part="{{ preHeaderTextPartId }}" class="bsi-dm-text-color" style="color: {{ preHeaderTextColor }};">Pre-header text here. |&nbsp;
             <span style="color: {{ preHeaderLinkColor }};">
                 <a href="[Webversion]" target="_blank" style="text-decoration: underline; color: {{ preHeaderLinkColor }};">View in Browser</a>
             </span>

@@ -11,9 +11,10 @@ const {cx, Icon} = require('@bsi-cx/design-build');
 module.exports = (
   template = require('../template.twig'),
   elementId = 'highlighted-content-8lm6Ih',
-  elementLabel = 'Highlighted content',
+  /*elementLabel = 'Highlighted content',*/
+  elementLabel = 'Hervorgehobener Inhalt',
   dropzoneId = 'highlighted-content-dropzone-4HtYBB',
-  dropzoneAllowedElements= [require('../../text'), require('../../cta'), require('../../spacer'), require('../../title-h1')]
+  dropzoneAllowedElements= [require('../../text'), require('../../cta'), require('../../spacer'), require('../../divider'), require('../../title-h1')]
 ) => cx
   .contentElement
   .withFile(template)

@@ -11,9 +11,11 @@ const {cx, Icon} = require('@bsi-cx/design-build');
 module.exports = (
   template = require('../template.twig'),
   elementId = 'social-media-follow-rbGrIr',
-  elementLabel = 'Social media follow',
+  /*elementLabel = 'Social media follow',*/
+  elementLabel = 'Social Media Follow',
   elementPartId = 'social-media-follow-part-2PtqkD',
-  elementPartLabel = 'Social media follow'
+  /*elementPartLabel = 'Social media follow'*/
+  elementPartLabel = 'Social Media Follow'
 ) => cx
   .contentElement
   .withFile(template)

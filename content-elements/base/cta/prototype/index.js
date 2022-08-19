@@ -12,10 +12,13 @@ const {cx, Icon} = require('@bsi-cx/design-build');
 module.exports = (
   template = require('../template.twig'),
   elementId = 'cta-eoRgSU',
-  elementLabel = 'CTA button',
-  elementDescription = 'left aligned',
+  /*elementLabel = 'CTA button',*/
+  elementLabel = 'CTA Button',
+  /*elementDescription = 'left aligned',*/
+  elementDescription = 'linksbündig',
   elementPartId = 'cta-part-YgQ87c',
-  elementPartLabel = 'CTA button'
+  /*elementPartLabel = 'CTA button'*/
+  elementPartLabel = 'CTA Button'
 ) => cx
   .contentElement
   .withFile(template)
