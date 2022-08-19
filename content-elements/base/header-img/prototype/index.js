@@ -11,9 +11,11 @@ const {cx, Icon} = require('@bsi-cx/design-build');
 module.exports = (
   template = require('../template.twig'),
   elementId = 'header-img-cftPW6',
-  elementLabel = 'Header image',
+  /*elementLabel = 'Header image',*/
+  elementLabel = 'Header Bild',
   imagePartId = 'header-img-part-CrwKWp',
-  imagePartLabel = 'Header image',
+  /*imagePartLabel = 'Header image',*/
+  imagePartLabel = 'Header Bild',
 ) => cx
   .contentElement
   .withFile(template)

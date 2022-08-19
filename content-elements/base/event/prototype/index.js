@@ -19,13 +19,17 @@ module.exports = (
   elementId = 'event-5yyfwR',
   elementLabel = 'Event',
   locationIconPartId = 'event-part-location-icon-x2nxDL',
-  locationIconPartLabel = 'Location icon',
+  /*locationIconPartLabel = 'Location icon',*/
+  locationIconPartLabel = 'Ort - Icon',
   locationTextPartId = 'event-part-location-text-7612sK',
-  locationTextPartLabel = 'Location text',
+  /*locationTextPartLabel = 'Location text',*/
+  locationTextPartLabel = 'Ort - Text',
   dateIconPartId = 'event-part-date-icon-aJBaMj',
-  dateIconPartLabel = 'Date icon',
+  /*dateIconPartLabel = 'Date icon',*/
+  dateIconPartLabel = 'Datum - Icon',
   dateTextPartId = 'event-part-date-text-x1Vpp0',
-  dateTextPartLabel = 'Date text'
+  /*dateTextPartLabel = 'Date text'*/
+  dateTextPartLabel = 'Datum - Text'
 ) => cx
   .contentElement
   .withFile(template)
