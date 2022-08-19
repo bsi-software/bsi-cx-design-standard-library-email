@@ -8,9 +8,6 @@
   .bsi-col-three .bsi-image {
     width: 100% !important;
   }
-  .bsi-pbottom {
-    padding-bottom: 20px !important;
-  }
   .bsi-header-img img {
     width: 100% !important;
     height: auto !important;
@@ -54,6 +51,9 @@
   .bsi-col-three .bsi-column {
     max-width: 100% !important;
   }
+  .bsi-col-two .bsi-column.bsi-col-wide.bsi-pbottom {
+    padding-bottom: 12px !important;
+  }
   .bsi-cta {
     display: block !important;
   }
@@ -68,10 +68,10 @@
   .bsi-col-two .bsi-column {
     max-width: 50% !important;
   }
-  .bsi-col-two .bsi-column.bsi-col-small {
+  .bsi-col-two .bsi-column.bsi-col-slim {
     max-width: 33.3% !important;
   }
-  .bsi-col-two .bsi-column.bsi-col-large {
+  .bsi-col-two .bsi-column.bsi-col-wide {
     max-width: 66.6% !important;
   }
   .bsi-col-one .bsi-column {
@@ -89,4 +89,20 @@
 .bsi-col-footer-right .bsi-social-media {
   margin-right: 0;
   justify-content: flex-end !important;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .bsi-dm-bg-color {
+    background-color: bsiProperty('darkColor', #000000) !important;
+  }
+  .bsi-dm-bg-color-footer {
+    background-color: bsiProperty('footerDarkBackgroundColor', #383e42) !important;
+  }
+  .bsi-dm-text-color {
+    color: bsiProperty('lightColor', #ffffff) !important;
+  }
+}
+
+p {
+  margin: 0 !important;
 }

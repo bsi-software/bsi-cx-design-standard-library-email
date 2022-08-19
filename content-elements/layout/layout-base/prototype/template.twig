@@ -9,7 +9,7 @@
     {% set layoutBaseColor = (color ?: properties.layoutBaseBackgroundColor) ?: '#ffffff' %}
     {% set layoutBaseWidth = (width ?: properties.layoutWidth) ?: 660 %}
 
-    <table data-bsi-element="{{ layoutBaseElementId }}" role="presentation" style="width: 100%; border: 0; border-spacing: 0; background-color: {{ layoutBaseColor }};">
+    <table data-bsi-element="{{ layoutBaseElementId }}" class="bsi-dm-bg-color" role="presentation" style="width: 100%; border: 0; border-spacing: 0; background-color: {{ layoutBaseColor }};">
         <tr>
             <td align="center">
                 <!--[if mso]>

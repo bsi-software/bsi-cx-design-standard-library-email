@@ -15,7 +15,7 @@
     {% set eventTextColor = (textColor ?: properties.eventTextColor) ?: '#ffffff' %}
     {% set eventFontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
     {% set eventFontSize = (fontSize ?: properties.fontSizeEventText) ?: 16 %}
-    {% set eventLineHeight = fontSize + 4 %}
+    {% set eventLineHeight = eventFontSize + 4 %}
     {% set eventMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
 
     <table data-bsi-element="{{ eventElementId }}" width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="padding-bottom: {{ eventMarginBottom }}px;">
@@ -48,5 +48,8 @@
                 </table>
             </td>
         </tr>
+        <!--[if mso]>
+        <tr height="{{ eventMarginBottom }}" style="height:{{ eventMarginBottom }}px;">&nbsp;</tr>
+        <![endif]-->
     </table>
 {% endapply %}

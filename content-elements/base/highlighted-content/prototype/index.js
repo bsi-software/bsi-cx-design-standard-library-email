@@ -13,7 +13,7 @@ module.exports = (
   elementId = 'highlighted-content-8lm6Ih',
   elementLabel = 'Highlighted content',
   dropzoneId = 'highlighted-content-dropzone-4HtYBB',
-  dropzoneAllowedElements= [require('../../text'), require('../../cta'), require('../../spacer'), require('../../title-h1')]
+  dropzoneAllowedElements= [require('../../text'), require('../../cta'), require('../../spacer'), require('../../divider'), require('../../title-h1')]
 ) => cx
   .contentElement
   .withFile(template)

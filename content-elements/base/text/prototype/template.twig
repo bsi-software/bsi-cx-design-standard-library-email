@@ -1,4 +1,4 @@
-{% macro render(elementId = null, textPartId = null, textColor = null, fontFamily = null, fontSize = null, lineHeight = null, marginBottom = null, text = null) %}{% apply spaceless %}
+{% macro render(elementId = null, textPartId = null, textColor = null, fontFamily = null, fontSize = null, lineHeight = null, textAlign = null, marginBottom = null, text = null) %}{% apply spaceless %}
     {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
     {% include './template.twig' %}
 {% endapply %}{% endmacro %}
@@ -10,10 +10,11 @@
     {% set textFontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
     {% set textFontSize = (fontSize ?: properties.baseFontSize) ?: 14 %}
     {% set textLineHeight = (lineHeight ?: properties.textLineHeight) ?: 22 %}
+    {% set textAlign = (textAlign ?: properties.alignmentLeft) ?: 'left' %}
     {% set textMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
     {% set text = text ?: bsi_cx_lorem(75) %}
 
-    <div data-bsi-element="{{ textElementId }}" data-bsi-element-part="{{ textPartId }}" style="text-align: left; margin-top: 0; margin-bottom: {{ textMarginBottom }}px; font-size: {{ textFontSize }}px; line-height: {{ textLineHeight }}px; color: {{ textColor }}; font-family: {{ textFontFamily }};">
+    <div data-bsi-element="{{ textElementId }}" data-bsi-element-part="{{ textPartId }}" class="bsi-dm-text-color" style="text-align: {{ textAlign }}; margin-top: 0; margin-bottom: {{ textMarginBottom }}px; font-size: {{ textFontSize }}px; line-height: {{ textLineHeight }}px; color: {{ textColor }}; font-family: {{ textFontFamily }};">
         <p>{{ text }}</p>
     </div>
 {% endapply %}

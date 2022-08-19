@@ -1,4 +1,4 @@
-{% macro render(elementId = null, dropzone1Id = null, dropzone2Id = null, dropzone3Id = null, dropzone4Id = null, dropzone5Id = null, image1Src = null, image2Src = null, image3Src = null, image4Src = null, image5Src = null) %}{% apply spaceless %}
+{% macro render(elementId = null, dropzone1Id = null, dropzone2Id = null, dropzone3Id = null, dropzone4Id = null, dropzone5Id = null, image1Src = null, image2Src = null, image3Src = null, image4Src = null, image5Src = null, marginBottom = null) %}{% apply spaceless %}
     {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
     {% include './template.twig' %}
 {% endapply %}{% endmacro %}
@@ -15,8 +15,9 @@
     {% set smileyRatingImage3Src = image3Src ?: bsi_cx_asset('../../../../static/smiley-3.png') %}
     {% set smileyRatingImage4Src = image4Src ?: bsi_cx_asset('../../../../static/smiley-4.png') %}
     {% set smileyRatingImage5Src = image5Src ?: bsi_cx_asset('../../../../static/smiley-5.png') %}
+    {% set smileyRatingMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
 
-    <table data-bsi-element="{{ smileyRatingElementId }}" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+    <table data-bsi-element="{{ smileyRatingElementId }}" width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="padding-bottom: {{ smileyRatingMarginBottom }}px;">
         <tr>
             <td valign="top" align="center">
                 <table class="bsi-smiley-rating" width="364" style="width: 364px;" border="0" cellspacing="0" cellpadding="0" align="center">
@@ -54,5 +55,8 @@
                 </table>
             </td>
         </tr>
+        <!--[if mso]>
+        <tr height="{{ smileyRatingMarginBottom }}" style="height:{{ smileyRatingMarginBottom }}px;">&nbsp;</tr>
+        <![endif]-->
     </table>
 {% endapply %}

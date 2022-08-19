@@ -30,6 +30,6 @@
     }
   ],
   "devDependencies": {
-    "@bsi-cx/design-build": "^1.9.8"
+    "@bsi-cx/design-build": "^1.0.0"
   }
 }
