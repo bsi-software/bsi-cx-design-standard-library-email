@@ -106,3 +106,12 @@
 p {
   margin: 0 !important;
 }
+
+// this CSS will only be applied in the Edit mode in CX
+// ensures that the editor is aware of the hidden preheader text
+.bsi-ce-edit-mode .show-preheader-if-edit { 
+  display: block!important;
+  margin-bottom: 20px!important;
+  color: purple!important;
+  font-style: italic!important;
+}
