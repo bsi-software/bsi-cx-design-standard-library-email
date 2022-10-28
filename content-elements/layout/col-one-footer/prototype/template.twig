@@ -7,8 +7,8 @@
     {% set colOneFooterElementId = elementId ?: 'col-one-footer-68T94f' %}
     {% set colOneFooterDropzoneId = dropzoneId ?: 'col-one-footer-dropzone-jaZSq2' %}
     {% set colOneFooterColor = (color ?: properties.footerTextColor) ?: '#ffffff' %}
-    {% set colOneFooterWidth = (width ?: properties.colOneFooterWidth) ?: 660 %}
-    {% set colOneFooterPadding = (padding ?: properties.columnFooterPadding) ?: 10 %}
+    {% set colOneFooterWidth = ((width ?: properties.colOneFooterWidth) ?: 660) - 6 %}
+    {% set colOneFooterPadding = ((padding ?: properties.columnFooterPadding) ?: 10) - 3 %}
 
     <div data-bsi-element="{{ colOneFooterElementId }}">
         <!--[if mso]>
