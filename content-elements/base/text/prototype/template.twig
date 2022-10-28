@@ -14,7 +14,20 @@
     {% set textMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
     {% set text = text ?: bsi_cx_lorem(75) %}
 
-    <div data-bsi-element="{{ textElementId }}" data-bsi-element-part="{{ textPartId }}" class="bsi-dm-text-color" style="text-align: {{ textAlign }}; margin-top: 0; margin-bottom: {{ textMarginBottom }}px; font-size: {{ textFontSize }}px; line-height: {{ textLineHeight }}px; color: {{ textColor }}; font-family: {{ textFontFamily }};">
-        <p>{{ text }}</p>
+    <div data-bsi-element="{{ textElementId }}">
+        <!--[if mso]>
+        <table role="presentation" width="100%">
+        <tr>
+        <td style="width: 100%;" valign="middle">
+        <![endif]-->    
+        <div data-bsi-element-part="{{ textPartId }}" class="bsi-dm-text-color" style="text-align: {{ textAlign }}; margin-top: 0; margin-bottom: {{ textMarginBottom }}px; font-size: {{ textFontSize }}px; line-height: {{ textLineHeight }}px; color: {{ textColor }}; font-family: {{ textFontFamily }};">
+            <p>{{ text }}</p>
+        </div>
+        <!--[if mso]>
+        </td>
+        </tr>
+        <tr height="{{ textMarginBottom }}" style="height:{{ textMarginBottom }}px;">&nbsp;</tr>
+        </table>
+        <![endif]-->
     </div>
 {% endapply %}
