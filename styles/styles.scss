@@ -108,10 +108,18 @@ p {
 }
 
 // this CSS will only be applied in the Edit mode in CX
-// ensures that the editor is aware of the hidden preheader text
-.bsi-ce-edit-mode .show-preheader-if-edit { 
-  display: block!important;
-  margin-bottom: 20px!important;
-  color: purple!important;
-  font-style: italic!important;
+.bsi-ce-edit-mode {
+  // ensures that the editor is aware of the hidden preheader text
+  .show-preheader-if-edit { 
+    display: block!important;
+    margin-bottom: 20px!important;
+    color: purple!important;
+    font-style: italic!important;
+  }
+
+  // ensures that the borders added by the cx content editor do not destroy the layout in edit mode
+  
+  .bsi-ce-box-sizing-fix {
+    box-sizing: border-box!important;
+  }
 }
