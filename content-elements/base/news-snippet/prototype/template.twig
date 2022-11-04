@@ -13,8 +13,8 @@
     {% set newsSnippetFontSizeHeadline = (fontSizeHeadline ?: properties.fontSizeNewsHeadline) ?: 14 %}
     {% set newsSnippetFontSizeText = (fontSizeText ?: properties.fontSizeNewsText) ?: 14 %}
     {% set newsSnippetMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
-    {% set newsSnippetWidthLeft = (widthLeft ?: (properties.colTwoWideWidth) ?: 440) - 20 %}
-    {% set newsSnippetWidthRight = (widthRight ?: (properties.colTwoSlimWidth) ?: 220) - 20 %}
+    {% set newsSnippetWidthLeft = ((widthLeft ?: properties.colTwoWideWidth) ?: 440) - 20 %}
+    {% set newsSnippetWidthRight = ((widthRight ?: properties.colTwoSlimWidth) ?: 220) - 20 %}
 
     <div data-bsi-element="{{ newsSnippetElementId }}" data-bsi-element-part="{{ newsSnippetElementPartId }}" class="bsi-col-two" style=" margin-bottom: {{ newsSnippetMarginBottom }}px;">
         <div data-bsi-news-snippet>
