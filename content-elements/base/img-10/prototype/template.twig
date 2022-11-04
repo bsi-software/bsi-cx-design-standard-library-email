@@ -7,10 +7,10 @@
     {% set img10ElementId = elementId ?: 'img-10-3Xt35e' %}
     {% set img10PartId = imagePartId ?: 'img-10-part-4wGyyL' %}
     {% set img10Src = imageSrc ?: bsi_cx_asset('../../../../static/image.png') %}
-    {% set img10MarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
     {% set img10Width = (imageWidth ?: properties.imageWidth10Percent) ?: 60 %}
+    {# inline element: therefore, no margins are defined #}
 
     <div data-bsi-element="{{ img10ElementId }}">
-        <img data-bsi-element-part="{{ img10PartId }}" src="{{ source ?: img10Src }}" width="{{ img10Width }}" alt="Image" style="margin-top: 0; margin-bottom: {{ img10MarginBottom }}px; display: block; width: {{ img10Width }}px; max-width: 100%; height:auto;" />
+        <img data-bsi-element-part="{{ img10PartId }}" src="{{ source ?: img10Src }}" width="{{ img10Width }}" alt="Image" style="margin-top: 0; display: block; width: {{ img10Width }}px; max-width: 100%; height:auto;" />
     </div>
 {% endapply %}

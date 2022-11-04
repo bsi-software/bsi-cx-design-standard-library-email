@@ -13,25 +13,27 @@
     {% set newsSnippetFontSizeHeadline = (fontSizeHeadline ?: properties.fontSizeNewsHeadline) ?: 14 %}
     {% set newsSnippetFontSizeText = (fontSizeText ?: properties.fontSizeNewsText) ?: 14 %}
     {% set newsSnippetMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
+    {% set newsSnippetWidthLeft = ((widthLeft ?: properties.colTwoWideWidth) ?: 440) - 20 %}
+    {% set newsSnippetWidthRight = ((widthRight ?: properties.colTwoSlimWidth) ?: 220) - 20 %}
 
     <div data-bsi-element="{{ newsSnippetElementId }}" data-bsi-element-part="{{ newsSnippetElementPartId }}" class="bsi-col-two" style=" margin-bottom: {{ newsSnippetMarginBottom }}px;">
         <div data-bsi-news-snippet>
             <!--[if mso]>
             <table role="presentation" width="100%">
                 <tr>
-                    <td style="width: 400px; padding-right: 10px; text-align: center;" valign="middle">
+                    <td style="width: {{ newsSnippetWidthLeft }}px; text-align: center; padding-right: 20px;" valign="middle">
             <![endif]-->
-            <div class="bsi-column bsi-col-wide bsi-pbottom" style="width: 100%; max-width: 400px; display: inline-block; vertical-align: top; padding-right: 10px;">
+            <div class="bsi-column bsi-ce-box-sizing-fix bsi-col-wide bsi-pbottom" style="width: 100%; max-width: {{ newsSnippetWidthLeft }}px; display: inline-block; vertical-align: top; padding-right: 20px;">
                 <h2 data-bsi-property="title" class="bsi-dm-text-color" style="font-family: {{ newsSnippetFontFamily }}; color: {{ newsSnippetTextColor }}; font-size: {{ newsSnippetFontSizeTitle }}px; line-height: {{ newsSnippetFontSizeTitle + 4 }}px; text-align: left; margin-top: 0;">{{ bsi_cx_lorem(3) }}</h2>
                 <p data-bsi-property="headline" class="bsi-dm-text-color" style="font-family: {{ newsSnippetFontFamily }}; color: {{ newsSnippetTextColor }}; font-size: {{ newsSnippetFontSizeHeadline }}px; line-height: {{ newsSnippetFontSizeHeadline + 4 }}px; font-weight: bold; text-align: left; margin-top: 0;">{{ bsi_cx_lorem(9) }}</p>
                 <p data-bsi-property="text" class="bsi-dm-text-color" style="font-family: {{ newsSnippetFontFamily }}; color: {{ newsSnippetTextColor }}; font-size: {{ newsSnippetFontSizeText }}px; line-height: {{ newsSnippetFontSizeText + 4 }}px; text-align: left; margin-top: 0;">{{ bsi_cx_lorem(40) }}</p>
             </div>
             <!--[if mso]>
             </td>
-            <td style="width: 210px; padding-left: 10px; text-align: center;" valign="middle">
+            <td style="width: {{ newsSnippetWidthRight }}px; text-align: center;" valign="middle">
             <![endif]-->
-            <div class="bsi-column bsi-col-slim" style="width: 100%; max-width: 210px; display: inline-block; vertical-align: top; padding-left: 10px;">
-                <img data-bsi-property="image" class="bsi-image" src="{{ newsSnippetImageSrc }}" width="210" alt="News image" style="margin-top: 0; display: block; width: 210px; max-width: 100%; height:auto;" />
+            <div class="bsi-column bsi-col-slim" style="width: 100%; max-width: {{ newsSnippetWidthRight }}px; display: inline-block; vertical-align: top;">
+                <img data-bsi-property="image" class="bsi-image" src="{{ newsSnippetImageSrc }}" width="220" alt="News image" style="margin-top: 0; display: block; width: 220px; max-width: 100%; height:auto;" />
             </div>
             <!--[if mso]>
             </td>

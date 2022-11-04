@@ -16,11 +16,11 @@ module.exports = (
   /*elementLabel = 'Pre-header',*/
   elementLabel = 'Pre-Header',
   previewPartId = 'header-preheader-part-preview-rWi96c',
-  /*previewPartLabel = 'Preview text (visible in e-mail client below subject line)',*/
-  previewPartLabel = 'Vorschautext (sichtbar im E-Mail-Client unter der Betreffzeile)',
+  /*previewPartLabel = 'Preview text - visible in the inbox of the email client below the subject line. Not displayed in the opened email',*/
+  previewPartLabel = 'Vorschautext - Sichtbar im Posteingang des E-Mail-Clients unterhalb der Betreffzeile. Wird in der geöffneten E-Mail nicht angezeigt',
   textPartId = 'header-preheader-part-text-dpjafj',
-  /*textPartLabel = 'Pre-header text (visible inside e-mail)'*/
-  textPartLabel = 'Pre-Header Text (sichtbar in der E-Mail)'
+  /*textPartLabel = 'Pre-header text - visible inside e-mail'*/
+  textPartLabel = 'Pre-Header Text - Sichtbar in der E-Mail'
 ) => cx
   .contentElement
   .withFile(template)

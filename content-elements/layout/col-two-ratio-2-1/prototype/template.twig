@@ -9,8 +9,8 @@
     {% set colTwoRatioDropzone2Id = dropzone2Id ?: 'col-two-ratio-2-1-dropzone-2-N4gT0V' %}
     {% set colTwoRatioLayoutLeft = layoutLeft ?: 'wide' %}
     {% set colTwoRatioLayoutRight = layoutRight ?: 'slim' %}
-    {% set colTwoRatioWidthLeft = ((widthLeft ?: properties.colTwoWideWidth) ?: 440) - 4 %}
-    {% set colTwoRatioWidthRight = ((widthRight ?: properties.colTwoSlimWidth) ?: 220) - 4 %}
+    {% set colTwoRatioWidthLeft = widthLeft ?: (properties.colTwoWideWidth) ?: 440 %}
+    {% set colTwoRatioWidthRight = widthRight ?: (properties.colTwoSlimWidth) ?: 220 %}
     {% set colTwoRatioPadding = (padding ?: properties.columnPadding) ?: 10 %}
 
     <div data-bsi-element="{{ colTwoRatioElementId }}" class="bsi-col-two">
