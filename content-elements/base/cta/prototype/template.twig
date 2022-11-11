@@ -15,8 +15,8 @@
     {% set ctaMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
     {% set ctaAlignment = (alignment ?: properties.alignmentLeft) ?: 'left' %}
 
-    <div data-bsi-element="{{ ctaElementId }}" style="margin-bottom: {{ ctaMarginBottom }}px; height: 38px;">
-        <table border="0" cellpadding="0" cellspacing="0" align="{{ ctaAlignment }}" width="100%">
+    <div data-bsi-element="{{ ctaElementId }}">
+        <table border="0" cellpadding="0" cellspacing="0" align="{{ ctaAlignment }}" width="100%" style="height: 38px; margin-bottom: {{ ctaMarginBottom }}px;">
             <tr>
                 <td align="{{ ctaAlignment }}" data-bsi-element-part="{{ ctaElementPartId }}">
                     <!--[if mso]>
@@ -34,7 +34,6 @@
                     </v:roundrect>
                     </td>
                     </tr>
-                    <tr height="{{ ctaMarginBottom }}" style="height:{{ ctaMarginBottom }}px;">&nbsp;</tr>
                     </table>
                     <![endif]-->
                 </td>
