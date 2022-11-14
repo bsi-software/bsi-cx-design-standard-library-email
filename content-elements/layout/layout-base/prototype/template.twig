@@ -9,25 +9,27 @@
     {% set layoutBaseColor = (color ?: properties.layoutBaseBackgroundColor) ?: '#ffffff' %}
     {% set layoutBaseWidth = ((width ?: properties.layoutWidth) ?: 660) + 8 %}
 
-    <table data-bsi-element="{{ layoutBaseElementId }}" class="bsi-dm-bg-color" role="presentation" style="width: 100%; border: 0; border-spacing: 0; background-color: {{ layoutBaseColor }};">
-        <tr>
-            <td align="center">
-                <!--[if mso]>
-                <table role="presentation" align="center" style="width: {{ layoutBaseWidth }}px;">
-                <tr>
-                <td style="padding: 20px 0;">
-                <![endif]-->
-                <div class="outer" style="width: 96%; padding: 0 4px 0 4px; max-width: {{ layoutBaseWidth }}px; margin: 0 auto;" data-bsi-dropzone="{{ layoutBaseDropzoneId }}">
-                    {% block layout_base_dropzone %}
-                        {% include '../../col-one/prototype/template.twig' only %}
-                    {% endblock %}
-                </div>
-                <!--[if mso]>
+    <div data-bsi-element="{{ layoutBaseElementId }}" class="bsi-dm-bg-color">
+        <table width="100%" role="presentation" style="border: 0; border-spacing: 0; background-color: {{ layoutBaseColor }}; width: 100%;">
+            <tr>
+                <td align="center">
+                    <!--[if mso]>
+                    <table role="presentation" align="center" style="width: {{ layoutBaseWidth }}px;">
+                    <tr>
+                    <td style="padding: 20px 0;">
+                    <![endif]-->
+                    <div class="outer" style="width: 96%; padding: 0 4px 0 4px; max-width: {{ layoutBaseWidth }}px; margin: 0 auto;" data-bsi-dropzone="{{ layoutBaseDropzoneId }}">
+                        {% block layout_base_dropzone %}
+                            {% include '../../col-one/prototype/template.twig' only %}
+                        {% endblock %}
+                    </div>
+                    <!--[if mso]>
+                    </td>
+                    </tr>
+                    </table>
+                    <![endif]-->
                 </td>
-                </tr>
-                </table>
-                <![endif]-->
-            </td>
-        </tr>
-    </table>
+            </tr>
+        </table>
+    </div>
 {% endapply %}
