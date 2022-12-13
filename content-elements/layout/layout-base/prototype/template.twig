@@ -9,12 +9,13 @@
     {% set layoutBaseColor = (color ?: properties.layoutBaseBackgroundColor) ?: '#ffffff' %}
     {% set layoutBaseWidth = ((width ?: properties.layoutWidth) ?: 660) + 8 %}
 
+    {# keep layout structure implementation in sync with 'layout-dark-footer' #}
     <div data-bsi-element="{{ layoutBaseElementId }}" class="bsi-dm-bg-color">
         <table width="100%" role="presentation" style="border: 0; border-spacing: 0; background-color: {{ layoutBaseColor }}; width: 100%;">
             <tr>
                 <td align="center">
                     <!--[if mso]>
-                    <table role="presentation" align="center" style="width: {{ layoutBaseWidth }}px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="width: {{ layoutBaseWidth }}px;">
                     <tr>
                     <td style="padding: 20px 0;">
                     <![endif]-->
