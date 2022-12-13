@@ -8,8 +8,8 @@
     {% set layoutDarkFooterDropzoneId = dropzoneId ?: 'layout-dark-footer-dropzone-S2Twva' %}
     {% set layoutDarkFooterBackgroundColor = (backgroundColor ?: properties.footerDarkBackgroundColor) ?: '#383e42' %}
     {% set layoutDarkFooterTextColor = (textColor ?: properties.footerDarkTextColor) ?: '#ffffff' %}
+    {% set layoutDarkFooterPadding = (padding ?: properties.footerDarkPadding) ?: 30 %}
     {% set layoutDarkFooterWidth = ((width ?: properties.layoutWidth) ?: 660) + 8 %}
-    {% set layoutDarkFooterPadding = (footerPadding ?: properties.footerPadding) ?: 30 %}
 
     {# keep layout structure implementation in sync with 'layout-base' #}
     <div data-bsi-element="{{ layoutDarkFooterElementId }}" class="bsi-dm-bg-color">
