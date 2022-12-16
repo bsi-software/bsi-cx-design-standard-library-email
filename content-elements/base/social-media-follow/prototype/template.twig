@@ -44,12 +44,12 @@
     {% set socialMediaMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
     {% set socialMediaIconHeight = (iconHeight ?: properties.socialMediaIconHeight) ?: 20 %}
 
-    <table data-bsi-element="{{ socialMediaElementId }}" class="bsi-social-media" width="266" align="center" border="0" cellspacing="0" cellpadding="0">
-        <tr data-bsi-element-part="{{ socialMediaElementPartId }}" style="width: 266px;" align="left" valign="top">
+    <table data-bsi-element="{{ socialMediaElementId }}" align="center" class="bsi-social-media" border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto; width: ">
+        <tr data-bsi-element-part="{{ socialMediaElementPartId }}" valign="top">
 
             {% for entry in socialMediaFollowList %}
                 {% set imgUrl = entry.img.externalRef ? entry.img.externalRef : entry.img %}
-                <td data-bsi-social-follow="{{ entry.name }}" align="left" style="float: left; padding-right: 10px;">
+                <td data-bsi-social-follow="{{ entry.name }}" style="padding-left: 5px; padding-right: 5px;">
                     <a href="{{ entry.url }}" target="_blank" style="text-decoration: none;">
                         <img src="{{ imgUrl }}" height="{{ socialMediaIconHeight }}" alt="{{ entry.name }}" border="0" style="display: block; width: auto;"/>
                     </a>

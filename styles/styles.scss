@@ -25,9 +25,6 @@
   .bsi-col-footer-left .bsi-social-media {
     margin: auto !important;
   }
-  .bsi-col-footer-right .bsi-social-media {
-    margin: auto !important;
-  }
   .bsi-event-padding {
     padding: 20px 15px !important;
   }
@@ -81,19 +78,6 @@
   .bsi-col-one .bsi-column {
     max-width: 100% !important;
   }
-}
-
-.bsi-social-media {
-  display: flex !important;
-  justify-content: center !important;
-}
-.bsi-col-footer-left .bsi-social-media {
-  margin-left: 0;
-  justify-content: flex-start !important;
-}
-.bsi-col-footer-right .bsi-social-media {
-  margin-right: 0;
-  justify-content: flex-end !important;
 }
 
 @media screen and (prefers-color-scheme: dark) {
