@@ -1,3 +1,59 @@
+/******************************************************/
+/*************  CSS Reset  ****************************/
+/******************************************************/
+
+/* CSS Reset inspired by https://github.com/TedGoas/Cerberus (licensed under the MIT license) */
+
+/* Remove all spaces around the email design added by some email clients */
+html,
+body {
+    margin: 0 auto !important;
+    padding: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+}
+
+/* Stop email clients from resizing small text */
+* {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* forces Samsung Android mail clients to use the entire viewport */
+#MessageViewBody, #MessageWebViewDiv{
+    width: 100% !important;
+}
+
+/* Stop Outlook from adding extra spacing to tables */
+table,
+td {
+    mso-table-lspace: 0pt !important;
+    mso-table-rspace: 0pt !important;
+}
+
+/* Fix webkit padding issue */
+table {
+    border-spacing: 0 !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Use a better rendering method when resizing images in IE */
+img {
+    -ms-interpolation-mode:bicubic;
+}
+
+/* Prevent Mail clients from underlining links. The same style must be inlined as well */
+a {
+    text-decoration: none;
+}
+
+/******************************************************/
+/*************  Mobile View  **************************/
+/******************************************************/
+
 @media screen and (max-width: 673px) {
   .bsi-col-one .bsi-image {
     width: 100% !important;
@@ -95,6 +151,11 @@
 p {
   margin: 0 !important;
 }
+
+
+/******************************************************/
+/***********  BSI Content Editor Override  ************/
+/******************************************************/
 
 // this CSS will only be applied in the Edit mode in CX
 .bsi-ce-edit-mode {
