@@ -8,6 +8,8 @@
     {% set ctaElementPartId = elementPartId ?: 'cta-part-YgQ87c' %}
     {% set ctaBackgroundColor = (backgroundColor ?: properties.buttonBackgroundColor) ?: '#2F4E66' %}
     {% set ctaBorderColor = (borderColor ?: properties.buttonBorderColor) ?: '#2F4E66' %}
+    {% set ctaBorderSize = (borderSize ?: properties.buttonBorderSize) ?: 2 %}
+    {% set borderAndBackgroundSame = ctaBackgroundColor.hex is same as(ctaBorderColor.hex) %}
     {% set ctaTextColor = (textColor ?: properties.buttonTextColor) ?: '#ffffff' %}
     {% set ctaFontFamily = (fontFamily ?: properties.buttonFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
     {% set ctaFontWeight = (fontWeight ?: properties.buttonFontWeight) ?: 'normal' %}
@@ -17,8 +19,13 @@
     {% set ctaAlignment = (alignment ?: properties.alignmentLeft) ?: 'left' %}
     {% set ctaHorizontalPadding = (horizontalPadding ?: properties.buttonHorizontalPadding) ?: 30 %}
     {% set ctaVerticalPadding = (verticalPadding ?: properties.buttonVerticalPadding) ?: 10 %}
+    {% if borderAndBackgroundSame %}
+        {% set ctaHorizontalPadding = ctaHorizontalPadding + ctaBorderSize %}
+        {% set ctaVerticalPadding = ctaVerticalPadding + ctaBorderSize %}
+    {% endif %}   
     {% set ctaFullWidth = (fullWidth ?: properties.buttonFullWidth) ?: false %} {# if you set this to true, your buttons will span the full width #}
     {% set ctaFullWidthStyle = ctaFullWidth == true ? 'width="100%"' : '' %}
+    {% set borderCss = borderAndBackgroundSame ? "" : "border: #{borderSize}px solid #{ctaBorderColor};" %}
     {% set ctaLegacyVmlMode = (legacyVml ?: properties.buttonLegacyVml) ?: false %} {# if you set this to true, your buttons will have rounded corners in Outlook as well. The button will have a fixed width though instad of fitting its size to the actual content #}
     
     <div data-bsi-element="{{ ctaElementId }}">
@@ -57,16 +64,18 @@
                     <td>
                         <table align="{{ ctaAlignment }}" class="bsi-cta-wrapper" role="presentation" border="0" cellspacing="0" cellpadding="0" {{ ctaFullWidthStyle | raw }}>
                             <tr>
-                                <td align="center" class="bsi-cta-wrapper" style="border-radius: {{ ctaBorderRadius }}px; background-color: {{ ctaBackgroundColor }}; border: 2px solid {{ ctaBorderColor }};" data-bsi-element-part="{{ ctaElementPartId }}"  {{ ctaFullWidthStyle | raw }}>
+                                <td align="center" class="bsi-cta-wrapper" style="border-radius: {{ ctaBorderRadius }}px; background-color: {{ ctaBackgroundColor }}; {{ borderCss }}" data-bsi-element-part="{{ ctaElementPartId }}"  {{ ctaFullWidthStyle | raw }}>
+                                    <!--[if mso]><div style="mso-line-height-rule: exactly; line-height: {{ctaVerticalPadding}}px; height: {{ctaVerticalPadding}}px; font-size: {{ctaVerticalPadding}}px">&nbsp;</div><![endif]-->
                                     {% if ctaFullWidth != true %}
                                         <!--[if mso]><i style="letter-spacing: {{ ctaHorizontalPadding }}px;mso-font-width:-100%;">&nbsp;</i><![endif]-->
                                     {% endif %}
                                 
-                                <a href="https://example.org/" target="_blank" class="bsi-cta" style="font-size: {{ ctaFontSize }}px; line-height: {{ ctaFontSize }}px; font-family: {{ ctaFontFamily }}; color: {{ ctaTextColor }}; font-weight: {{ ctaFontWeight }}; text-decoration: none; border-radius: {{ ctaBorderRadius }}px; padding: {{ ctaVerticalPadding }}px {{ ctaHorizontalPadding }}px; display: inline-block; text-align:center; word-break: keep-all; mso-line-height-rule: exactly; mso-padding-alt: 0; text-underline-color: {{ ctaBackgroundColor }};" {{ ctaFullWidthStyle | raw }}>{{ bsi_cx_lorem(2)}}</a>
+                                    <a href="https://example.org/" target="_blank" class="bsi-cta" style="mso-line-height-rule: exactly; font-size: {{ ctaFontSize }}px; line-height: {{ ctaFontSize }}px; font-family: {{ ctaFontFamily }}; color: {{ ctaTextColor }}; font-weight: {{ ctaFontWeight }}; text-decoration: none; border-radius: {{ ctaBorderRadius }}px; padding: {{ ctaVerticalPadding }}px {{ ctaHorizontalPadding }}px; display: inline-block; text-align:center; word-break: keep-all;  mso-padding-alt: 0; text-underline-color: {{ ctaBackgroundColor }};" {{ ctaFullWidthStyle | raw }}>{{ bsi_cx_lorem(2)}}</a>
                                 
                                     {% if ctaFullWidth != true %}
                                         <!--[if mso]><i style="letter-spacing: {{ ctaHorizontalPadding }}px;mso-font-width:-100%;">&nbsp;</i><![endif]-->
                                     {% endif %}
+                                    <!--[if mso]><div style="mso-line-height-rule: exactly; line-height: {{ctaVerticalPadding}}px; height: {{ctaVerticalPadding}}px; font-size: {{ctaVerticalPadding}}px">&nbsp;</div><![endif]-->
                                 </td>
                             </tr>
                         </table>
