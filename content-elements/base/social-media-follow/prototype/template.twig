@@ -41,15 +41,15 @@
       url: 'https://www.kununu.com/'
     }] %}
     {% set socialMediaFollowList = (socialMediaFollow ?: properties.socialMediaFollow) ?: defaultSocialMedia %}
-    {% set socialMediaMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
+    {% set socialMediaMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 10 %}
     {% set socialMediaIconHeight = (iconHeight ?: properties.socialMediaIconHeight) ?: 20 %}
 
-    <table data-bsi-element="{{ socialMediaElementId }}" align="center" class="bsi-social-media" border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto; width: ">
+    <table data-bsi-element="{{ socialMediaElementId }}" align="center" class="bsi-social-media" border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto;">
         <tr data-bsi-element-part="{{ socialMediaElementPartId }}" valign="top">
 
             {% for entry in socialMediaFollowList %}
                 {% set imgUrl = entry.img.externalRef ? entry.img.externalRef : entry.img %}
-                <td data-bsi-social-follow="{{ entry.name }}" style="padding-left: 5px; padding-right: 5px;">
+                <td data-bsi-social-follow="{{ entry.name }}" style="padding-left: 6px; padding-right: 6px;">
                     <a href="{{ entry.url }}" target="_blank" style="text-decoration: none;">
                         <img src="{{ imgUrl }}" height="{{ socialMediaIconHeight }}" alt="{{ entry.name }}" border="0" style="display: block; width: auto;"/>
                     </a>
