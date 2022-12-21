@@ -13,16 +13,17 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 * Dark Footer Layout: the dark background color now spans over the entire width, which is the default use case for most brands.
 
 ### New Features:
-* CTA Button: the button padding, font-size, font-weight and width (fit content or full-width) are now customizable through dedicated properties.
-* Images and header images now supported rounded corners. This is a progressive enhancement: Outlook on Windows will fall back to sharp corners.
+* CTA Button: the button padding, border strength, font-size, font-weight and width (fit content or full-width) are now customizable through dedicated properties.
+* Images and header images now support rounded corners. This is a progressive enhancement: Outlook on Windows will fall back to sharp corners.
 * Header logo: Support for fixed height added
 * Social Media Follow: the full list of social media elements is now customizable through the properties.
 
 ### Bug Fixes:
 
-* CTA Button: the Outlook implementation treats longer button texts better
+* CTA Button: the Outlook implementation treats longer button texts better and the implementation is more robust.
 * Text: The text element properly passed the predefined styles (alignment, font-weight, font-size, text color) to the froala editor
 * Dark Footer: the implementation behaves now properly on mobile devices too.
+* A few ghost lines on Outlook have been eliminated. For the resolution of the other once, we would welcome Pull Requests to address them.
 * Additional quality improvements
 
 [1.1.0]: https://github.com/bsi-software/bsi-cx-design-standard-library-email/releases/tag/1.1.0
