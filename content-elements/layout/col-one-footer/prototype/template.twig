@@ -7,12 +7,12 @@
     {% set colOneFooterElementId = elementId ?: 'col-one-footer-68T94f' %}
     {% set colOneFooterDropzoneId = dropzoneId ?: 'col-one-footer-dropzone-jaZSq2' %}
     {% set colOneFooterColor = (color ?: properties.footerTextColor) ?: '#ffffff' %}
-    {% set colOneFooterWidth = ((width ?: properties.colOneFooterWidth) ?: 660) - 6 %}
-    {% set colOneFooterPadding = ((padding ?: properties.columnFooterPadding) ?: 10) - 3 %}
+    {% set colOneFooterWidth = (width ?: properties.colOneFooterWidth) ?: 660 %}
+    {% set colOneFooterPadding = (padding ?: properties.columnFooterPadding) ?: 10 %}
 
-    <div data-bsi-element="{{ colOneFooterElementId }}">
+    <div data-bsi-element="{{ colOneFooterElementId }}" class="bsi-col-one">
         <!--[if mso]>
-        <table role="presentation" width="100%">
+        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
         <td style="width: {{ colOneFooterWidth }}px; padding: {{ colOneFooterPadding }}px; text-align: center; color: {{ colOneFooterColor }}; text-decoration: none;" valign="middle">
         <![endif]-->

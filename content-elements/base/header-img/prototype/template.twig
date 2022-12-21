@@ -9,6 +9,7 @@
     {% set headerImgSrc = imageSrc ?: bsi_cx_asset('../../../../static/image_660x320.png') %}
     {% set headerImgHeight = (headerHeight ?: properties.headerHeight) ?: 320 %}
     {% set headerImgWidth = (headerWidth ?: properties.headerWidth) ?: 660 %}
+    {% set headerImgBorderRadius = (borderRadius ?: properties.imageBorderRadius) ?: 0 %} {# Progressive enhancement: not supported by Outlook #}
     {% set headerImgMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
 
     <div data-bsi-element="{{ headerImgElementId }}" class="bsi-header-img">
@@ -17,7 +18,7 @@
         <tr>
         <td style="width: 100%;" valign="middle">
         <![endif]-->    
-        <img data-bsi-element-part="{{ headerImgPartId }}" src="{{ headerImgSrc }}" width="{{ headerImgWidth }}" height="{{ headerImgHeight }}" alt="Header image" style="margin-top :0; margin-bottom: {{ headerImgMarginBottom }}px; display: block; width: {{ headerImgWidth }}px; max-width: 100%; height: {{ headerImgHeight }}px;" />
+        <img data-bsi-element-part="{{ headerImgPartId }}" src="{{ headerImgSrc }}" width="{{ headerImgWidth }}" height="{{ headerImgHeight }}" alt="Header image" style="margin-top :0; margin-bottom: {{ headerImgMarginBottom }}px; display: block; width: {{ headerImgWidth }}px; max-width: 100%; height: {{ headerImgHeight }}px; border-radius: {{ headerImgBorderRadius }}px;" />
         <!--[if mso]>
         </td>
         </tr>

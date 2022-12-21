@@ -9,15 +9,28 @@
     {% set layoutDarkFooterBackgroundColor = (backgroundColor ?: properties.footerDarkBackgroundColor) ?: '#383e42' %}
     {% set layoutDarkFooterTextColor = (textColor ?: properties.footerDarkTextColor) ?: '#ffffff' %}
     {% set layoutDarkFooterPadding = (padding ?: properties.footerDarkPadding) ?: 30 %}
-    {% set layoutDarkFooterWidth = (width ?: properties.layoutWidth) ?: 660 %}
+    {% set layoutDarkFooterWidth = ((width ?: properties.layoutWidth) ?: 660) + 8 %}
 
-    <div data-bsi-element="{{ layoutDarkFooterElementId }}" class="bsi-footer bsi-dm-bg-color-footer">
-        <table width="{{ layoutDarkFooterWidth }}" style="width: {{ layoutDarkFooterWidth }}px;" bgcolor="{{ layoutDarkFooterBackgroundColor }}" align="center">
+    {# keep layout structure implementation in sync with 'layout-base' #}
+    <div data-bsi-element="{{ layoutDarkFooterElementId }}" class="bsi-dm-bg-color">
+        <table width="100%" role="presentation" style="border: 0; border-spacing: 0; background-color: {{ layoutDarkFooterBackgroundColor }}; width: 100%;">
             <tr>
-                <td data-bsi-dropzone="{{ layoutDarkFooterDropzoneId }}" align="center" valign="top" style="color: {{ layoutDarkFooterTextColor }}; padding: {{ layoutDarkFooterPadding }}px 23px;">
-                    {% block layout_dark_footer_dropzone %}
-                        {% include '../../col-one-footer/template.twig' only %}
-                    {% endblock %}
+                <td align="center">
+                    <!--[if mso]>
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="width: {{ layoutDarkFooterWidth }}px;">
+                    <tr>
+                    <td style="padding: 20px 0;">
+                    <![endif]-->
+                    <div class="outer" style="color: {{ layoutDarkFooterTextColor }}; width: 96%; padding: {{ layoutDarkFooterPadding }}px 4px {{ layoutDarkFooterPadding }}px 4px; max-width: {{ layoutDarkFooterWidth }}px; margin: 0 auto;" data-bsi-dropzone="{{ layoutDarkFooterDropzoneId }}">
+                        {% block layout_dark_footer_dropzone %}
+                            {% include '../../col-one-footer/prototype/template.twig' only %}
+                        {% endblock %}
+                    </div>
+                    <!--[if mso]>
+                    </td>
+                    </tr>
+                    </table>
+                    <![endif]-->
                 </td>
             </tr>
         </table>
