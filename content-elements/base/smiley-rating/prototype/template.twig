@@ -16,47 +16,42 @@
     {% set smileyRatingImage4Src = image4Src ?: bsi_cx_asset('../../../../static/smiley-4.png') %}
     {% set smileyRatingImage5Src = image5Src ?: bsi_cx_asset('../../../../static/smiley-5.png') %}
     {% set smileyRatingMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
+    {% set smileyRatingSpacerWidth = (spacerWidth ?: properties.smileyRatingSpacerWidth) ?: 14 %}
 
-    <table data-bsi-element="{{ smileyRatingElementId }}" width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="margin-bottom: {{ smileyRatingMarginBottom }}px;">
-        <tr>
-            <td valign="top" align="center">
-                <table class="bsi-smiley-rating" width="364" style="width: 364px;" border="0" cellspacing="0" cellpadding="0" align="center">
-                    <tr>
-                        <td data-bsi-dropzone="{{ smileyRatingDropzone1Id }}" align="center" valign="top">
-                            {% block smiley_rating_dropzone_one %}
-                                {% include '../../img-10/template.twig' with {source: smileyRatingImage1Src} only %}
-                            {% endblock %}
-                        </td>
-                        <td width="16" style="width:16px;font-size: 1px; line-height: 1px;">&nbsp;</td>
-                        <td data-bsi-dropzone="{{ smileyRatingDropzone2Id }}" align="left" valign="top">
-                            {% block smiley_rating_dropzone_two %}
-                                {% include '../../img-10/template.twig' with {source: smileyRatingImage2Src} only %}
-                            {% endblock %}
-                        </td>
-                        <td width="16" style="width:16px;font-size: 1px; line-height: 1px;">&nbsp;</td>
-                        <td data-bsi-dropzone="{{ smileyRatingDropzone3Id }}" align="left" valign="top">
-                            {% block smiley_rating_dropzone_three %}
-                                {% include '../../img-10/template.twig' with {source: smileyRatingImage3Src} only %}
-                            {% endblock %}
-                        </td>
-                        <td width="16" style="width:16px;font-size: 1px; line-height: 1px;">&nbsp;</td>
-                        <td data-bsi-dropzone="{{ smileyRatingDropzone4Id }}" align="left" valign="top">
-                            {% block smiley_rating_dropzone_four %}
-                                {% include '../../img-10/template.twig' with {source: smileyRatingImage4Src} only %}
-                            {% endblock %}
-                        </td>
-                        <td width="16" style="width:16px;font-size: 1px; line-height: 1px;">&nbsp;</td>
-                        <td data-bsi-dropzone="{{ smileyRatingDropzone5Id }}" align="left" valign="top">
-                            {% block smiley_rating_dropzone_five %}
-                                {% include '../../img-10/template.twig' with {source: smileyRatingImage5Src} only %}
-                            {% endblock %}
-                        </td>
-                    </tr>
-                </table>
+    <table data-bsi-element="{{ smileyRatingElementId }}" align="center" border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto;">
+        <tr valign="top">
+            <td data-bsi-dropzone="{{ smileyRatingDropzone1Id }}" align="center" valign="top">
+                {% block smiley_rating_dropzone_one %}
+                    {% include '../../img-10/template.twig' with {source: smileyRatingImage1Src} only %}
+                {% endblock %}
+            </td>
+            <td width="{{ smileyRatingSpacerWidth }}" style="width: {{ smileyRatingSpacerWidth }}px;font-size: 1px; line-height: 1px;">&nbsp;</td>
+            <td data-bsi-dropzone="{{ smileyRatingDropzone2Id }}" align="left" valign="top">
+                {% block smiley_rating_dropzone_two %}
+                    {% include '../../img-10/template.twig' with {source: smileyRatingImage2Src} only %}
+                {% endblock %}
+            </td>
+            <td width="{{ smileyRatingSpacerWidth }}" style="width: {{ smileyRatingSpacerWidth }}px;font-size: 1px; line-height: 1px;">&nbsp;</td>
+            <td data-bsi-dropzone="{{ smileyRatingDropzone3Id }}" align="left" valign="top">
+                {% block smiley_rating_dropzone_three %}
+                    {% include '../../img-10/template.twig' with {source: smileyRatingImage3Src} only %}
+                {% endblock %}
+            </td>
+            <td width="{{ smileyRatingSpacerWidth }}" style="width: {{ smileyRatingSpacerWidth }}px;font-size: 1px; line-height: 1px;">&nbsp;</td>
+            <td data-bsi-dropzone="{{ smileyRatingDropzone4Id }}" align="left" valign="top">
+                {% block smiley_rating_dropzone_four %}
+                    {% include '../../img-10/template.twig' with {source: smileyRatingImage4Src} only %}
+                {% endblock %}
+            </td>
+            <td width="{{ smileyRatingSpacerWidth }}" style="width: {{ smileyRatingSpacerWidth }}px;font-size: 1px; line-height: 1px;">&nbsp;</td>
+            <td data-bsi-dropzone="{{ smileyRatingDropzone5Id }}" align="left" valign="top">
+                {% block smiley_rating_dropzone_five %}
+                    {% include '../../img-10/template.twig' with {source: smileyRatingImage5Src} only %}
+                {% endblock %}
             </td>
         </tr>
-        <!--[if mso]>
-        <tr height="{{ smileyRatingMarginBottom }}" style="height:{{ smileyRatingMarginBottom }}px;">&nbsp;</tr>
-        <![endif]-->
+        <tr>
+            <td height="{{ smileyRatingMarginBottom }}" style="height: {{ smileyRatingMarginBottom }}px;">&nbsp;</td>
+        </tr>
     </table>
 {% endapply %}

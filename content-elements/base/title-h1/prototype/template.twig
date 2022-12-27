@@ -10,6 +10,7 @@
     {% set titleH1FontFamily = (fontFamily ?: properties.titleFontFamily) ?: 'Calibri, Carlito, PT Sans, Trebuchet MS, sans‑serif' %}
     {% set titleH1FontSize = (fontSize ?: properties.fontSizeH1) ?: 28 %}
     {% set titleH1LineHeight = (lineHeight ?: properties.lineHeightH1) ?: 32 %}
+    {% set titleH1FontWeight = (fontWeight ?: properties.fontWeightH1) ?: 'normal' %}
     {% set titleH1MarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
     {% set titleH1Text = titleText ?: bsi_cx_lorem(3) %}
 
@@ -25,7 +26,7 @@
         <tr>
         <td style="width: 100%;" valign="middle">
         <![endif]-->       
-        <h{{ titleType }} data-bsi-element-part="{{ titleH1PartId }}" class="bsi-dm-text-color" style="color: {{ titleH1Color }}; font-family: {{ titleH1FontFamily }}; text-align: left; margin-top: 0; margin-bottom: {{ titleH1MarginBottom }}px; font-size: {{ titleH1FontSize }}px; line-height: {{ titleH1LineHeight }}px; font-weight: normal;">{{ titleH1Text }}</h{{ titleType }}>
+        <h{{ titleType }} data-bsi-element-part="{{ titleH1PartId }}" class="bsi-dm-text-color" style="color: {{ titleH1Color }}; font-family: {{ titleH1FontFamily }}; text-align: left; margin-top: 0; margin-bottom: {{ titleH1MarginBottom }}px; font-size: {{ titleH1FontSize }}px; line-height: {{ titleH1LineHeight }}px; font-weight: {{ titleH1FontWeight }};">{{ titleH1Text }}</h{{ titleType }}>
         <!--[if mso]>
         </td>
         </tr>
