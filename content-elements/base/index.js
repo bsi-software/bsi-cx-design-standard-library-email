@@ -3,6 +3,7 @@ const contentElements = [
   require('./text'),
   require('./cta'),
   require('./highlighted-content'),
+  require('./table'),
   require('./spacer'),
   require('./divider')
 ];
@@ -10,7 +11,6 @@ const contentElements = [
 const colOneElements = [
   ...contentElements,
   require('./image'),
-  require('./table'),
   require('./news-snippet'),
   require('./smiley-rating'),
   require('./event')
