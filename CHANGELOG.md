@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2] - 16.02.2023
+
+### Changes
+* Dependency updates
+* This package is now available on NPM
+
+[1.1.2]: https://github.com/bsi-software/bsi-cx-design-standard-library-email/releases/tag/1.1.2
+
 
 ## [1.1.1] - 27.12.2022
 

@@ -1,0 +1,8 @@
+*
+!/configs/**
+!/content-elements/**
+!/static/**
+!/styles/**
+/CHANGELOG.md
+/LICENSE.txt
+/README.md
