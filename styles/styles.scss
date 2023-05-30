@@ -141,6 +141,14 @@ a {
   }
 }
 
+/******************************************************/
+/*************  Dark Mode  ****************************/
+/******************************************************/
+:root {
+  color-scheme: light dark;
+  supported-color-schemes: light dark;
+}
+
 @media screen and (prefers-color-scheme: dark) {
   .bsi-dm-bg-color {
     background-color: bsiProperty('darkColor', #000000) !important;
@@ -150,6 +158,12 @@ a {
   }
   .bsi-dm-text-color {
     color: bsiProperty('lightColor', #ffffff) !important;
+  }
+  .bsi-dm-highlighted-content {
+    background-color: bsiProperty('highlightBackgroundColorDarkMode', #7c3d01) !important;
+  }
+  .bsi-dm-layout-colored {
+    background-color: bsiProperty('layoutColoredBackgroundColorDarkMode', #3b3b3b) !important;
   }
 }
 
