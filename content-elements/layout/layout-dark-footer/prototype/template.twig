@@ -10,10 +10,11 @@
     {% set layoutDarkFooterTextColor = (textColor ?: properties.footerDarkTextColor) ?: '#ffffff' %}
     {% set layoutDarkFooterPadding = (padding ?: properties.footerDarkPadding) ?: 30 %}
     {% set layoutDarkFooterWidth = ((width ?: properties.layoutWidth) ?: 660) + 8 %}
+    {% set layoutDarkFooterDarkModeClass = darkModeClass ?: 'bsi-dm-bg-color-footer' %}
 
     {# keep layout structure implementation in sync with 'layout-base' #}
-    <div data-bsi-element="{{ layoutDarkFooterElementId }}" class="bsi-dm-bg-color">
-        <table width="100%" role="presentation" style="border: 0; border-spacing: 0; background-color: {{ layoutDarkFooterBackgroundColor }}; width: 100%;">
+    <div data-bsi-element="{{ layoutDarkFooterElementId }}">
+        <table class="{{ layoutDarkFooterDarkModeClass }}" width="100%" role="presentation" style="border: 0; border-spacing: 0; background-color: {{ layoutDarkFooterBackgroundColor }}; width: 100%;">
             <tr>
                 <td align="center">
                     <!--[if mso]>
