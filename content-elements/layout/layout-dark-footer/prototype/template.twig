@@ -1,4 +1,4 @@
-{% macro render(elementId = null, dropzoneId = null, backgroundColor = null, textColor = null, padding = null, width = null) %}{% apply spaceless %}
+{% macro render(elementId = null, dropzoneId = null, backgroundColor = null, textColor = null, padding = null, width = null, fillsFullScreen = null, widthBackgroundColor = null) %}{% apply spaceless %}
     {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
     {% include './template.twig' %}
 {% endapply %}{% endmacro %}
@@ -9,12 +9,18 @@
     {% set layoutDarkFooterBackgroundColor = (backgroundColor ?: properties.footerDarkBackgroundColor) ?: '#383e42' %}
     {% set layoutDarkFooterTextColor = (textColor ?: properties.footerDarkTextColor) ?: '#ffffff' %}
     {% set layoutDarkFooterPadding = (padding ?: properties.footerDarkPadding) ?: 30 %}
-    {% set layoutDarkFooterWidth = ((width ?: properties.layoutWidth) ?: 660) + 8 %}
+    {% set layoutDarkFooterWidthContent = ((width ?: properties.layoutWidth) ?: 660) + 8 %}
+    {% set layoutDarkFooterFillsFullScreen = fillsFullScreen ?: properties.footerBackgroundColorFillsFullScreen %}
+    {% set layoutDarkFooterWidthBackgroundColor = ((widthBackgroundColor ?: properties.footerBackgroundColorWidth) ?: 660) + 8 %}
     {% set layoutDarkFooterDarkModeClass = darkModeClass ?: 'bsi-dm-bg-color-footer' %}
 
     {# keep layout structure implementation in sync with 'layout-base' #}
     <div data-bsi-element="{{ layoutDarkFooterElementId }}">
-        <table class="{{ layoutDarkFooterDarkModeClass }}" width="100%" role="presentation" style="border: 0; border-spacing: 0; background-color: {{ layoutDarkFooterBackgroundColor }}; width: 100%;">
+        {% if layoutDarkFooterFillsFullScreen %}
+        <table class="{{ layoutDarkFooterDarkModeClass }}" align="center" width="100%" role="presentation" style="border: 0; border-spacing: 0; background-color: {{ layoutDarkFooterBackgroundColor }}; width: 100%;">
+        {% else %}
+        <table class="{{ layoutDarkFooterDarkModeClass }} bsi-bg-color-footer" align="center" width="{{ layoutDarkFooterWidthBackgroundColor }}" role="presentation" style="border: 0; border-spacing: 0; background-color: {{ layoutDarkFooterBackgroundColor }}; width: {{ layoutDarkFooterWidthBackgroundColor }}px;">
+        {% endif %}
             <tr>
                 <td align="center">
                     <!--[if mso]>
