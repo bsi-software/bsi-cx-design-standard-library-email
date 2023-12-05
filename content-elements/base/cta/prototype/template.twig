@@ -36,13 +36,13 @@
         <td style="width: 100%;" valign="middle">
         <![endif]-->
         {% if ctaLegacyVmlMode == true %}
-            <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="{{ ctaAlignment }}" width="100%" style="min-width: 100%; height: 38px; margin-bottom: {{ ctaMarginBottom }}px;">
+            <table class="cta-alignment" role="presentation" border="0" cellpadding="0" cellspacing="0" align="{{ ctaAlignment }}" width="100%" style="min-width: 100%; height: 38px; margin-bottom: {{ ctaMarginBottom }}px;">
                 <tr>
-                    <td align="{{ ctaAlignment }}" data-bsi-element-part="{{ ctaElementPartId }}">
+                    <td align="{{ ctaAlignment }}" class="cta-alignment" data-bsi-element-part="{{ ctaElementPartId }}">
                         <!--[if mso]>
                         <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                         <tr>
-                        <td align="{{ ctaAlignment }}">
+                        <td align="{{ ctaAlignment }}" class="cta-alignment">
                         <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:30pt; width:110pt; v-text-anchor:middle;" arcsize="{{ ctaBorderRadius }}%" strokeweight="2px" strokecolor="{{ ctaBorderColor }}" fillcolor="{{ ctaBackgroundColor }}"><w:anchorlock/>
                         <v:textbox inset="0,0,0,0">
                         <center style="color: {{ ctaTextColor }}; font-family: {{ ctaFontFamily }}">
@@ -63,7 +63,7 @@
             <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%" style="min-width: 100%; margin-bottom: {{ ctaMarginBottom }}px;">
                 <tr>
                     <td>
-                        <table align="{{ ctaAlignment }}" class="bsi-cta-wrapper" role="presentation" border="0" cellspacing="0" cellpadding="0" {{ ctaFullWidthStyle | raw }}>
+                        <table align="{{ ctaAlignment }}" class="bsi-cta-wrapper cta-alignment" role="presentation" border="0" cellspacing="0" cellpadding="0" {{ ctaFullWidthStyle | raw }}>
                             <tr>
                                 <td align="center" class="bsi-cta-wrapper" style="{{ borderCssOutlook }} border-radius: {{ ctaBorderRadius }}px; background-color: {{ ctaBackgroundColor }}; " {{ ctaFullWidthStyle | raw }}>
                                     <!--[if mso]><div style="mso-line-height-rule: exactly; line-height: {{ctaVerticalPadding}}px; height: {{ctaVerticalPadding}}px; font-size: {{ctaVerticalPadding}}px">&nbsp;</div><![endif]-->

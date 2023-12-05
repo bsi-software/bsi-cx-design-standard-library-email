@@ -5,9 +5,9 @@
 
 {% apply spaceless %}
     {% set spacerElementId = elementId ?: 'spacer-HqlX1L' %}
-    {% set spacerHeight = (spacerHeight ?: properties.spacerHeightMedium) ?: 25 %}
+    {% set spacerHeight = (spacerHeight ?: properties.spacerHeightMedium) ?: 24 %}
 
-    <div data-bsi-element="{{ spacerElementId }}">
-        <div style="line-height: {{ spacerHeight }}px; height: {{ spacerHeight }}px; mso-line-height-rule: exactly;">&nbsp;</div>
+    <div data-bsi-element="{{ spacerElementId }}" class="bsi-element-spacer">
+        <div class="spacer" style="line-height: {{ spacerHeight }}px; height: {{ spacerHeight }}px; mso-line-height-rule: exactly;">&nbsp;</div>
     </div>
 {% endapply %}

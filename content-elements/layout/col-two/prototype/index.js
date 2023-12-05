@@ -26,6 +26,7 @@ module.exports = (
   .withElementId(elementId)
   .withLabel(elementLabel)
   .withIcon(Icon.TWO_COLUMNS)
+  .withStyleConfigs(require('../../../../configs/styles/col-two-aspect-ratio'))
   .withDropzones(
     cx.dropzone
       .withDropzone(dropzone1Id)

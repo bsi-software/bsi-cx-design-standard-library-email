@@ -13,7 +13,7 @@ module.exports = (
   template = require('../template.twig'),
   elementId = 'layout-base-dziMWZ',
   /*elementLabel = 'Layout base',*/
-  elementLabel = 'Basis Layout',
+  elementLabel = 'Content Layout',
   dropzoneId = 'layout-base-dropzone-7nPzXF',
   dropzoneAllowedElements= [require('../../../base/spacer'), require('../../../base/divider'), ...layoutElements]
 ) => cx
@@ -22,6 +22,7 @@ module.exports = (
   .withElementId(elementId)
   .withLabel(elementLabel)
   .withIcon(Icon.ONE_COLUMN)
+  .withStyleConfigs(require('../../../../configs/styles/layout-background-color'))
   .withDropzones(
     cx.dropzone
       .withDropzone(dropzoneId)
