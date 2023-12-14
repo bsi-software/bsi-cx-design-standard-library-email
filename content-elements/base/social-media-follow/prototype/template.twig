@@ -44,8 +44,9 @@
     {% set socialMediaMarginBottom = ((marginBottom ?: properties.socialMediaMarginBottom) ?: properties.baseMarginBottom) ?: 10 %}
     {% set socialMediaIconHeight = (iconHeight ?: properties.socialMediaIconHeight) ?: 20 %}
     {% set socialMediaIconPadding = (iconPadding ?: properties.socialMediaIconPadding) ?: 6 %}
+    {% set socialMediaIconAlignment = (alignment ?: properties.socialMediaIconAlignment) ?: 'center' %}
 
-    <table data-bsi-element="{{ socialMediaElementId }}" align="center" class="bsi-social-media" border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto;">
+    <table data-bsi-element="{{ socialMediaElementId }}" align="{{ socialMediaIconAlignment }}" class="bsi-social-media" border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto;">
         <tr data-bsi-element-part="{{ socialMediaElementPartId }}" valign="top">
 
             {% for entry in socialMediaFollowList %}
