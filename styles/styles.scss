@@ -192,4 +192,8 @@ p {
   .bsi-ce-box-sizing-fix {
     box-sizing: border-box!important;
   }
+
+  img.bsi-image {
+    max-width: none !important;
+  }
 }

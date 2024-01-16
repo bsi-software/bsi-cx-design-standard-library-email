@@ -2,6 +2,7 @@ const contentElements = [
   require('./title-h1'),
   require('./text'),
   require('./cta'),
+  require('./img-10'),
   require('./highlighted-content'),
   require('./table'),
   require('./spacer'),

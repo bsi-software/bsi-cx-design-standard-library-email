@@ -15,7 +15,7 @@ module.exports = (
   /*elementLabel = 'CTA button',*/
   elementLabel = 'CTA Button',
   /*elementDescription = 'left aligned',*/
-  elementDescription = 'linksbündig',
+  elementDescription = '',
   elementPartId = 'cta-part-YgQ87c',
   /*elementPartLabel = 'CTA button'*/
   elementPartLabel = 'CTA Button'
@@ -24,7 +24,7 @@ module.exports = (
   .withFile(template)
   .withElementId(elementId)
   .withLabel(elementLabel)
-  /*.withDescription(elementDescription)*/
+  .withDescription(elementDescription)
   .withIcon(Icon.MEGAPHONE)
   .withStyleConfigs(require('../../../../configs/styles/cta-alignment'))
   .withParts(

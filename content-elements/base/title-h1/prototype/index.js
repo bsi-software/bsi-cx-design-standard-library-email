@@ -22,6 +22,7 @@ module.exports = (
   .withElementId(elementId)
   .withLabel(elementLabel)
   .withIcon(Icon.TEXT)
+  .withStyleConfigs(require('../../../../configs/styles/title-color'))
   .withParts(
     cx.part.plainText
       .withId(titlePartId)

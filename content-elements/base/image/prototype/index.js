@@ -31,6 +31,7 @@ module.exports = (
   .withLabel(elementLabel)
   .withDescription(elementDescription)
   .withIcon(Icon.IMAGE)
+  .withStyleConfigs(require('../../../../configs/styles/image-width'))
   .withParts(
     cx.part.image
       .withId(imagePartId)
