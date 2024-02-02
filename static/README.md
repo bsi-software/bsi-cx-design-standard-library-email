@@ -9,7 +9,7 @@
 * `instagram.png`: [Instagram](https://www.facebook.com/brand/resources/instagram/instagram-brand/)
 * `linkedin.png`: [LinkedIn](https://brand.linkedin.com/downloads)
 * `kununu.png`: [Kununu](https://assets.kununu.com/images/images_badges/profile-widgets/icon.png)
-* `twitter.png`: [Twitter](https://about.twitter.com/en/who-we-are/brand-toolkit)
+* `x-twitter.png`: [X (Twitter)](https://about.twitter.com/en/who-we-are/brand-toolkit)
 * `youtube.png`: [YouTube](https://www.youtube.com/howyoutubeworks/resources/brand-resources/#logos-icons-and-colors)
 * `pinterest.png`: [Pinterest](https://business.pinterest.com/en/brand-guidelines/)
 * `snapchat.png`: [Snapchat](https://www.snap.com/en-US/brand-guidelines)

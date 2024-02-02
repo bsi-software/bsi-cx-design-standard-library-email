@@ -1,4 +1,4 @@
-{% macro render(elementId = null, elementPartId = null, imageSrcLinkedIn = null, imageSrcTwitter = null, imageSrcYouTube = null, imageSrcFacebook = null, imageSrcInstagram = null, imageSrcPinterest = null, imageSrcSnapchat = null, imageSrcKununu = null, marginBottom = null, iconHeight = null) %}{% apply spaceless %}
+{% macro render(elementId = null, elementPartId = null, socialMediaFollow = null, marginBottom = null, iconHeight = null, iconPadding = null) %}{% apply spaceless %}
     {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
     {% include './template.twig' %}
 {% endapply %}{% endmacro %}
@@ -12,8 +12,8 @@
       img: bsi_cx_asset('../../../../static/linkedin.png'),
       url: 'https://www.linkedin.com/'
     }, {
-      name: 'Twitter',
-      img: bsi_cx_asset('../../../../static/twitter.png'),
+      name: 'X (Twitter)',
+      img: bsi_cx_asset('../../../../static/x-twitter.png'),
       url: 'https://www.twitter.com/'
     }, {
       name: 'YouTube',
