@@ -11,6 +11,7 @@ module.exports = cx.style
         cx.styleOption
             .withStyleId('layout-background-white')
             .withLabel('Weiss')
+            .withCssClass('bsi-layout-base')
             .withDomManipulations(
                 cx.domManipulation
                     .withSelector('table.layout-base-background')
@@ -23,6 +24,7 @@ module.exports = cx.style
         cx.styleOption
             .withStyleId('layout-background-colored')
             .withLabel('Farbig')
+            .withCssClass('bsi-layout-colored')
             .withDomManipulations(
                 cx.domManipulation
                     .withSelector('table.layout-base-background')

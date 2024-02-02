@@ -8,10 +8,11 @@
     {% set layoutBaseDropzoneId = dropzoneId ?: 'layout-base-dropzone-7nPzXF' %}
     {% set layoutBaseColor = (color ?: properties.layoutBaseBackgroundColor) ?: '#ffffff' %}
     {% set layoutBaseWidth = ((width ?: properties.layoutWidth) ?: 660) + 8 %}
+    {% set layoutBaseBackgroundClass = backgroundClass ?: 'bsi-layout-base' %}
     {% set layoutBaseDarkModeClass = darkModeClass ?: 'bsi-dm-bg-color' %}
 
     {# keep layout structure implementation in sync with 'layout-dark-footer' #}
-    <div data-bsi-element="{{ layoutBaseElementId }}">
+    <div data-bsi-element="{{ layoutBaseElementId }}" class="{{ layoutBaseBackgroundClass }}">
         <table class="layout-base-background {{ layoutBaseDarkModeClass }}" width="100%" role="presentation" style="border: 0; border-spacing: 0; background-color: {{ layoutBaseColor }}; width: 100%;">
             <tr>
                 <td align="center">

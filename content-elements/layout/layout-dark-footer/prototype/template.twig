@@ -12,10 +12,11 @@
     {% set layoutDarkFooterWidthContent = ((width ?: properties.layoutWidth) ?: 660) + 8 %}
     {% set layoutDarkFooterFillsFullScreen = fillsFullScreen ?: properties.footerBackgroundColorFillsFullScreen %}
     {% set layoutDarkFooterWidthBackgroundColor = ((widthBackgroundColor ?: properties.footerBackgroundColorWidth) ?: 660) + 8 %}
+    {% set layoutDarkFooterBackgroundClass = backgroundClass ?: 'bsi-footer-bg-dark' %}
     {% set layoutDarkFooterDarkModeClass = darkModeClass ?: 'bsi-dm-bg-color-footer' %}
 
     {# keep layout structure implementation in sync with 'layout-base' #}
-    <div data-bsi-element="{{ layoutDarkFooterElementId }}">
+    <div data-bsi-element="{{ layoutDarkFooterElementId }}" class="{{ layoutDarkFooterBackgroundClass }}">
         {% if layoutDarkFooterFillsFullScreen %}
         <table class="layout-footer-background {{ layoutDarkFooterDarkModeClass }}" align="center" width="100%" role="presentation" style="border: 0; border-spacing: 0; background-color: {{ layoutDarkFooterBackgroundColor }}; width: 100%;">
         {% else %}

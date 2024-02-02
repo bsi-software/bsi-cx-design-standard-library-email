@@ -15,6 +15,7 @@ module.exports = cx.style
         cx.styleOption
             .withStyleId('layout-footer-background-dark')
             .withLabel('Dunkel')
+            .withCssClass('bsi-footer-bg-dark')
             .withDomManipulations(
                 cx.domManipulation
                     .withSelector('table.layout-footer-background')
@@ -35,6 +36,7 @@ module.exports = cx.style
         cx.styleOption
             .withStyleId('layout-footer-background-light')
             .withLabel('Hell')
+            .withCssClass('bsi-footer-bg-light')
             .withDomManipulations(
                 cx.domManipulation
                     .withSelector('table.layout-footer-background')
