@@ -15,6 +15,11 @@
     {% set smileyRatingImage3Src = image3Src ?: bsi_cx_asset('../../../../static/smiley-3.png') %}
     {% set smileyRatingImage4Src = image4Src ?: bsi_cx_asset('../../../../static/smiley-4.png') %}
     {% set smileyRatingImage5Src = image5Src ?: bsi_cx_asset('../../../../static/smiley-5.png') %}
+    {% set smileyRatingImage1Alt = properties.smileyRatingImage1Alt ?: 'Sehr gut' %}
+    {% set smileyRatingImage2Alt = properties.smileyRatingImage2Alt ?: 'Gut' %}
+    {% set smileyRatingImage3Alt = properties.smileyRatingImage3Alt ?: 'Befriedigend' %}
+    {% set smileyRatingImage4Alt = properties.smileyRatingImage4Alt ?: 'Ausreichend' %}
+    {% set smileyRatingImage5Alt = properties.smileyRatingImage5Alt ?: 'Mangelhaft' %}
     {% set smileyRatingMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
     {% set smileyRatingSpacerWidth = (spacerWidth ?: properties.smileyRatingSpacerWidth) ?: 14 %}
 
@@ -22,31 +27,31 @@
         <tr valign="top">
             <td data-bsi-dropzone="{{ smileyRatingDropzone1Id }}" align="center" valign="top" class="smiley-rating-1">
                 {% block smiley_rating_dropzone_one %}
-                    {% include '../../img-10/template.twig' with {source: smileyRatingImage1Src, alt: 'Sehr gut'} only %}
+                    {% include '../../img-10/template.twig' with {source: smileyRatingImage1Src, alt: smileyRatingImage1Alt} only %}
                 {% endblock %}
             </td>
             <td width="{{ smileyRatingSpacerWidth }}" style="width: {{ smileyRatingSpacerWidth }}px; font-size: 1px; line-height: 1px;">&nbsp;</td>
             <td data-bsi-dropzone="{{ smileyRatingDropzone2Id }}" align="left" valign="top" class="smiley-rating-2">
                 {% block smiley_rating_dropzone_two %}
-                    {% include '../../img-10/template.twig' with {source: smileyRatingImage2Src, alt: 'Gut'} only %}
+                    {% include '../../img-10/template.twig' with {source: smileyRatingImage2Src, alt: smileyRatingImage2Alt} only %}
                 {% endblock %}
             </td>
             <td width="{{ smileyRatingSpacerWidth }}" style="width: {{ smileyRatingSpacerWidth }}px;font-size: 1px; line-height: 1px;">&nbsp;</td>
             <td data-bsi-dropzone="{{ smileyRatingDropzone3Id }}" align="left" valign="top" class="smiley-rating-3">
                 {% block smiley_rating_dropzone_three %}
-                    {% include '../../img-10/template.twig' with {source: smileyRatingImage3Src, alt: 'Befriedigend'} only %}
+                    {% include '../../img-10/template.twig' with {source: smileyRatingImage3Src, alt: smileyRatingImage3Alt} only %}
                 {% endblock %}
             </td>
             <td width="{{ smileyRatingSpacerWidth }}" style="width: {{ smileyRatingSpacerWidth }}px;font-size: 1px; line-height: 1px;">&nbsp;</td>
             <td data-bsi-dropzone="{{ smileyRatingDropzone4Id }}" align="left" valign="top" class="smiley-rating-4">
                 {% block smiley_rating_dropzone_four %}
-                    {% include '../../img-10/template.twig' with {source: smileyRatingImage4Src, alt: 'Ausreichend'} only %}
+                    {% include '../../img-10/template.twig' with {source: smileyRatingImage4Src, alt: smileyRatingImage4Alt} only %}
                 {% endblock %}
             </td>
             <td width="{{ smileyRatingSpacerWidth }}" style="width: {{ smileyRatingSpacerWidth }}px;font-size: 1px; line-height: 1px;">&nbsp;</td>
             <td data-bsi-dropzone="{{ smileyRatingDropzone5Id }}" align="left" valign="top" class="smiley-rating-5">
                 {% block smiley_rating_dropzone_five %}
-                    {% include '../../img-10/template.twig' with {source: smileyRatingImage5Src, alt: 'Mangelhaft'} only %}
+                    {% include '../../img-10/template.twig' with {source: smileyRatingImage5Src, alt: smileyRatingImage5Alt} only %}
                 {% endblock %}
             </td>
         </tr>
