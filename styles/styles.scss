@@ -53,6 +53,7 @@ img {
 /* Prevent Mail clients from underlining links. The same style must be inlined as well */
 a {
   text-decoration: none;
+  color: bsiProperty('linkColor', #ff7d00);
 }
 
 /******************************************************/
