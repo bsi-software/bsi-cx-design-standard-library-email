@@ -12,14 +12,15 @@
     {% set layoutDarkFooterWidthContent = ((width ?: properties.layoutWidth) ?: 660) + 8 %}
     {% set layoutDarkFooterFillsFullScreen = fillsFullScreen ?: properties.footerBackgroundColorFillsFullScreen %}
     {% set layoutDarkFooterWidthBackgroundColor = ((widthBackgroundColor ?: properties.footerBackgroundColorWidth) ?: 660) + 8 %}
+    {% set layoutDarkFooterBackgroundClass = backgroundClass ?: 'bsi-footer-bg-dark' %}
     {% set layoutDarkFooterDarkModeClass = darkModeClass ?: 'bsi-dm-bg-color-footer' %}
 
     {# keep layout structure implementation in sync with 'layout-base' #}
-    <div data-bsi-element="{{ layoutDarkFooterElementId }}">
+    <div data-bsi-element="{{ layoutDarkFooterElementId }}" class="{{ layoutDarkFooterBackgroundClass }}">
         {% if layoutDarkFooterFillsFullScreen %}
-        <table class="{{ layoutDarkFooterDarkModeClass }}" align="center" width="100%" role="presentation" style="border: 0; border-spacing: 0; background-color: {{ layoutDarkFooterBackgroundColor }}; width: 100%;">
+        <table class="layout-footer-background {{ layoutDarkFooterDarkModeClass }}" align="center" width="100%" role="presentation" style="border: 0; border-spacing: 0; background-color: {{ layoutDarkFooterBackgroundColor }}; width: 100%;">
         {% else %}
-        <table class="{{ layoutDarkFooterDarkModeClass }} bsi-bg-color-footer" align="center" width="{{ layoutDarkFooterWidthBackgroundColor }}" role="presentation" style="border: 0; border-spacing: 0; background-color: {{ layoutDarkFooterBackgroundColor }}; width: {{ layoutDarkFooterWidthBackgroundColor }}px;">
+        <table class="layout-footer-background {{ layoutDarkFooterDarkModeClass }} bsi-bg-color-footer" align="center" width="{{ layoutDarkFooterWidthBackgroundColor }}" role="presentation" style="border: 0; border-spacing: 0; background-color: {{ layoutDarkFooterBackgroundColor }}; width: {{ layoutDarkFooterWidthBackgroundColor }}px;">
         {% endif %}
             <tr>
                 <td align="center">
@@ -28,7 +29,7 @@
                     <tr>
                     <td style="padding: 20px 0;">
                     <![endif]-->
-                    <div class="outer" style="color: {{ layoutDarkFooterTextColor }}; width: 96%; padding: {{ layoutDarkFooterPadding }}px 4px {{ layoutDarkFooterPadding }}px 4px; max-width: {{ layoutDarkFooterWidth }}px; margin: 0 auto;" data-bsi-dropzone="{{ layoutDarkFooterDropzoneId }}">
+                    <div class="outer layout-footer-content" style="color: {{ layoutDarkFooterTextColor }}; width: 96%; padding: {{ layoutDarkFooterPadding }}px 4px {{ layoutDarkFooterPadding }}px 4px; max-width: {{ layoutDarkFooterWidth }}px; margin: 0 auto;" data-bsi-dropzone="{{ layoutDarkFooterDropzoneId }}">
                         {% block layout_dark_footer_dropzone %}
                             {% include '../../col-one-footer/prototype/template.twig' only %}
                         {% endblock %}

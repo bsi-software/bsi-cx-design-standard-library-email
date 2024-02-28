@@ -13,7 +13,7 @@ module.exports = (
   template = require('../template.twig'),
   elementId = 'layout-dark-footer-x1LvCb',
   /*elementLabel = 'Layout dark',*/
-  elementLabel = 'Dunkles Layout',
+  elementLabel = 'Footer Layout',
   dropzoneId = 'layout-dark-footer-dropzone-S2Twva',
   dropzoneAllowedElements= [require('../../../base/spacer'), require('../../../base/divider'), ...footerLayoutElements]
 ) => cx
@@ -22,6 +22,7 @@ module.exports = (
   .withElementId(elementId)
   .withLabel(elementLabel)
   .withIcon(Icon.ONE_COLUMN)
+  .withStyleConfigs(require('../../../../configs/styles/layout-footer-background-color'))
   .withDropzones(
     cx.dropzone
       .withDropzone(dropzoneId)

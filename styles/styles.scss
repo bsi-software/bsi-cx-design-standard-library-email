@@ -53,6 +53,27 @@ img {
 /* Prevent Mail clients from underlining links. The same style must be inlined as well */
 a {
   text-decoration: none;
+  color: bsiProperty('linkColor', #ff7d00);
+}
+
+/******************************************************/
+/*************  CX Placeholder Links  *****************/
+/******************************************************/
+
+// Color of CX placeholder links (e.g. [Unsubscribe from newsletter|unsubscribe])
+// Only available as of CX 23.2: The CSS class "placeholder-link" will be rendered onto the <a> element by CX
+
+.bsi-layout-base a.placeholder-link {
+  color: bsiProperty('placeholderLinkColorLayoutBase', #16616d) !important;
+}
+.bsi-layout-colored a.placeholder-link {
+  color: bsiProperty('placeholderLinkColorLayoutColored', #ff7d00) !important;
+}
+.bsi-footer-bg-dark a.placeholder-link {
+  color: bsiProperty('placeholderLinkColorFooterDark', #ffffff) !important;
+}
+.bsi-footer-bg-light a.placeholder-link {
+  color: bsiProperty('placeholderLinkColorFooterLight', #383e42) !important;
 }
 
 /******************************************************/
@@ -191,5 +212,9 @@ p {
   
   .bsi-ce-box-sizing-fix {
     box-sizing: border-box!important;
+  }
+
+  img.bsi-image {
+    max-width: none !important;
   }
 }

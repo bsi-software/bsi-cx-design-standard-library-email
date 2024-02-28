@@ -10,10 +10,12 @@ module.exports = (
   template = require('../template.twig'),
   elementId = 'spacer-HqlX1L',
   /*elementLabel = 'Spacing medium',*/
-  elementLabel = 'Abstand - medium',
+  elementLabel = 'Abstand',
 ) => cx
   .contentElement
   .withFile(template)
   .withElementId(elementId)
   .withLabel(elementLabel)
-  .withIcon(Icon.DIVIDER);
+  .withIcon(Icon.DIVIDER)
+  .withStyleConfigs(
+    require('../../../../configs/styles/spacer'));
