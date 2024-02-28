@@ -18,6 +18,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   * Keep alt attributes empty if only decorative images are included
   * Smiley rating element: transfer alt texts to properties file
 * Social media follow element: replaced Twitter by X
+* Add fallback styling for links inside formatted texts
 * Dependency updates
 
 [1.2.0]: https://github.com/bsi-software/bsi-cx-design-standard-library-email/releases/tag/1.2.0
