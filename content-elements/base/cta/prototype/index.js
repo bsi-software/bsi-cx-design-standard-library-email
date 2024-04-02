@@ -26,7 +26,9 @@ module.exports = (
   .withLabel(elementLabel)
   .withDescription(elementDescription)
   .withIcon(Icon.MEGAPHONE)
-  .withStyleConfigs(require('../../../../configs/styles/cta-alignment'))
+  .withStyleConfigs(
+    require('../../../../configs/styles/cta-alignment'),
+    require('../../../../configs/styles/cta-layout'))
   .withParts(
     cx.part.link
       .withId(elementPartId)
