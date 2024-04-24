@@ -24,7 +24,7 @@
         {% set ctaVerticalPadding = ctaVerticalPadding + ctaBorderSize %}
     {% endif %}   
     {% set ctaFullWidth = (fullWidth ?: properties.buttonFullWidth) ?: false %} {# if you set this to true, your buttons will span the full width #}
-    {% set ctaFullWidthStyle = ctaFullWidth == true ? 'width="100%"' : '' %}
+    {% set ctaFullWidthStyle = ctaFullWidth ? 'width="100%"' : '' %}
     {% set borderCss = borderAndBackgroundSame ? "border:0 ;" : "border: #{ctaBorderSize}px solid #{ctaBorderColor};" %}
     {% set borderCssOutlook = borderAndBackgroundSame ? "" : "mso-border-alt: #{ctaBorderSize}px solid #{ctaBorderColor};" %}
     {% set ctaLegacyVmlMode = (legacyVml ?: properties.buttonLegacyVml) ?: false %} {# if you set this to true, your buttons will have rounded corners in Outlook as well. The button will have a fixed width though instad of fitting its size to the actual content #}
