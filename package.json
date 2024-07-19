@@ -1,6 +1,6 @@
 {
   "name": "@bsi-cx/design-standard-library-email",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Standard content element library for BSI CX email templates.",
   "license": "MIT",
   "repository": "github:bsi-software/bsi-cx-design-standard-library-email",
@@ -23,9 +23,13 @@
     {
       "name": "Benjamin Vier",
       "url": "https://www.bsi-software.com/"
+    },
+    {
+      "name": "Sophia Wild",
+      "url": "https://www.bsi-software.com/"
     }
   ],
   "devDependencies": {
-    "@bsi-cx/design-build": "^1.13.3"
+    "@bsi-cx/design-build": "^1.13.5"
   }
 }
