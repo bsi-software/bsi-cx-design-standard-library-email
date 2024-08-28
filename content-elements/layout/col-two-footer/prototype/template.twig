@@ -9,8 +9,8 @@
     {% set colTwoFooterDropzone2Id = dropzone2Id ?: 'col-two-footer-dropzone-2-qCJrba' %}
     {% set colTwoFooterColor = (color ?: properties.footerTextColor) ?: '#ffffff' %}
     {% set colTwoFooterWidth = (width ?: properties.colTwoFooterWidth) ?: 300 %}
-    {% set colTwoFooterWidthMSO = colTwoFooterWidth - 80 %}
     {% set colTwoFooterPadding = (padding ?: properties.columnFooterPadding) ?: 10 %}
+    {% set colTwoFooterWidthMSO = colTwoFooterWidth - 2 * colTwoFooterPadding %}
 
     <div data-bsi-element="{{ colTwoFooterElementId }}">
         <!--[if mso]>
