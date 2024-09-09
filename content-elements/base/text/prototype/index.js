@@ -13,7 +13,8 @@ module.exports = (
   elementId = 'text-Or4N33',
   elementLabel = 'Text',
   textPartId = 'text-part-5njcDS',
-  textPartLabel = 'Text'
+  textPartLabel = 'Text',
+  textEditorConfig = require('../../../../configs/editor/full.js'),
 ) => cx
   .contentElement
   .withFile(template)
@@ -22,6 +23,6 @@ module.exports = (
   .withIcon(Icon.TEXT)
   .withParts(
     cx.part.formattedText
-      .withHtmlEditorConfig(require('../../../../configs/editor/full.js'))
+      .withHtmlEditorConfig(textEditorConfig)
       .withId(textPartId)
       .withLabel(textPartLabel));
