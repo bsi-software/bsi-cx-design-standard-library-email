@@ -1,0 +1,87 @@
+{% macro render(elementId = null, fontSize = null, fontFamily = null, textColor = null, fontWeight = null, minString = null, maxString = null, buttonBackgroundColor =  null) %}{% apply spaceless %}
+    {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
+    {% include './template.twig' %}
+{% endapply %}{% endmacro %}
+
+
+
+{% apply spaceless %}
+    {% set npsElementId = elementId ?: 'nps-29c87d' %}
+    {% set npsFontSize = fontSize ?: 14 %}
+    {% set npsFontFamily = fontFamily ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
+    {% set npsButtonColor = (buttonTextColor ?: properties.buttonTextColor) ?: '#ffff' %}
+    {% set npsTextColor = (textColor ?: properties.baseTextColor) ?: '#0000' %}
+    {% set npsFontWeight = (fontWeight ?: properties.buttonFontWeight) ?: 'normal' %}
+    {% set npsMinString = minString ?: '' %}
+    {% set npsMaxString = maxString ?: '' %}
+    {% set npsButtonBackgroundColor = (buttonBackgroundColor ?: properties.buttonBackgroundColor) ?: '#2F4E66' %}
+    {% set npsHorizontalPadding = 10 %}
+    {% set npsVerticalPadding = 8 %}
+    {% set npsTitleElementPartId = "titleText-14fef7" %}
+    {% set npsAlignment = (alignment ?: properties.alignmentLeft) ?: 'center' %}
+    {% set npsMinElementPartId = 'min-a23f97' %}
+    {% set npsMaxElementPartId = 'max-2f63e1' %}
+ 
+    
+    <div data-bsi-element="{{ npsElementId }}">
+        <h3 data-bsi-element-part = "{{ npsTitleElementPartId }}" data-bsi-property="title" class="bsi-dm-text-color" style="font-family: {{ npsFontFamily }}; color: {{ npsTextColor }}; font-size: {{ npsFontSize }}px; font-weight: {{ npsFontWeight }}; text-align: center; margin-top: 0;">{{ bsi_cx_lorem(3) }}</h3>
+        <table class="nps-survey-table" border="0" cellpadding="0" cellspacing="0"  width="100%" style="min-width: 100%;">
+            <tr>
+                <td width="30" style="background-color: {{ npsButtonBackgroundColor }}; text-align: center; vertical-align: middle;" >
+                    <a href = "" data-bsi-element-part="link0" style="background-color: {{ npsButtonBackgroundColor }}; mso-line-height-rule: exactly; font-size: {{ npsFontSize }}px; line-height: {{ npsFontSize }}px; font-family: {{ npsFontFamily }}; color: {{ npsButtonColor }}; font-weight: {{ npsFontWeight }}; text-decoration: none; mso-border-alt: none; border-radius: {{ npsBorderRadius }}px; display: inline-block; text-align:center; word-break: keep-all; text-underline-color: {{ npsButtonBackgroundColor }};">1</a>
+                </td>
+                <td width="5" style="width: 5px;"></td>
+                <td width="30" style="background-color: {{ npsButtonBackgroundColor }}; text-align: center; vertical-align: middle;">
+                    <a href = "" data-bsi-element-part="link1" style="background-color: {{ npsButtonBackgroundColor }}; mso-line-height-rule: exactly; font-size: {{ npsFontSize }}px; line-height: {{ npsFontSize }}px; font-family: {{ npsFontFamily }}; color: {{ npsButtonColor }}; font-weight: {{ npsFontWeight }}; text-decoration: none; mso-border-alt: none; border-radius: {{ npsBorderRadius }}px; display: inline-block; text-align:center; word-break: keep-all; text-underline-color: {{ npsButtonBackgroundColor }};">2</a>
+                </td>
+                <td width="5" style="width: 5px;"></td>
+                <td width="30" style="background-color: {{ npsButtonBackgroundColor }};  text-align: center; vertical-align: middle;">
+                    <a href = "" data-bsi-element-part="link2" style="background-color: {{ npsButtonBackgroundColor }}; mso-line-height-rule: exactly; font-size: {{ npsFontSize }}px; line-height: {{ npsFontSize }}px; font-family: {{ npsFontFamily }}; color: {{ npsButtonColor }}; font-weight: {{ npsFontWeight }}; text-decoration: none; mso-border-alt: none; border-radius: {{ npsBorderRadius }}px; display: inline-block; text-align:center; word-break: keep-all; text-underline-color: {{ npsButtonBackgroundColor }};">3</a>
+                </td>
+                <td width="5" style="width: 5px;"></td>
+                <td width="30" style="background-color: {{ npsButtonBackgroundColor }}; text-align: center; vertical-align: middle;">
+                    <a href = "" data-bsi-element-part="link3" style="background-color: {{ npsButtonBackgroundColor }}; mso-line-height-rule: exactly; font-size: {{ npsFontSize }}px; line-height: {{ npsFontSize }}px; font-family: {{ npsFontFamily }}; color: {{ npsButtonColor }}; font-weight: {{ npsFontWeight }}; text-decoration: none; mso-border-alt: none; border-radius: {{ npsBorderRadius }}px; display: inline-block; text-align:center; word-break: keep-all; text-underline-color: {{ npsButtonBackgroundColor }};">4</a>
+                </td>
+                <td width="5" style="width: 5px;"></td>
+                <td width="30" style="background-color: {{ npsButtonBackgroundColor }}; text-align: center; vertical-align: middle;">
+                    <a href = "" data-bsi-element-part="link4" style="background-color: {{ npsButtonBackgroundColor }}; mso-line-height-rule: exactly; font-size: {{ npsFontSize }}px; line-height: {{ npsFontSize }}px; font-family: {{ npsFontFamily }}; color: {{ npsButtonColor }}; font-weight: {{ npsFontWeight }}; text-decoration: none; mso-border-alt: none; border-radius: {{ npsBorderRadius }}px; display: inline-block; text-align:center; word-break: keep-all; text-underline-color: {{ npsButtonBackgroundColor }};">5</a>
+                </td>
+                <td width="5" style="width: 5px;"></td>
+                <td width="30" height="30" style="background-color: {{ npsButtonBackgroundColor }}; text-align: center; vertical-align: middle;">
+                    <a href = "" data-bsi-element-part="link5" style="background-color: {{ npsButtonBackgroundColor }}; mso-line-height-rule: exactly; font-size: {{ npsFontSize }}px; line-height: {{ npsFontSize }}px; font-family: {{ npsFontFamily }}; color: {{ npsButtonColor }}; font-weight: {{ npsFontWeight }}; text-decoration: none; mso-border-alt: none; border-radius: {{ npsBorderRadius }}px; display: inline-block; text-align:center; word-break: keep-all; text-underline-color: {{ npsButtonBackgroundColor }};">6</a>
+                </td>
+                <td width="5" style="width: 5px;"></td>
+                <td width="30" height="30" style="background-color: {{ npsButtonBackgroundColor }}; text-align: center; vertical-align: middle;">
+                    <a href = "" data-bsi-element-part="link6" style="background-color: {{ npsButtonBackgroundColor }}; mso-line-height-rule: exactly; font-size: {{ npsFontSize }}px; line-height: {{ npsFontSize }}px; font-family: {{ npsFontFamily }}; color: {{ npsButtonColor }}; font-weight: {{ npsFontWeight }}; text-decoration: none; mso-border-alt: none; border-radius: {{ npsBorderRadius }}px; display: inline-block; text-align:center; word-break: keep-all; text-underline-color: {{ npsButtonBackgroundColor }};">7</a>
+                </td>
+                <td width="5" style="width: 5px;"></td>
+                <td width="30" height="30" style="background-color: {{ npsButtonBackgroundColor }}; text-align: center; vertical-align: middle;">
+                    <a href = "" data-bsi-element-part="link7" style="background-color: {{ npsButtonBackgroundColor }}; mso-line-height-rule: exactly; font-size: {{ npsFontSize }}px; line-height: {{ npsFontSize }}px; font-family: {{ npsFontFamily }}; color: {{ npsButtonColor }}; font-weight: {{ npsFontWeight }}; text-decoration: none; mso-border-alt: none; border-radius: {{ npsBorderRadius }}px; display: inline-block; text-align:center; word-break: keep-all; text-underline-color: {{ npsButtonBackgroundColor }};">8</a>
+                </td>
+                <td width="5" style="width: 5px;"></td>
+                <td width="30" height="30" style="background-color: {{ npsButtonBackgroundColor }}; text-align: center; vertical-align: middle;">
+                    <a href = "" data-bsi-element-part="link8" style="background-color: {{ npsButtonBackgroundColor }}; mso-line-height-rule: exactly; font-size: {{ npsFontSize }}px; line-height: {{ npsFontSize }}px; font-family: {{ npsFontFamily }}; color: {{ npsButtonColor }}; font-weight: {{ npsFontWeight }}; text-decoration: none; mso-border-alt: none; border-radius: {{ npsBorderRadius }}px;  display: inline-block; text-align:center; word-break: keep-all; text-underline-color: {{ npsButtonBackgroundColor }};">9</a>
+                </td>
+                <td width="5" style="width: 5px;"></td>
+                <td width="30" height="30" style="background-color: {{ npsButtonBackgroundColor }}; text-align: center; vertical-align: middle;">
+                    <a href = "" data-bsi-element-part="link9" style="background-color: {{ npsButtonBackgroundColor }}; mso-line-height-rule: exactly; font-size: {{ npsFontSize }}px; line-height: {{ npsFontSize }}px; font-family: {{ npsFontFamily }}; color: {{ npsButtonColor }}; font-weight: {{ npsFontWeight }}; text-decoration: none; mso-border-alt: none; border-radius: {{ npsBorderRadius }}px; display: inline-block; text-align:center; word-break: keep-all; text-underline-color: {{ npsButtonBackgroundColor }};">10</a>
+                </td>
+            </tr>
+        </table>
+
+       <!-- <table border="0" cellpadding="0" cellspacing="0"  width="100%" style="min-width: 100%;">
+            <tr>
+                <td><h3 data-bsi-element-part = "{{ npsMinElementPartId }}" data-bsi-property="title" class="bsi-dm-text-color" style="font-family: {{ npsFontFamily }}; color: {{ npsTextColor }}; font-size: {{ npsFontSize }}px; font-weight: {{ npsFontWeight }}; text-align: {{ npsAlignment }}; margin-top: 0; padding: {{ npsVerticalPadding }}px {{ npsHorizontalPadding }}px;">dislike</h3></td>
+                <td><span style="padding: {{ npsVerticalPadding }}px {{ npsHorizontalPadding }}px; mso-padding-alt: {{ npsVerticalPadding }}px {{ npsHorizontalPadding }}px;">&nbsp;</span></td>
+                <td><span style="padding: {{ npsVerticalPadding }}px {{ npsHorizontalPadding }}px; mso-padding-alt: {{ npsVerticalPadding }}px {{ npsHorizontalPadding }}px;">&nbsp;</span></td>
+                <td><span style="padding: {{ npsVerticalPadding }}px {{ npsHorizontalPadding }}px; mso-padding-alt: {{ npsVerticalPadding }}px {{ npsHorizontalPadding }}px;">&nbsp;</span></td>
+                <td><span style="padding: {{ npsVerticalPadding }}px {{ npsHorizontalPadding }}px; mso-padding-alt: {{ npsVerticalPadding }}px {{ npsHorizontalPadding }}px;">&nbsp;</span></td>
+                <td><span style="padding: {{ npsVerticalPadding }}px {{ npsHorizontalPadding }}px; mso-padding-alt: {{ npsVerticalPadding }}px {{ npsHorizontalPadding }}px;">&nbsp;</span></td>
+                <td><span style="padding: {{ npsVerticalPadding }}px {{ npsHorizontalPadding }}px; mso-padding-alt: {{ npsVerticalPadding }}px {{ npsHorizontalPadding }}px;">&nbsp;</span></td>
+                <td><span style="padding: {{ npsVerticalPadding }}px {{ npsHorizontalPadding }}px; mso-padding-alt: {{ npsVerticalPadding }}px {{ npsHorizontalPadding }}px;">&nbsp;</span></td>
+                <td><span style="padding: {{ npsVerticalPadding }}px {{ npsHorizontalPadding }}px; mso-padding-alt: {{ npsVerticalPadding }}px {{ npsHorizontalPadding }}px;">&nbsp;</span></td>
+                <td><h3 data-bsi-element-part = "{{ npsMaxElementPartId }}" data-bsi-property="title" class="bsi-dm-text-color" style="font-family: {{ npsFontFamily }}; color: {{ npsTextColor }}; font-size: {{ npsFontSize }}px; font-weight: {{ npsFontWeight }}; text-align: {{ npsAlignment }}; margin-top: 0; padding: {{ npsVerticalPadding }}px {{ npsHorizontalPadding }}px; mso-padding-alt: {{ npsVerticalPadding }}px {{ npsHorizontalPadding }}px;">like</h3></td>
+            </tr>
+        </table>-->
+    </div>
+{% endapply %}
