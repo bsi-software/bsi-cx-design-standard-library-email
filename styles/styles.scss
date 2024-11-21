@@ -207,6 +207,15 @@ a {
   .bsi-dm-layout-colored {
     background-color: bsiProperty('layoutColoredBackgroundColorDarkMode', #3b3b3b) !important;
   }
+
+  .nps-dm-button{
+    background-color: bsiProperty('highlightBackgroundColorDarkMode', #7c3d01) !important;
+  }
+
+  .nps-dm-content {
+    background-color: bsiProperty('layoutColoredBackgroundColorDarkMode', #3b3b3b) !important;
+  }
+
 }
 
 p {
