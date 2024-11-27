@@ -19,9 +19,9 @@
         <td style="width: 100%; text-align: {{ headerLogoAlign }};" valign="{{ headerLogoAlign }}">
         <![endif]-->
         {% if headerLogoHeight > 0 %}
-            <img data-bsi-element-part="{{ headerLogoPartId }}" src="{{ headerLogoSrc }}" height="{{ headerLogoHeight }}" alt="" style="margin: 0; display: inline-block; width: auto; max-width: 100%; height: {{ headerLogoHeight }}px;" />
+            <img data-bsi-element-part="{{ headerLogoPartId }}" src="{{ headerLogoSrc }}" class="headerLogo" height="{{ headerLogoHeight }}" alt="" style="margin: 0; display: inline-block; width: auto; max-width: 100%; height: {{ headerLogoHeight }}px;" />
         {% else %}
-            <img data-bsi-element-part="{{ headerLogoPartId }}" src="{{ headerLogoSrc }}" width="{{ headerLogoWidth }}" alt="" style="margin: 0; display: inline-block; width: {{ headerLogoWidth }}px; max-width: 100%; height: auto;" />
+            <img data-bsi-element-part="{{ headerLogoPartId }}" src="{{ headerLogoSrc }}" class="headerLogo" width="{{ headerLogoWidth }}" alt="" style="margin: 0; display: inline-block; width: {{ headerLogoWidth }}px; max-width: 100%; height: auto;" />
         {% endif %}
         <!--[if mso]>
         </td>
