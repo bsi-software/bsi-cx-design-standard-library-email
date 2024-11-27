@@ -45,9 +45,39 @@ div {
   margin: 0;
 }
 
+/* Hide dark-mode logo on default */
+.headerLogoDarkMode {
+  display: none;
+}
+
 /* Use a better rendering method when resizing images in IE */
 img {
   -ms-interpolation-mode:bicubic;
+}
+
+/* Behaviour Col 2/3 in Col 1 */
+.bsi-col-one .dropzone-col-two-left {
+  padding: 10px 10px 10px 0px !important;
+}
+
+.bsi-col-one .dropzone-col-two-right {
+  padding: 10px 0px 10px 10px !important;
+}
+
+.bsi-col-one .dropzone-col-two-ratio-left {
+  padding: 10px 10px 10px 0px !important;
+}
+
+.bsi-col-one .dropzone-col-two-ratio-right {
+  padding: 10px 0px 10px 10px !important;
+}
+
+.bsi-col-one .dropzone-col-three-left {
+  padding: 10px 10px 10px 0px !important;
+}
+
+.bsi-col-one .dropzone-col-three-right {
+  padding: 10px 0px 10px 10px !important;
 }
 
 /* Prevent Mail clients from underlining links. The same style must be inlined as well */
@@ -172,8 +202,22 @@ a {
 }
 
 @media screen and (prefers-color-scheme: dark) {
+  .headerLogo {
+    display: none !important;
+  }
+
+  .headerLogoDarkMode {
+    display: block !important;
+  }
+
   .bsi-dm-bg-color {
     background-color: bsiProperty('darkColor', #000000) !important;
+  }
+  .bsi-dm-bg-column-color {
+    background-color: bsiProperty('darkColor', #000000) !important;
+  }
+  .bsi-dm-bg-column-colored {
+    background-color: bsiProperty('darkColorColumn', #2a2a2a) !important;
   }
   .bsi-dm-bg-color-footer {
     background-color: bsiProperty('footerDarkBackgroundColor', #383e42) !important;
