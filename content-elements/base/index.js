@@ -14,6 +14,7 @@ const colOneElements = [
   require('./image'),
   require('./news-snippet'),
   require('./smiley-rating'),
+  require('./nps-survey'),
   require('./event')
 ];
 
