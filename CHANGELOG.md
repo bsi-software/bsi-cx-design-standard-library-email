@@ -7,6 +7,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Next
 * Export text element with .editor() function where htmlEditorConfig can be customized
+* Add NPS Survey
 
 ## [1.2.1] - 18.07.2024
 
