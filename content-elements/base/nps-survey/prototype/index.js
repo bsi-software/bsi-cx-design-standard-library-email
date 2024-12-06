@@ -1,4 +1,4 @@
-const {cx} = require('@bsi-cx/design-build');
+const {cx, Icon} = require('@bsi-cx/design-build');
 
 
 module.exports = (
@@ -10,6 +10,7 @@ module.exports = (
   .withFile(template)
   .withElementId(elementId)
   .withLabel(elementLabel)
+  .withIcon(Icon.MEGAPHONE)
   .withParts(
     cx.part.plainText
     .withId("min-a23f97")
