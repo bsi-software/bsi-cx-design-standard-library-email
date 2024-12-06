@@ -6,8 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Next
+...
+
+
+## [1.2.2] - 06.12.2024
+
+### Changes
 * Export text element with .editor() function where htmlEditorConfig can be customized
-* Add NPS Survey
+* Add NPS Survey element
+* Update button element spacings for outlook clients on windows
+* Update 2-col footer and logo alignment
+
+[1.2.2]: https://github.com/bsi-software/bsi-cx-design-standard-library-email/releases/tag/1.2.2
+
 
 ## [1.2.1] - 18.07.2024
 
