@@ -45,11 +45,6 @@ div {
   margin: 0;
 }
 
-/* Hide dark-mode logo on default */
-.headerLogoDarkMode {
-  display: none;
-}
-
 .nps-survey-table td {
   height: 30px;
   width: 30px;
@@ -164,6 +159,14 @@ a {
 }
 @media screen and (max-width: 460px) {
 
+  .headerLogo {
+    margin: 0 auto !important;
+  }
+
+  .headerLogoDarkMode {
+    margin: 0 auto !important;
+  }
+
   .nps-survey-table td {
     height: 20px;
     width: 20px;
@@ -179,6 +182,7 @@ a {
   .bsi-col-two .bsi-column.bsi-col-wide.bsi-pbottom {
     padding-bottom: 12px !important;
   }
+
   .bsi-cta-wrapper {
     width: 100% !important;
     min-width: 100% !important;
@@ -188,6 +192,31 @@ a {
   }
   .bsi-smiley-rating {
     width: 300px !important;
+  }
+
+  /* Behaviour Col 2/3 in Col 1 mobile */
+  .bsi-col-one .dropzone-col-two-left {
+    padding: 0px 0px 0px 0px !important;
+  }
+
+  .bsi-col-one .dropzone-col-two-right {
+    padding: 0px 0px 0px 0px !important;
+  }
+
+  .bsi-col-one .dropzone-col-two-ratio-left {
+    padding: 0px 0px 0px 0px !important;
+  }
+
+  .bsi-col-one .dropzone-col-two-ratio-right {
+    padding: 0px 0px 0px 0px !important;
+  }
+
+  .bsi-col-one .dropzone-col-three-left {
+    padding: 0px 0px 0px 0px !important;
+  }
+
+  .bsi-col-one .dropzone-col-three-right {
+    padding: 0px 0px 0px 0px !important;
   }
 }
 @media screen and (min-width: 461px) and (max-width: 673px)  {
