@@ -6,8 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Next
-...
 
+### Changes
+* New logo element with light- and darkmode setting
+* one column element with background property
+* Add Style for column backgrounds
 
 ## [1.2.2] - 06.12.2024
 
