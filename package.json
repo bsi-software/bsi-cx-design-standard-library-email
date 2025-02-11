@@ -13,7 +13,6 @@
     "url": "https://bsi-software.github.io/bsi-cx-docs/"
   },
   "devDependencies": {
-    "@bsi-cx/design-build": "^1.13.5",
-    "@bsi-cx/design-standard-library-email": "github:bsi-software/bsi-cx-design-standard-library-email#semver:1.2.1"
+    "@bsi-cx/design-build": "^1.13.5"
   }
 }
