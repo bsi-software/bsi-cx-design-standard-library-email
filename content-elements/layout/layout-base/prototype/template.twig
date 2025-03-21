@@ -9,7 +9,7 @@
     {% set layoutBaseColor = (color ?: properties.layoutBaseBackgroundColor) ?: '#ffffff' %}
     {% set layoutBaseWidth = ((width ?: properties.layoutWidth) ?: 660) + 8 %}
     {% set layoutBaseBackgroundClass = backgroundClass ?: 'bsi-layout-base' %}
-    {% set layoutBaseDarkModeClass = darkModeClass ?: 'bsi-dm-bg-color' %}
+    {% set darkModeClassText = properties.darkModeActive ? 'bsi-dm-bg-color' : '' %}
 
     {# keep layout structure implementation in sync with 'layout-dark-footer' #}
     <div data-bsi-element="{{ layoutBaseElementId }}" class="{{ layoutBaseBackgroundClass }}">
