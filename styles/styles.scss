@@ -64,6 +64,12 @@ a {
   color: bsiProperty('linkColor', #ff7d00);
 }
 
+/* Set word-break on table contents to regain the ability to break instead of overflowing */
+
+table.table tr td {
+  word-break: break-word;
+}
+
 /******************************************************/
 /*************  CX Placeholder Links  *****************/
 /******************************************************/

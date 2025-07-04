@@ -9,6 +9,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changes
 * Fix border for buttons with differently colored border and background
+* Fix word-break and spacing between table columns on outlook
 
 ## [1.2.2] - 06.12.2024
 
