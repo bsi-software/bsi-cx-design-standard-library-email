@@ -191,8 +191,8 @@ a {
   supported-color-schemes: light dark;
 }
 
-@media screen and (prefers-color-scheme: dark) {
-  .bsi-dm-bg-color {
+  @media screen and (prefers-color-scheme: dark) {
+    .bsi-dm-bg-color {
     background-color: bsiProperty('darkModeBaseBackgroundColor', #000000) !important;
   }
   .bsi-dm-text-color {
