@@ -38,6 +38,9 @@ table {
   table-layout: fixed !important;
   margin: 0 auto;
   padding: 0;
+  &.bsi-cta-wrapper {
+    border-collapse: separate !important;
+  }
 }
 
 div {
@@ -241,9 +244,5 @@ p {
   
   .bsi-ce-box-sizing-fix {
     box-sizing: border-box!important;
-  }
-
-  img.bsi-image {
-    max-width: none !important;
   }
 }
