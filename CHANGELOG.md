@@ -6,8 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Next
-* fix horizontal padding for Outlook buttons (#411176)
 
+### Changes
+* Fix border for buttons with differently colored border and background
+* Update editor styling for images
+* Fix horizontal padding for Outlook buttons (#411176)
 
 ## [1.2.2] - 06.12.2024
 
