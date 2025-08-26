@@ -10,6 +10,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changes
 * Fix border for buttons with differently colored border and background
 * Update editor styling for images
+* Fix horizontal padding for Outlook buttons (#411176)
 
 ## [1.2.2] - 06.12.2024
 
