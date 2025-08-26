@@ -13,6 +13,7 @@
     {% set titleH1FontWeight = (fontWeight ?: properties.fontWeightH1) ?: 'normal' %}
     {% set titleH1MarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
     {% set titleH1Text = titleText ?: bsi_cx_lorem(3) %}
+    {% set darkModeClass = properties.darkModeActive ? 'bsi-dm-text-color' : '' %}
 
     {% if titleType == 1 or titleType == 2 or titleType == 3 or titleType == 4 or titleType == 5 or titleType == 6 %}
         {% set titleType = titleType %}
@@ -26,7 +27,7 @@
         <tr>
         <td style="width: 100%;" valign="middle">
         <![endif]-->       
-        <h{{ titleType }} data-bsi-element-part="{{ titleH1PartId }}" class="bsi-dm-text-color bsi-title-color" style="color: {{ titleH1Color }}; font-family: {{ titleH1FontFamily }}; text-align: left; margin-top: 0; margin-bottom: {{ titleH1MarginBottom }}px; font-size: {{ titleH1FontSize }}px; line-height: {{ titleH1LineHeight }}px; font-weight: {{ titleH1FontWeight }};">{{ titleH1Text }}</h{{ titleType }}>
+        <h{{ titleType }} data-bsi-element-part="{{ titleH1PartId }}" class="{{ darkModeClass }} bsi-title-color" style="color: {{ titleH1Color }}; font-family: {{ titleH1FontFamily }}; text-align: left; margin-top: 0; margin-bottom: {{ titleH1MarginBottom }}px; font-size: {{ titleH1FontSize }}px; line-height: {{ titleH1LineHeight }}px; font-weight: {{ titleH1FontWeight }};">{{ titleH1Text }}</h{{ titleType }}>
         <!--[if mso]>
         </td>
         </tr>
