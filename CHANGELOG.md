@@ -9,6 +9,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changes
 * Fix border for buttons with differently colored border and background
+* Fix word-break and spacing between table columns on outlook
 * Update editor styling for images
 * Add dark mode property which is used to enable or disable the dark mode style in the browser
 * Update dependencies
