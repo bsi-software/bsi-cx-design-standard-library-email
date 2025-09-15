@@ -188,15 +188,15 @@ table.table tr td {
   supported-color-schemes: light dark;
 }
 
-@media screen and (prefers-color-scheme: dark) {
-  .bsi-dm-bg-color {
-    background-color: bsiProperty('darkColor', #000000) !important;
+  @media screen and (prefers-color-scheme: dark) {
+    .bsi-dm-bg-color {
+    background-color: bsiProperty('darkModeBaseBackgroundColor', #000000) !important;
+  }
+  .bsi-dm-text-color {
+    color: bsiProperty('darkModeBaseTextColor', #ffffff) !important;
   }
   .bsi-dm-bg-color-footer {
     background-color: bsiProperty('footerDarkBackgroundColor', #383e42) !important;
-  }
-  .bsi-dm-text-color {
-    color: bsiProperty('lightColor', #ffffff) !important;
   }
   .bsi-dm-highlighted-content {
     background-color: bsiProperty('highlightBackgroundColorDarkMode', #7c3d01) !important;
@@ -238,9 +238,5 @@ p {
   
   .bsi-ce-box-sizing-fix {
     box-sizing: border-box!important;
-  }
-
-  img.bsi-image {
-    max-width: none !important;
   }
 }
