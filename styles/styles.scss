@@ -31,18 +31,6 @@ td {
   mso-table-rspace: 0pt !important;
 }
 
-/* Fix webkit padding issue */
-table {
-  border-spacing: 0 !important;
-  border-collapse: collapse !important;
-  table-layout: fixed !important;
-  margin: 0 auto;
-  padding: 0;
-  &.bsi-cta-wrapper {
-    border-collapse: separate !important;
-  }
-}
-
 div {
   padding: 0;
   margin: 0;
