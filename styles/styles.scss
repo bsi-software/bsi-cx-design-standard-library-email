@@ -54,6 +54,10 @@ a {
 
 /* Set word-break on table contents to regain the ability to break instead of overflowing */
 
+table.table th {
+  text-align: left !important;
+}
+
 table.table tr td {
   word-break: break-word;
 }
