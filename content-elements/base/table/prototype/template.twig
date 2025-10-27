@@ -14,10 +14,6 @@
     {% set darkModeClass = properties.darkModeActive ? 'bsi-dm-text-color' : '' %}
 
     <div data-bsi-element="{{ tableElementId }}">
-        <style>
-            table th { text-align:left !important; }
-        </style>
-
         <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
             <tr>
                 <td data-bsi-element-part="{{ tableElementPartId }}" class="{{ darkModeClass }}" align="left" style="font-family: {{ tableFontFamily }}; color: {{ tableTextColor }}; font-size: {{ tableFontSize }}px; line-height: {{ tableLineHeight }}px; text-align: left;">
