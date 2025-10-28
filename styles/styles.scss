@@ -183,6 +183,10 @@ table.table tr td {
 /******************************************************/
 /*************  Dark Mode  ****************************/
 /******************************************************/
+//darkMode
+$darkModeActive: bsiProperty('darkModeActive');
+
+@if $darkModeActive == true {
 :root {
   color-scheme: light dark;
   supported-color-schemes: light dark;
@@ -190,29 +194,35 @@ table.table tr td {
 
   @media screen and (prefers-color-scheme: dark) {
     .bsi-dm-bg-color {
-    background-color: bsiProperty('darkModeBaseBackgroundColor', #000000) !important;
-  }
-  .bsi-dm-text-color {
-    color: bsiProperty('darkModeBaseTextColor', #ffffff) !important;
-  }
-  .bsi-dm-bg-color-footer {
-    background-color: bsiProperty('footerDarkBackgroundColor', #383e42) !important;
-  }
-  .bsi-dm-highlighted-content {
-    background-color: bsiProperty('highlightBackgroundColorDarkMode', #7c3d01) !important;
-  }
-  .bsi-dm-layout-colored {
-    background-color: bsiProperty('layoutColoredBackgroundColorDarkMode', #3b3b3b) !important;
-  }
+      background-color: bsiProperty('darkModeBaseBackgroundColor', #000000) !important;
+    }
+    .bsi-dm-text-color {
+      color: bsiProperty('darkModeBaseTextColor', #ffffff) !important;
+    }
+    .bsi-dm-bg-color-footer {
+      background-color: bsiProperty('footerDarkBackgroundColor', #383e42) !important;
+    }
+    .bsi-dm-highlighted-content {
+      background-color: bsiProperty('highlightBackgroundColorDarkMode', #7c3d01) !important;
+    }
+    .bsi-dm-layout-colored {
+      background-color: bsiProperty('layoutColoredBackgroundColorDarkMode', #3b3b3b) !important;
+    }
 
-  .nps-dm-button{
-    background-color: bsiProperty('highlightBackgroundColorDarkMode', #7c3d01) !important;
-  }
+    .nps-dm-button{
+      background-color: bsiProperty('highlightBackgroundColorDarkMode', #7c3d01) !important;
+    }
 
-  .nps-dm-content {
-    background-color: bsiProperty('layoutColoredBackgroundColorDarkMode', #3b3b3b) !important;
-  }
+    .nps-dm-content {
+      background-color: bsiProperty('layoutColoredBackgroundColorDarkMode', #3b3b3b) !important;
+    }
 
+  }
+} @else {
+  :root {
+    color-scheme: light;
+    supported-color-schemes: light;
+  }
 }
 
 p {
