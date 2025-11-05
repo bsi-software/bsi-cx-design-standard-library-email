@@ -183,7 +183,6 @@ table.table tr td {
 /******************************************************/
 /*************  Dark Mode  ****************************/
 /******************************************************/
-//darkMode
 $darkModeActive: bsiProperty('darkModeActive');
 
 @if $darkModeActive == true {
