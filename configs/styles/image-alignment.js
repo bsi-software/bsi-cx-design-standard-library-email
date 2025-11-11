@@ -2,6 +2,11 @@ const {cx, Version, bsiProperty} = require('@bsi-cx/design-build');
 
 const TABLE_SELECTOR = 'td.bsi-image-col';
 const IMAGE_SELECTOR = 'img.bsi-image';
+const TEXT_IMAGE_SELECTOR = 'div.bsi-image-text';
+
+const alignmentLeft = bsiProperty('alignmentLeft', 'left');
+const alignmentCenter = bsiProperty('alignmentCenter', 'center');
+const alignmentRight = bsiProperty('alignmentRight', 'right');
 
 module.exports = cx.style
     .withIdentifier('image-align-UPmQ3M')
@@ -14,9 +19,13 @@ module.exports = cx.style
             .withCssClass('align-left')
             .withDomManipulations(
                 cx.domManipulation
+                    .withSelector(TEXT_IMAGE_SELECTOR)
+                    .withAttribute('style')
+                    .withValue('text-align: '+ alignmentLeft+ " !important; "),
+                cx.domManipulation
                     .withSelector(TABLE_SELECTOR)
                     .withAttribute('align')
-                    .withValue('left'),
+                    .withValue(alignmentLeft),
                 cx.domManipulation
                     .withSelector(IMAGE_SELECTOR)
                     .withAttribute('style')
@@ -28,9 +37,13 @@ module.exports = cx.style
             .withCssClass('align-center')
             .withDomManipulations(
                 cx.domManipulation
+                    .withSelector(TEXT_IMAGE_SELECTOR)
+                    .withAttribute('style')
+                    .withValue('text-align: '+ alignmentCenter+ " !important; "),
+                cx.domManipulation
                     .withSelector(TABLE_SELECTOR)
                     .withAttribute('align')
-                    .withValue('center'),
+                    .withValue(alignmentCenter),
                 cx.domManipulation
                     .withSelector(IMAGE_SELECTOR)
                     .withAttribute('style')
@@ -42,9 +55,13 @@ module.exports = cx.style
             .withCssClass('align-right')
             .withDomManipulations(
                 cx.domManipulation
+                    .withSelector(TEXT_IMAGE_SELECTOR)
+                    .withAttribute('style')
+                    .withValue('text-align: '+ alignmentRight+ " !important; "),
+                cx.domManipulation
                     .withSelector(TABLE_SELECTOR)
                     .withAttribute('align')
-                    .withValue('right'),
+                    .withValue(alignmentRight),
                 cx.domManipulation
                     .withSelector(IMAGE_SELECTOR)
                     .withAttribute('style')
