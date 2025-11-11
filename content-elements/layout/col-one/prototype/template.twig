@@ -8,12 +8,14 @@
     {% set colOneDropzoneId = dropzoneId ?: 'col-one-dropzone-GYTnrx' %}
     {% set colOneWidth = (width ?: properties.colOneWidth) ?: 660 %}
     {% set colOnePadding = (padding ?: properties.columnPadding) ?: 10 %}
+    {% set colOneBaseBackgroundClass = backgroundClass ?: 'bsi-col-one-base' %}
 
-    <div data-bsi-element="{{ colOneElementId }}" class="bsi-col-one">
+
+    <div data-bsi-element="{{ colOneElementId }}" class="bsi-col-one {{ colOneBaseBackgroundClass }}">
         <!--[if mso]>
-        <table role="presentation" width="100%">
+        <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
         <tr>
-        <td style="width: {{ colOneWidth }}px; padding: {{ colOnePadding }}px;" valign="top">
+        <td class="bsi-col-one-td-column" style="width: {{ colOneWidth }}px; padding: {{ colOnePadding }}px;" valign="top">
         <![endif]-->
         <div class="bsi-column" style="width: 100%; max-width: {{ colOneWidth }}px; display: inline-block; vertical-align: top;">
             <div style="padding: {{ colOnePadding }}px;" data-bsi-dropzone="{{ colOneDropzoneId }}">
