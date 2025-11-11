@@ -33,7 +33,7 @@ module.exports = (
   .withIcon(Icon.IMAGE)
   .withStyleConfigs(
     require('../../../../configs/styles/image-width'),
-    require('./../../../../configs/styles/image-align')
+    require('../../../../configs/styles/image-alignment')
   )
   .withParts(
     cx.part.image
