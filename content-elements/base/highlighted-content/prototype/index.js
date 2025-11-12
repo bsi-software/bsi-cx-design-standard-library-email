@@ -14,13 +14,14 @@ module.exports = (
   /*elementLabel = 'Highlighted content',*/
   elementLabel = 'Hervorgehobener Inhalt',
   dropzoneId = 'highlighted-content-dropzone-4HtYBB',
-  dropzoneAllowedElements= [require('../../text'), require('../../cta'), require('../../spacer'), require('../../divider'), require('../../title-h1')]
+  dropzoneAllowedElements= [require('../../text'), require('../../cta'), require('../../spacer'), require('../../divider'), require('../../title-h1'), require('../../img-10'), require('../../table'), require('../../image'), require('../../news-snippet'), require('../../smiley-rating'), require('../../nps-survey'), require('../../event')]
 ) => cx
   .contentElement
   .withFile(template)
   .withElementId(elementId)
   .withLabel(elementLabel)
   .withIcon(Icon.TEXT_WITH_IMAGE)
+  .withStyleConfigs(require('../../../../configs/styles/highlighted-border-color'))
   .withDropzones(
     cx.dropzone
       .withDropzone(dropzoneId)
