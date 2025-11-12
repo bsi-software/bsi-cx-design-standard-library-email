@@ -19,10 +19,6 @@ module.exports = cx.style
                     .withAttribute('align')
                     .withValue('left'),
                 cx.domManipulation
-                    .withSelector('table.bsi-footer-col-mso')
-                    .withAttribute('align')
-                    .withValue('left'),
-                cx.domManipulation
                     .withSelector('.layout-footer-content')
                     .withAttribute('style')
                     .withValue('margin-left: 0; margin-right: auto;')
@@ -41,10 +37,6 @@ module.exports = cx.style
                     .withAttribute('align')
                     .withValue('center'),
                 cx.domManipulation
-                    .withSelector('table.bsi-footer-col-mso')
-                    .withAttribute('align')
-                    .withValue('center'),
-                cx.domManipulation
                     .withSelector('.layout-footer-content')
                     .withAttribute('style')
                     .withValue('margin-left: auto !important; margin-right: auto !important;')
@@ -60,10 +52,6 @@ module.exports = cx.style
                     .withValue('right'),
                 cx.domManipulation
                     .withSelector('td.bsi-footer-col')
-                    .withAttribute('align')
-                    .withValue('right'),
-                cx.domManipulation
-                    .withSelector('table.bsi-footer-col-mso')
                     .withAttribute('align')
                     .withValue('right'),
                 cx.domManipulation
