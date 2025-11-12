@@ -19,18 +19,20 @@
     {% set darkModeClass = properties.darkModeActive ? 'bsi-dm-text-color' : '' %}
 
     <div data-bsi-element="{{ imageElementId }}" class="bsi-element-{{imageElementId}} {{ imageAlign }}">
-        <!--[if mso]>
+        
         <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
         <tr>
         <td style="width: 100%;" class="bsi-image-col" valign="middle">
-        <![endif]-->
+        
         <img data-bsi-element-part="{{ imagePartId }}" class="bsi-image" src="{{ imageSrc }}" width="{{ imageWidth }}" alt="" style="margin-top: 0; margin-bottom: 6px; display: block; width: {{ imageWidth }}px; max-width: 100%; height:auto; border-radius: {{ imageBorderRadius }}px;" />
         <div data-bsi-element-part="{{ imageTextPartId }}" class="{{ darkModeClass }} bsi-image-text" style="font-family: {{ imageFontFamily }}; color: {{ imageTextColor }}; font-size: {{ imageFontSize }}px; line-height: {{ imageLineHeight }}px; margin-bottom: {{ imageMarginBottom }}px;"></div>
-        <!--[if mso]>
+        
         </td>
         </tr>
+        <!--[if mso]>
         <tr height="{{ imageMarginBottom }}" style="height:{{ imageMarginBottom }}px;">&nbsp;</tr>
-        </table>
         <![endif]-->
+        </table>
+        
     </div>
 {% endapply %}

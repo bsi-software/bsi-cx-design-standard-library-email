@@ -43,6 +43,11 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 [1.2.3]: https://github.com/bsi-software/bsi-cx-design-standard-library-email/releases/tag/1.2.3
 
 
+* Fix layout cellpadding and cellspacing
+* Add config style background-color for col-one 
+* Add config style allignment for image
+* Add config style allignment for layout-dark-footer and add new variables in properties to handle the padding and the width of the footer
+* Add new config style border for highlighted component and add new elements inside the dropzone
 
 ## [1.2.2] - 06.12.2024
 
