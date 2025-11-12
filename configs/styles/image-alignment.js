@@ -10,7 +10,7 @@ const alignmentRight = bsiProperty('alignmentRight', 'right');
 
 module.exports = cx.style
     .withIdentifier('image-align-UPmQ3M')
-    //.withMinVersion(Version.CX_23_2)
+    .withMinVersion(Version.CX_23_2)
     .withLabel('Image alignment')
     .withStyleOptions(
         cx.styleOption
