@@ -4,7 +4,8 @@ const footerDarkBackgroundColor = bsiProperty('footerDarkBackgroundColor', '#383
 const footerLightBackgroundColor = bsiProperty('footerLightBackgroundColor', '#ffffff');
 const footerDarkTextColor = bsiProperty('footerDarkTextColor', '#ffffff');
 const footerLightTextColor = bsiProperty('footerLightTextColor', '#000000');
-const footerDarkPadding = bsiProperty('footerDarkPadding', 30).value;
+const footerDarkPaddingTopBottom = bsiProperty('footerDarkPaddingTopBottom', 30).value;
+const footerDarkPaddingLeftRight = bsiProperty('footerDarkPaddingLeftRight', 4).value;
 const footerLightPadding = bsiProperty('footerLightPadding', 4).value;
 
 module.exports = cx.style
@@ -28,7 +29,7 @@ module.exports = cx.style
                 cx.domManipulation
                     .withSelector('table.layout-footer-background div.layout-footer-content')
                     .withAttribute('style')
-                    .withValue('padding: '+ footerDarkPadding +'px 4px '+ footerDarkPadding +'px 4px;'),
+                    .withValue('padding: '+ footerDarkPaddingTopBottom +'px ' + footerDarkPaddingLeftRight + 'px ' + footerDarkPaddingTopBottom +'px ' + footerDarkPaddingLeftRight + 'px;'),
                 cx.domManipulation
                     .withSelector('table.layout-footer-background')
                     .withAttribute('class')
@@ -49,7 +50,7 @@ module.exports = cx.style
                 cx.domManipulation
                     .withSelector('table.layout-footer-background div.layout-footer-content')
                     .withAttribute('style')
-                    .withValue('padding: '+ footerLightPadding +'px 4px '+ footerLightPadding +'px 4px;'),
+                    .withValue('padding: '+ footerLightPadding +'px ' + footerDarkPaddingLeftRight + 'px '+ footerLightPadding +'px ' + footerDarkPaddingLeftRight + 'px;'),
                 cx.domManipulation
                     .withSelector('table.layout-footer-background')
                     .withAttribute('class')

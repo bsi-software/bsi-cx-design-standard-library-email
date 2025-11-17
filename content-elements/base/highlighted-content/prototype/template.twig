@@ -8,22 +8,28 @@
     {% set highlightedContentDropzoneId = dropzoneId ?: 'highlighted-content-dropzone-4HtYBB' %}
     {% set highlightedContentBackgroundColor = (backgroundColor ?: properties.highlightBackgroundColor) ?: '#93C120' %}
     {% set highlightedContentMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
+    {% set highlightedBorder = (highlightedBorder ?: properties.highlightedBorder) ?: 'highlighted-border-none' %}
     {% set darkModeClass = properties.darkModeActive ? 'bsi-dm-highlighted-content' : '' %}
-    <div data-bsi-element="{{ highlightedContentElementId }}" style="margin-bottom: {{ highlightedContentMarginBottom }}px;">
-        <!--[if mso]>
+
+    <div data-bsi-element="{{ highlightedContentElementId }}" class="{{highlightedBorder}}" style="margin-bottom: {{ highlightedContentMarginBottom }}px;">
         <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr>
-        <td style="width: 100%; padding: 25px 25px;" valign="middle" bgcolor={{ highlightedContentBackgroundColor }}>
-        <![endif]-->
-        <div class="{{ darkModeClass }}" data-bsi-dropzone="{{ highlightedContentDropzoneId }}" style="background-color: {{ highlightedContentBackgroundColor }}; padding: 25px 25px;">
-            {% block highlighted_content_dropzone %}
-            {% endblock %}
-        </div>
-        <!--[if mso]>
-        </td>
-        </tr>
-        <tr height="{{ highlightedContentMarginBottom }}" style="height:{{ highlightedContentMarginBottom }}px;">&nbsp;</tr>
+
+            <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0" class="bsi-highlighted-content" style="border-collapse: collapse; ">
+                <tr>
+                    <td style="width: 100%; padding: 25px 25px;" valign="middle" bgcolor={{ highlightedContentBackgroundColor }}>
+                        <div class="{{ darkModeClass }}" data-bsi-dropzone="{{ highlightedContentDropzoneId }}">
+                        {# <div class="{{ darkModeClass }} bsi-highlighted-content" data-bsi-dropzone="{{ highlightedContentDropzoneId }}" style="background-color: {{ highlightedContentBackgroundColor }}; padding: 25px 25px;"> #}
+                            {% block highlighted_content_dropzone %}
+                            {% endblock %}
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <!--[if mso]>
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr height="{{ highlightedContentMarginBottom }}" style="height:{{ highlightedContentMarginBottom }}px;">&nbsp;</tr>
+            </table>
+            <![endif]-->
         </table>
-        <![endif]-->
     </div>
 {% endapply %}
