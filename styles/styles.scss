@@ -20,7 +20,8 @@ body {
 }
 
 /* forces Samsung Android mail clients to use the entire viewport */
-#MessageViewBody, #MessageWebViewDiv{
+#MessageViewBody,
+#MessageWebViewDiv {
   width: 100% !important;
 }
 
@@ -37,13 +38,13 @@ div {
 }
 
 .nps-survey-table td {
-  height: 30px; 
+  height: 30px;
   width: 30px;
 }
 
 /* Use a better rendering method when resizing images in IE */
 img {
-  -ms-interpolation-mode:bicubic;
+  -ms-interpolation-mode: bicubic;
 }
 
 /* Prevent Mail clients from underlining links. The same style must be inlined as well */
@@ -68,12 +69,15 @@ table.table tr td {
 .bsi-layout-base a.placeholder-link {
   color: bsiProperty('placeholderLinkColorLayoutBase', #16616d) !important;
 }
+
 .bsi-layout-colored a.placeholder-link {
   color: bsiProperty('placeholderLinkColorLayoutColored', #ff7d00) !important;
 }
+
 .bsi-footer-bg-dark a.placeholder-link {
   color: bsiProperty('placeholderLinkColorFooterDark', #ffffff) !important;
 }
+
 .bsi-footer-bg-light a.placeholder-link {
   color: bsiProperty('placeholderLinkColorFooterLight', #383e42) !important;
 }
@@ -84,55 +88,68 @@ table.table tr td {
 
 @media screen and (max-width: 673px) {
   .nps-survey-table td {
-    height: 20px; 
+    height: 20px;
     width: 20px;
   }
+
   .bsi-col-one .bsi-image {
     width: 100% !important;
   }
+
   .bsi-col-two .bsi-image {
     width: 100% !important;
   }
+
   .bsi-col-three .bsi-image {
     width: 100% !important;
   }
+
   .bsi-header-img img {
     width: 100% !important;
     height: auto !important;
   }
+
   .bsi-footer,
   .bsi-bg-color-footer {
     width: 100% !important;
   }
+
   .bsi-col-footer {
     text-align: center !important;
     width: 100% !important;
   }
+
   .bsi-col-footer p {
     text-align: center !important;
   }
+
   .bsi-col-footer-left .bsi-social-media {
     margin: auto !important;
   }
+
   .bsi-event-padding {
     padding: 20px 15px !important;
   }
+
   .bsi-event-text {
     font-size: 14px !important;
     line-height: 26px !important;
   }
+
   .bsi-event-text a {
     color: inherit;
     text-decoration: none;
   }
+
   .bsi-event-spacer {
     width: 15px !important;
   }
 }
+
 @media screen and (max-width: 460px) {
-  
+
   .nps-survey-table td {
-    height: 20px; 
+    height: 20px;
     width: 20px;
   }
 
@@ -140,41 +157,51 @@ table.table tr td {
     max-width: 100% !important;
     padding: 0 !important;
   }
+
   .bsi-col-three .bsi-column {
     max-width: 100% !important;
   }
+
   .bsi-col-two .bsi-column.bsi-col-wide.bsi-pbottom {
     padding-bottom: 12px !important;
   }
+
   .bsi-cta-wrapper {
     width: 100% !important;
     min-width: 100% !important;
   }
+
   .bsi-cta {
     display: block !important;
   }
+
   .bsi-smiley-rating {
     width: 300px !important;
   }
 }
-@media screen and (min-width: 461px) and (max-width: 673px)  {
+
+@media screen and (min-width: 461px) and (max-width: 673px) {
   .nps-survey-table td {
-    height: 20px; 
+    height: 20px;
     width: 20px;
   }
 
   .bsi-col-three .bsi-column {
     max-width: 33.3% !important;
   }
+
   .bsi-col-two .bsi-column {
     max-width: 50% !important;
   }
+
   .bsi-col-two .bsi-column.bsi-col-slim {
     max-width: 33.3% !important;
   }
+
   .bsi-col-two .bsi-column.bsi-col-wide {
     max-width: 66.6% !important;
   }
+
   .bsi-col-one .bsi-column {
     max-width: 100% !important;
   }
@@ -183,36 +210,48 @@ table.table tr td {
 /******************************************************/
 /*************  Dark Mode  ****************************/
 /******************************************************/
-:root {
-  color-scheme: light dark;
-  supported-color-schemes: light dark;
-}
+
+@if bsiProperty('darkModeActive', false) {
+  :root {
+    color-scheme: light dark;
+  }
 
   @media screen and (prefers-color-scheme: dark) {
     .bsi-dm-bg-color {
-    background-color: bsiProperty('darkModeBaseBackgroundColor', #000000) !important;
-  }
-  .bsi-dm-text-color {
-    color: bsiProperty('darkModeBaseTextColor', #ffffff) !important;
-  }
-  .bsi-dm-bg-color-footer {
-    background-color: bsiProperty('footerDarkBackgroundColor', #383e42) !important;
-  }
-  .bsi-dm-highlighted-content {
-    background-color: bsiProperty('highlightBackgroundColorDarkMode', #7c3d01) !important;
-  }
-  .bsi-dm-layout-colored {
-    background-color: bsiProperty('layoutColoredBackgroundColorDarkMode', #3b3b3b) !important;
-  }
+      background-color: bsiProperty('darkModeBaseBackgroundColor', #000000) !important;
+    }
 
-  .nps-dm-button{
-    background-color: bsiProperty('highlightBackgroundColorDarkMode', #7c3d01) !important;
-  }
+    .bsi-dm-text-color {
+      color: bsiProperty('darkModeBaseTextColor', #ffffff) !important;
+    }
 
-  .nps-dm-content {
-    background-color: bsiProperty('layoutColoredBackgroundColorDarkMode', #3b3b3b) !important;
-  }
+    .bsi-dm-bg-color-footer {
+      background-color: bsiProperty('footerDarkBackgroundColor', #383e42) !important;
+    }
 
+    .bsi-dm-highlighted-content {
+      background-color: bsiProperty('highlightBackgroundColorDarkMode', #7c3d01) !important;
+    }
+
+    .bsi-dm-layout-colored {
+      background-color: bsiProperty('layoutColoredBackgroundColorDarkMode', #3b3b3b) !important;
+    }
+
+    .nps-dm-button {
+      background-color: bsiProperty('highlightBackgroundColorDarkMode', #7c3d01) !important;
+    }
+
+    .nps-dm-content {
+      background-color: bsiProperty('layoutColoredBackgroundColorDarkMode', #3b3b3b) !important;
+    }
+
+  }
+}
+
+@else {
+  :root {
+    color-scheme: light;
+  }
 }
 
 p {
@@ -226,17 +265,17 @@ p {
 
 // this CSS will only be applied in the Edit mode in CX
 .bsi-ce-edit-mode {
+
   // ensures that the editor is aware of the hidden preheader text
-  .show-preheader-if-edit { 
-    display: block!important;
-    margin-bottom: 20px!important;
-    color: purple!important;
-    font-style: italic!important;
+  .show-preheader-if-edit {
+    display: block !important;
+    margin-bottom: 20px !important;
+    color: purple !important;
+    font-style: italic !important;
   }
 
   // ensures that the borders added by the cx content editor do not destroy the layout in edit mode
-  
   .bsi-ce-box-sizing-fix {
-    box-sizing: border-box!important;
+    box-sizing: border-box !important;
   }
 }
