@@ -214,6 +214,7 @@ table.table tr td {
 @if bsiProperty('darkModeActive', false) {
   :root {
     color-scheme: light dark;
+    supported-color-schemes: light dark;
   }
 
   @media screen and (prefers-color-scheme: dark) {
@@ -251,6 +252,7 @@ table.table tr td {
 @else {
   :root {
     color-scheme: light;
+    supported-color-schemes: light;
   }
 }
 
