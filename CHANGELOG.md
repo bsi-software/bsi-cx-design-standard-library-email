@@ -14,6 +14,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 * Add dark mode property which is used to enable or disable the dark mode style in the browser
 * Update dependencies
 * Fix button padding for Outlook 365
+* Disable Dark Mode on iOS devices
 
 ## [1.2.2] - 06.12.2024
 
