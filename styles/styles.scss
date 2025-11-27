@@ -213,15 +213,12 @@ $darkModeActive: bsiProperty('darkModeActive');
     .bsi-dm-text-color {
       color: bsiProperty('darkModeBaseTextColor', #ffffff) !important;
     }
-  .bsi-dm-bg-color {
-    background-color: bsiProperty('darkColor', #000000) !important;
-  }
-  .bsi-dm-bg-column-color {
-    background-color: bsiProperty('darkColor', #000000) !important;
-  }
-  .bsi-dm-bg-column-colored {
-    background-color: bsiProperty('darkColorColumn', #2a2a2a) !important;
-  }
+    .bsi-dm-bg-column-color {
+      background-color: bsiProperty('darkModeColumnColor', #000000) !important;
+    }
+    .bsi-dm-bg-column-colored {
+      background-color: bsiProperty('darkModeColoredColumnColor', #2a2a2a) !important;
+    }
     .bsi-dm-bg-color-footer {
       background-color: bsiProperty('footerDarkBackgroundColor', #383e42) !important;
     }
