@@ -17,10 +17,10 @@
         <![endif]-->
         {% if headerLogoHeight > 0 %}
             <img data-bsi-element-part="{{ logoPartId }}" src="{{ logoSource }}" class="headerLogo" height="{{ logo_Height }}" alt="" style="margin: 0; display: inline-block; width: auto; max-width: 100%; height: {{ logoHeight }}px;" />
-            <img data-bsi-element-part="{{ logoDarkPartId }}" src="{{ logoDarkSource }}" class="headerLogoDarkMode" height="{{ logo_Height }}" alt="" style="margin: 0; width: auto; max-width: 100%; height: {{ logoHeight }}px;" />
+            <img data-bsi-element-part="{{ logoDarkPartId }}" src="{{ logoDarkSource }}" class="headerLogoDarkMode" height="{{ logo_Height }}" alt="" style="display:none; margin: 0; width: auto; max-width: 100%; height: {{ logoHeight }}px;" />
         {% else %}
             <img data-bsi-element-part="{{ logoPartId }}" src="{{ logoSource }}" class="headerLogo" width="{{ logo_Width }}" alt="" style="margin: 0; display: inline-block; width: {{ logoWidth }}px; max-width: 100%; height: auto;" />
-            <img data-bsi-element-part="{{ logoDarkPartId }}" src="{{ logoDarkSource }}" class="headerLogoDarkMode" width="{{ logo_Width }}" alt="" style="margin: 0; width: {{ logoWidth }}px; max-width: 100%; height: auto;" />
+            <img data-bsi-element-part="{{ logoDarkPartId }}" src="{{ logoDarkSource }}" class="headerLogoDarkMode" width="{{ logo_Width }}" alt="" style="display:none; margin: 0; width: {{ logoWidth }}px; max-width: 100%; height: auto;" />
         {% endif %}
         <!--[if mso]>
         </td>

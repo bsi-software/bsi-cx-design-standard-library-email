@@ -16,6 +16,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 * Update dependencies
 * Fix button padding for Outlook 365
 
+
+## [1.2.3] - 16.01.2025
+
+### Changes
+* New Logo-Element with Light- and Darkmode Images
+* Two-Column-Element within One-Column-Element without padding left and right
+* One-Column-Element with Background Property
+
 ## [1.2.2] - 06.12.2024
 
 ### Changes
