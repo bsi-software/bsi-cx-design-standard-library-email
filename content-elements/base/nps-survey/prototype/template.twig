@@ -1,5 +1,5 @@
 {% macro render(elementId = null, fontSize = null, fontFamily = null, textColor = null, fontWeight = null, minString = null, maxString = null, buttonBackgroundColor =  null) %}{% apply spaceless %}
-{% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
+    {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
     {% include './template.twig' %}
 {% endapply %}{% endmacro %}
 
