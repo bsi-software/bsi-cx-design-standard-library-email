@@ -24,5 +24,5 @@ module.exports = (
         ...Array.from({ length: 10 + npsStartWith0 },
             (_, i) => cx.part.link
                 .withLabel(`Link ${i + 1 - npsStartWith0}`)
-                .withId(`link-${i + 1 - npsStartWith0}`))
+                .withId(`link-${i + 1 - npsStartWith0}-part`))
     );

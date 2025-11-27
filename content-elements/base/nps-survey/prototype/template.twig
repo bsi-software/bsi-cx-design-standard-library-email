@@ -29,10 +29,10 @@
     {% set npsAlignment = (alignment ?: properties.alignmentLeft) ?: 'center' %}
     {% set npsMinElementPartId = 'min-a23f97' %}
     {% set npsMaxElementPartId = 'max-2f63e1' %}
+    {% set npsStart = (npsStartWith0 or properties.npsStartWith0) ? 0 : 1 %}
     {% set darkModeClassContent = properties.darkModeActive ? 'nps-dm-content' : '' %}
     {% set darkModeClassButton = properties.darkModeActive ? 'nps-dm-button' : '' %}
     {% set darkModeClassText = properties.darkModeActive ? 'bsi-dm-text-color' : '' %}
-    {% set npsStart = (npsStartWith0 or properties.npsStartWith0) ? 0 : 1 %}
 
 
     <div data-bsi-element="{{ npsElementId }}" class="{{ darkModeClassContent }}" style="max-width: {{ npsSkalaMaxWidth }}px">
@@ -40,8 +40,8 @@
         <table class="nps-survey-table {{ npsScoreZeroClass }}" border="0" cellpadding="0" cellspacing="0"  width="100%" style="min-width: 100%; border-spacing: {{ npsBorderSpacing }}px !important; border-collapse: separate !important">
             <tr>
                 {% for i in range(npsStart, 10) %}
-                    <td width="30" style="background-color: {{ npsButtonBackgroundColor }}; text-align: center; vertical-align: middle; border-style: {{ npsButtonBorderStyle }}; border-width: {{ npsButtonBorderWidth }}px; border-color: {{ npsButtonBorderColor }}; border-radius: {{ npsButtonBorderRadius }}px; width: auto;">
-                        <a href = "[link{{ i }}]" class="{{ darkModeClassButton }}" data-bsi-element-part="link-{{ i }}" style="background-color: {{ npsButtonBackgroundColor }}; mso-line-height-rule: exactly; font-size: {{ npsFontSize }}px; line-height: {{ npsButtonHeight }}px; font-family: {{ npsFontFamily }}; color: {{ npsButtonColor }}; font-weight: {{ npsFontWeight }}; text-decoration: none; mso-border-alt: none; display: inline-block; width: 100%; text-align:center; word-break: keep-all; text-underline-color: {{ npsButtonBackgroundColor }};">{{ i }}</a>
+                    <td width="30" style="background-color: {{ npsButtonBackgroundColor }}; text-align: center; vertical-align: middle; border-style: {{ npsButtonBorderStyle }}; border-width: {{ npsButtonBorderWidth }}px; border-color: {{ npsButtonBorderColor }}; border-radius: {{ npsButtonBorderRadius }}px;">
+                        <a href = "[link{{ i }}]" class="{{ darkModeClassButton }}" data-bsi-element-part="link-{{ i }}-part" style="background-color: {{ npsButtonBackgroundColor }}; mso-line-height-rule: exactly; font-size: {{ npsFontSize }}px; line-height: {{ npsButtonHeight }}px; font-family: {{ npsFontFamily }}; color: {{ npsButtonColor }}; font-weight: {{ npsFontWeight }}; text-decoration: none; mso-border-alt: none; display: inline-block; width: 100%; text-align:center; word-break: keep-all; text-underline-color: {{ npsButtonBackgroundColor }};">{{ i }}</a>
                     </td>
                 {% endfor %}
             </tr>
