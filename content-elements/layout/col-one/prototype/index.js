@@ -22,6 +22,7 @@ module.exports = (
   .withElementId(elementId)
   .withLabel(elementLabel)
   .withIcon(Icon.ONE_COLUMN)
+  .withStyleConfigs(require('../../../../configs/styles/col-background-color'))
   .withDropzones(
     cx.dropzone
       .withDropzone(dropzoneId)

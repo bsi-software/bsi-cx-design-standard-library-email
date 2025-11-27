@@ -1,0 +1,32 @@
+{% apply spaceless %}
+    {% set logoElementId = elementId ?: 'logo-3I1Ntx' %}
+    {% set logoPartId = imagePartId ?: 'logo-part-5onUvI' %}
+    {% set logoSource = logoSrc ?: bsi_cx_asset('../../../../static/image.png') %}
+    {% set logoDarkPartId = imageDarkPartId ?: 'logo-dark-part-ORDw0N' %}
+    {% set logoDarkSource = logoDarkSrc ?: bsi_cx_asset('../../../../static/image.png') %}
+    {% set logo_Height = logoHeight ?: properties.logoHeight %}
+    {% set logo_Width = (logoWidth ?: properties.logoWidth) ?: 90 %}
+    {% set logoMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
+    {% set logoAlign = (logoAlign ?: properties.logoAlign) ?: 'left' %}
+
+    <div data-bsi-element="{{ logoElementId }}" style="margin-bottom: {{ logoMarginBottom }}px; text-align: {{ logoAlign }}">
+        <!--[if mso]>
+        <table role="presentation" width="50%">
+        <tr>
+        <td style="width: 100%; text-align: {{ logoAlign }};" valign="{{ logoAlign }}">
+        <![endif]-->
+        {% if headerLogoHeight > 0 %}
+            <img data-bsi-element-part="{{ logoPartId }}" src="{{ logoSource }}" class="headerLogo" height="{{ logo_Height }}" alt="" style="margin: 0; display: inline-block; width: auto; max-width: 100%; height: {{ logoHeight }}px;" />
+            <img data-bsi-element-part="{{ logoDarkPartId }}" src="{{ logoDarkSource }}" class="headerLogoDarkMode" height="{{ logo_Height }}" alt="" style="margin: 0; width: auto; max-width: 100%; height: {{ logoHeight }}px;" />
+        {% else %}
+            <img data-bsi-element-part="{{ logoPartId }}" src="{{ logoSource }}" class="headerLogo" width="{{ logo_Width }}" alt="" style="margin: 0; display: inline-block; width: {{ logoWidth }}px; max-width: 100%; height: auto;" />
+            <img data-bsi-element-part="{{ logoDarkPartId }}" src="{{ logoDarkSource }}" class="headerLogoDarkMode" width="{{ logo_Width }}" alt="" style="margin: 0; width: {{ logoWidth }}px; max-width: 100%; height: auto;" />
+        {% endif %}
+        <!--[if mso]>
+        </td>
+        </tr>
+        <tr height="{{ logoMarginBottom }}" style="height:{{ logoMarginBottom }}px;">&nbsp;</tr>
+        </table>
+        <![endif]-->
+    </div>
+{% endapply %}
