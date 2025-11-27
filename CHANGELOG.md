@@ -20,9 +20,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [1.2.3] - 16.01.2025
 
 ### Changes
-* New Logo-Element with Light- and Darkmode Images
-* Two-Column-Element within One-Column-Element without padding left and right
-* One-Column-Element with Background Property
+* New logo element with light- and darkmode setting
+* one column element with background property
+* Add Style for column backgrounds
 
 ## [1.2.2] - 06.12.2024
 
