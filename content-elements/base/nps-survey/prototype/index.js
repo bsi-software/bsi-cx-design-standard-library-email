@@ -1,18 +1,16 @@
-const {cx, Icon} = require('@bsi-cx/design-build');
-
+const { cx, Icon, bsiProperty } = require('@bsi-cx/design-build');
 
 module.exports = (
     template = require('../template.twig'),
     elementId = 'nps-29c87d',
     elementLabel = 'NPS Survey',
-    dropzoneId = 'nps-survey-zero-value-dropzone-QQ5H1U'
+    npsStartWith0 = bsiProperty('npsStartWith0', false) ? 1 : 0
 ) => cx
     .contentElement
     .withFile(template)
     .withElementId(elementId)
     .withLabel(elementLabel)
     .withIcon(Icon.MEGAPHONE)
-    .withStyleConfigs(require('../../../../configs/styles/nps-dropzone-option'))
     .withParts(
         cx.part.plainText
             .withId("min-a23f97")
@@ -23,39 +21,8 @@ module.exports = (
         cx.part.plainText
             .withId("titleText-14fef7")
             .withLabel("Title text"),
-        cx.part.link
-            .withId("link1")
-            .withLabel("Link 1"),
-        cx.part.link
-            .withId("link2")
-            .withLabel("Link 2"),
-        cx.part.link
-            .withId("link3")
-            .withLabel("Link 3"),
-        cx.part.link
-            .withId("link4")
-            .withLabel("Link 4"),
-        cx.part.link
-            .withId("link5")
-            .withLabel("Link 5"),
-        cx.part.link
-            .withId("link6")
-            .withLabel("Link 6"),
-        cx.part.link
-            .withId("link7")
-            .withLabel("Link 7"),
-        cx.part.link
-            .withId("link8")
-            .withLabel("Link 8"),
-        cx.part.link
-            .withId("link9")
-            .withLabel("Link 9"),
-        cx.part.link
-            .withId("link10")
-            .withLabel("Link 10"))
-    .withDropzones(
-        cx.dropzone
-            .withDropzone('dropzoneId')
-            .withAllowedElements(
-                require('../../nps-survey-score-0')
-            ));
+        ...Array.from({ length: 10 + npsStartWith0 },
+            (_, i) => cx.part.link
+                .withLabel(`Link ${i + 1 - npsStartWith0}`)
+                .withId(`link-${i + 1 - npsStartWith0}`))
+    );
