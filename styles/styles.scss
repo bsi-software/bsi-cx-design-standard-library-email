@@ -46,31 +46,6 @@ img {
   -ms-interpolation-mode:bicubic;
 }
 
-/* Behaviour Col 2/3 in Col 1 */
-.bsi-col-one .dropzone-col-two-left {
-  padding: 10px 10px 10px 0px !important;
-}
-
-.bsi-col-one .dropzone-col-two-right {
-  padding: 10px 0px 10px 10px !important;
-}
-
-.bsi-col-one .dropzone-col-two-ratio-left {
-  padding: 10px 10px 10px 0px !important;
-}
-
-.bsi-col-one .dropzone-col-two-ratio-right {
-  padding: 10px 0px 10px 10px !important;
-}
-
-.bsi-col-one .dropzone-col-three-left {
-  padding: 10px 10px 10px 0px !important;
-}
-
-.bsi-col-one .dropzone-col-three-right {
-  padding: 10px 0px 10px 10px !important;
-}
-
 /* Prevent Mail clients from underlining links. The same style must be inlined as well */
 a {
   text-decoration: none;
@@ -189,31 +164,6 @@ table.table tr td {
   }
   .bsi-smiley-rating {
     width: 300px !important;
-  }
-
-  /* Behaviour Col 2/3 in Col 1 mobile */
-  .bsi-col-one .dropzone-col-two-left {
-    padding: 0px !important;
-  }
-
-  .bsi-col-one .dropzone-col-two-right {
-    padding: 0px !important;
-  }
-
-  .bsi-col-one .dropzone-col-two-ratio-left {
-    padding: 0px !important;
-  }
-
-  .bsi-col-one .dropzone-col-two-ratio-right {
-    padding: 0px !important;
-  }
-
-  .bsi-col-one .dropzone-col-three-left {
-    padding: 0px !important;
-  }
-
-  .bsi-col-one .dropzone-col-three-right {
-    padding: 0px !important;
   }
 }
 @media screen and (min-width: 461px) and (max-width: 673px)  {

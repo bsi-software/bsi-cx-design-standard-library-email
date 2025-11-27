@@ -6,8 +6,6 @@ const {cx, Icon} = require('@bsi-cx/design-build');
  * @param {string} elementLabel
  * @param {string} imagePartId
  * @param {string} imagePartLabel
- * @param {string} imageDarkPartId
- * @param {string} imageDarkPartLabel
  * @returns {ContentElement}
  */
 module.exports = (
@@ -15,7 +13,7 @@ module.exports = (
   elementId = 'header-logo-XvovFj',
   elementLabel = 'Logo',
   imagePartId = 'header-logo-part-p94CZB',
-  imagePartLabel = 'Logo'
+  imagePartLabel = 'Logo',
 ) => cx
   .contentElement
   .withFile(template)
