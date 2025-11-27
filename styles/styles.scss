@@ -37,7 +37,7 @@ div {
 }
 
 .nps-survey-table td {
-  height: 30px; 
+  height: 30px;
   width: 30px;
 }
 
@@ -84,7 +84,7 @@ table.table tr td {
 
 @media screen and (max-width: 673px) {
   .nps-survey-table td {
-    height: 20px; 
+    height: 20px;
     width: 20px;
   }
   .bsi-col-one .bsi-image {
@@ -130,9 +130,17 @@ table.table tr td {
   }
 }
 @media screen and (max-width: 460px) {
-  
+
+  .headerLogo {
+    margin: 0 auto !important;
+  }
+
+  .headerLogoDarkMode {
+    margin: 0 auto !important;
+  }
+
   .nps-survey-table td {
-    height: 20px; 
+    height: 20px;
     width: 20px;
   }
 
@@ -146,6 +154,7 @@ table.table tr td {
   .bsi-col-two .bsi-column.bsi-col-wide.bsi-pbottom {
     padding-bottom: 12px !important;
   }
+
   .bsi-cta-wrapper {
     width: 100% !important;
     min-width: 100% !important;
@@ -159,7 +168,7 @@ table.table tr td {
 }
 @media screen and (min-width: 461px) and (max-width: 673px)  {
   .nps-survey-table td {
-    height: 20px; 
+    height: 20px;
     width: 20px;
   }
 
@@ -192,11 +201,23 @@ $darkModeActive: bsiProperty('darkModeActive');
 }
 
   @media screen and (prefers-color-scheme: dark) {
+    .headerLogo {
+      display: none !important;
+    }
+    .headerLogoDarkMode {
+      display: block !important;
+    }
     .bsi-dm-bg-color {
       background-color: bsiProperty('darkModeBaseBackgroundColor', #000000) !important;
     }
     .bsi-dm-text-color {
       color: bsiProperty('darkModeBaseTextColor', #ffffff) !important;
+    }
+    .bsi-dm-bg-column-color {
+      background-color: bsiProperty('darkModeColumnColor', #000000) !important;
+    }
+    .bsi-dm-bg-column-colored {
+      background-color: bsiProperty('darkModeColoredColumnColor', #2a2a2a) !important;
     }
     .bsi-dm-bg-color-footer {
       background-color: bsiProperty('footerDarkBackgroundColor', #383e42) !important;
