@@ -28,7 +28,7 @@
     {% set borderCss = borderAndBackgroundSame ? "" : "border: #{ctaBorderSize}px solid #{ctaBorderColor};" %}
     {% set borderCssOutlook = borderAndBackgroundSame ? "" : "mso-border-alt: #{ctaBorderSize}px solid #{ctaBorderColor};" %}
     {% set ctaLegacyVmlMode = (legacyVml ?: properties.buttonLegacyVml) ?: false %} {# if you set this to true, your buttons will have rounded corners in Outlook as well. The button will have a fixed width though instad of fitting its size to the actual content #}
-    
+
     <div data-bsi-element="{{ ctaElementId }}">
         <!--[if mso]>
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -65,8 +65,8 @@
                     <td>
                         <table align="{{ ctaAlignment }}" class="bsi-cta-wrapper cta-alignment" role="presentation" border="0" cellspacing="0" cellpadding="0" {{ ctaFullWidthStyle | raw }}>
                             <tr>
-                                <td align="center" class="bsi-cta-wrapper" style="{{ borderCssOutlook }} {{borderCss}} border-radius: {{ ctaBorderRadius }}px; background-color: {{ ctaBackgroundColor }}; " {{ ctaFullWidthStyle | raw }}>
-                                    <!--[if mso]><div style="mso-line-height-rule: exactly; line-height: {{ctaVerticalPadding}}px; height: {{ctaVerticalPadding}}px; font-size: {{ctaVerticalPadding}}px">&nbsp;</div><![endif]-->
+                                <td align="center" class="bsi-cta-wrapper" style="padding: 0 {{ ctaHorizontalPadding }}px; {{ borderCssOutlook }} {{borderCss}} border-radius: {{ ctaBorderRadius }}px; background-color: {{ ctaBackgroundColor }}; " {{ ctaFullWidthStyle | raw }}>
+                                    <!--[if mso]><div style="mso-line-height-rule: exactly; line-height: {{ctaVerticalPadding}}px; height: {{ctaVerticalPadding}}px; font-size: {{ctaVerticalPadding}}px;">&nbsp;</div><![endif]-->
                                     {% if ctaFullWidth != true %}
                                         <!--[if mso]><b style="letter-spacing: {{ ctaHorizontalPadding }}px;mso-font-width:-100%;">&nbsp;</b><![endif]-->
                                     {% endif %}
