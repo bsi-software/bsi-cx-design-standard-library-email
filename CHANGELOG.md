@@ -7,6 +7,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Next
 * Add dark mode activation/deactivation using properties.js value
+* Fix possible npm security issues
 * Fix table header alignment
 * Fix button padding for Outlook 365
 
