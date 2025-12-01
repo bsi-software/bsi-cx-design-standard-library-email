@@ -6,7 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Next
-* Dark mode activation/deactivation using properties.js value
+* Add dark mode activation/deactivation using properties.js value
+* Fix table header alignment
+* Fix button padding for Outlook 365
 
 ### Changes
 * Fix border for buttons with differently colored border and background
@@ -14,7 +16,6 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 * Update editor styling for images
 * Add dark mode property which is used to enable or disable the dark mode style in the browser
 * Update dependencies
-* Fix button padding for Outlook 365
 
 ## [1.2.2] - 06.12.2024
 
