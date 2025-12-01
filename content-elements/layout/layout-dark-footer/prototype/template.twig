@@ -8,28 +8,32 @@
     {% set layoutDarkFooterDropzoneId = dropzoneId ?: 'layout-dark-footer-dropzone-S2Twva' %}
     {% set layoutDarkFooterBackgroundColor = (backgroundColor ?: properties.footerDarkBackgroundColor) ?: '#383e42' %}
     {% set layoutDarkFooterTextColor = (textColor ?: properties.footerDarkTextColor) ?: '#ffffff' %}
-    {% set layoutDarkFooterPadding = (padding ?: properties.footerDarkPadding) ?: 30 %}
+    {% set layoutDarkFooterPaddingTopBottom = (paddingTopBottom ?: properties.footerDarkPaddingTopBottom) ?: 30 %}
+    {% set layoutDarkFooterPaddingLeftRight = (paddingLeftRight ?: properties.footerDarkPaddingLeftRight) ?: 4 %}
+    {% set layoutFooterWidth = (widthInPercentage ?: properties.footerWidth) ?: '96%' %}
     {% set layoutDarkFooterWidth = ((width ?: properties.layoutWidth) ?: 660) + 8 %}
     {% set layoutDarkFooterFillsFullScreen = fillsFullScreen ?: properties.footerBackgroundColorFillsFullScreen %}
     {% set layoutDarkFooterWidthBackgroundColor = ((widthBackgroundColor ?: properties.footerBackgroundColorWidth) ?: 660) + 8 %}
+    {% set layoutDarkFooterAlign = (footerAlign ?: properties.footerAlign) ?: 'align-footer-left' %}
+    {% set layoutDarkFooterValign = (footerValign ?: properties.footerValign) ?: 'vertical-align-footer-top' %}
     {% set layoutDarkFooterBackgroundClass = backgroundClass ?: 'bsi-footer-bg-dark' %}
     {% set layoutDarkFooterDarkModeClass = darkModeClass ?: 'bsi-dm-bg-color-footer' %}
 
     {# keep layout structure implementation in sync with 'layout-base' #}
-    <div data-bsi-element="{{ layoutDarkFooterElementId }}" class="{{ layoutDarkFooterBackgroundClass }}">
+    <div data-bsi-element="{{ layoutDarkFooterElementId }}" class="{{ layoutDarkFooterBackgroundClass }} {{layoutDarkFooterAlign}} {{layoutDarkFooterValign}}" style="height: 100%; display: flex;">
         {% if layoutDarkFooterFillsFullScreen %}
-        <table class="layout-footer-background {{ layoutDarkFooterDarkModeClass }}" align="center" width="100%" role="presentation" style="border: 0; border-spacing: 0; background-color: {{ layoutDarkFooterBackgroundColor }}; width: 100%;">
+        <table class="layout-footer-background {{ layoutDarkFooterDarkModeClass }}" width="100%" role="presentation" cellpadding="0" cellspacing="0" style="border: 0; border-spacing: 0; background-color: {{ layoutDarkFooterBackgroundColor }}; width: 100%;">
         {% else %}
-        <table class="layout-footer-background {{ layoutDarkFooterDarkModeClass }} bsi-bg-color-footer" align="center" width="{{ layoutDarkFooterWidthBackgroundColor }}" role="presentation" style="border: 0; border-spacing: 0; background-color: {{ layoutDarkFooterBackgroundColor }}; width: {{ layoutDarkFooterWidthBackgroundColor }}px;">
+        <table class="layout-footer-background {{ layoutDarkFooterDarkModeClass }} bsi-bg-color-footer" cellpadding="0" cellspacing="0" align="{{layoutDarkFooterAlign}}" valign="{{ layoutDarkFooterValign }}" width="{{ layoutDarkFooterWidthBackgroundColor }}" role="presentation" style="border: 0; border-spacing: 0; background-color: {{ layoutDarkFooterBackgroundColor }}; width: {{ layoutDarkFooterWidthBackgroundColor }}px;">
         {% endif %}
             <tr>
-                <td align="center">
+                <td class="bsi-footer-col">
                     <!--[if mso]>
-                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="width: {{ layoutDarkFooterWidth }}px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width: {{ layoutDarkFooterWidth }}px;">
                     <tr>
                     <td style="padding: 20px 0;">
                     <![endif]-->
-                    <div class="outer layout-footer-content" style="color: {{ layoutDarkFooterTextColor }}; width: 96%; padding: {{ layoutDarkFooterPadding }}px 4px {{ layoutDarkFooterPadding }}px 4px; max-width: {{ layoutDarkFooterWidth }}px; margin: 0 auto;" data-bsi-dropzone="{{ layoutDarkFooterDropzoneId }}">
+                    <div class="outer layout-footer-content" style="color: {{ layoutDarkFooterTextColor }}; width: {{layoutFooterWidth}}; padding: {{ layoutDarkFooterPaddingTopBottom }}px {{layoutDarkFooterPaddingLeftRight}}px {{ layoutDarkFooterPaddingTopBottom }}px {{layoutDarkFooterPaddingLeftRight}}px; max-width: {{ layoutDarkFooterWidth }}px; margin: 0;" data-bsi-dropzone="{{ layoutDarkFooterDropzoneId }}">
                         {% block layout_dark_footer_dropzone %}
                             {% include '../../col-one-footer/prototype/template.twig' only %}
                         {% endblock %}
@@ -39,6 +43,7 @@
                     </tr>
                     </table>
                     <![endif]-->
+                    
                 </td>
             </tr>
         </table>
