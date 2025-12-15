@@ -39,6 +39,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 * New logo element with light- and darkmode setting
 * one column element with background property
 * Add Style for column backgrounds
+* Add `npsStartWith0` parameter to allow 0..10 NPS scores
 
 ## [1.2.2] - 06.12.2024
 
