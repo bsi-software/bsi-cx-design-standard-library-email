@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Next
+* Header Img: Add support for margin-bottom=0 and remove outlook padding
+* New logo element with light- and darkmode setting
+* one column element with background property
+* Add Style for column backgrounds
+* Add `npsStartWith0` parameter to allow 0..10 NPS scores
 
 
 
@@ -32,14 +37,6 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 [1.2.3]: https://github.com/bsi-software/bsi-cx-design-standard-library-email/releases/tag/1.2.3
 
 
-
-## [1.2.3] - 16.01.2025
-
-### Changes
-* New logo element with light- and darkmode setting
-* one column element with background property
-* Add Style for column backgrounds
-* Add `npsStartWith0` parameter to allow 0..10 NPS scores
 
 ## [1.2.2] - 06.12.2024
 
