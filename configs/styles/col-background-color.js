@@ -1,7 +1,7 @@
 const {cx, Version, bsiProperty} = require('@bsi-cx/design-build');
 
-const baseBackground = bsiProperty('columnBaseBackgroundColor', '#ffffff00');
-const coloredBackground = bsiProperty('columnColoredBackgroundColor', '#F6F7FB');
+const baseBackground = bsiProperty('layoutBaseBackgroundColor', '#ffffff00');
+const coloredBackground = bsiProperty('layoutColoredBackgroundColor', '#F6F7FB');
 
 module.exports = cx.style
     .withIdentifier('column-background-color-YcsBrW')
