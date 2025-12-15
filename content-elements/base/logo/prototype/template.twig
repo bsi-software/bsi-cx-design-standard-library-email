@@ -4,36 +4,32 @@
     {% set logoSource = logoSrc ?: bsi_cx_asset('../../../../static/image.png') %}
     {% set logoDarkPartId = imageDarkPartId ?: 'logo-dark-part-ORDw0N' %}
     {% set logoDarkSource = logoDarkSrc ?: bsi_cx_asset('../../../../static/image.png') %}
-    {% set logo_Height = logoHeight ?: properties.logoHeight %}
-    {% set logo_Width = (logoWidth ?: properties.logoWidth) ?: 90 %}
+    {% set logoHeight = logoHeight ?: properties.logoHeight %}
+    {% set logoWidth = (logoWidth ?: properties.logoWidth) ?: 90 %}
     {% set logoMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
     {% set logoAlign = (logoAlign ?: properties.logoAlign) ?: 'left' %}
 
+    {% set logoImgAttribute = logoHeight ? 'height="' ~ logoHeight ~ '"' : 'width="' ~ logoWidth ~ '"'%}
+    {% set logoImgStyle = logoHeight ? 'height: ' ~ logoHeight ~ 'px; width: auto;' : 'width= ' ~ logoWidth ~ 'px; height: auto;'%}
+
     <div data-bsi-element="{{ logoElementId }}" style="margin-bottom: {{ logoMarginBottom }}px; text-align: {{ logoAlign }}">
         <!--[if mso]>
-        <table role="presentation" width="50%">
+        <table role="presentation" width="50%" cellspacing="0" cellpadding="0" border="0">
         <tr>
         <td style="width: 100%; text-align: {{ logoAlign }};" valign="{{ logoAlign }}">
         <![endif]-->
-        {% if headerLogoHeight > 0 %}
             <div class="headerLogo" style="display: block;">
-                <img data-bsi-element-part="{{ logoPartId }}" src="{{ logoSource }}" height="{{ logo_Height }}" alt="" style="margin: 0; width: auto; max-width: 100%; height: {{ logoHeight }}px;" />
+                <img data-bsi-element-part="{{ logoPartId }}" src="{{ logoSource }}" {{ logoImgAttribute }} alt="" style="{{ logoImgStyle }} margin: 0; max-width: 100%;" />
             </div>
             <div class="headerLogoDarkMode" style="display: none">
-                <img data-bsi-element-part="{{ logoDarkPartId }}" src="{{ logoDarkSource }}" height="{{ logo_Height }}" alt="" style="margin: 0; width: auto; max-width: 100%; height: {{ logoHeight }}px;" />
+                <img data-bsi-element-part="{{ logoDarkPartId }}" src="{{ logoDarkSource }}" {{ logoImgAttribute }} alt="" style="{{ logoImgStyle }} margin: 0; max-width: 100%;" />
             </div>
-        {% else %}
-            <div class="headerLogo" style="display: block;">
-                <img data-bsi-element-part="{{ logoPartId }}" src="{{ logoSource }}" width="{{ logo_Width }}" alt="" style="margin: 0; width: {{ logoWidth }}px; max-width: 100%; height: auto;" />
-            </div>
-            <div class="headerLogoDarkMode" style="display: none">
-                <img data-bsi-element-part="{{ logoDarkPartId }}" src="{{ logoDarkSource }}" width="{{ logo_Width }}" alt="" style="margin: 0; width: {{ logoWidth }}px; max-width: 100%; height: auto;" />
-            </div>
-        {% endif %}
         <!--[if mso]>
         </td>
         </tr>
+        {% if logoMarginBottom != "0" %}
         <tr height="{{ logoMarginBottom }}" style="height:{{ logoMarginBottom }}px;">&nbsp;</tr>
+        {% endif %}
         </table>
         <![endif]-->
     </div>
