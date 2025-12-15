@@ -15,9 +15,7 @@ module.exports = (
   elementId = 'header-logo-XvovFj',
   elementLabel = 'Logo',
   imagePartId = 'header-logo-part-p94CZB',
-  imagePartLabel = 'Logo',
-  imageDarkPartId = 'header-logo-dark-part-4i7uiB',
-  imageDarkPartLabel = 'Logo Dark'
+  imagePartLabel = 'Logo'
 ) => cx
   .contentElement
   .withFile(template)
@@ -27,7 +25,4 @@ module.exports = (
   .withParts(
     cx.part.image
       .withId(imagePartId)
-      .withLabel(imagePartLabel),
-    cx.part.image
-      .withId(imageDarkPartId)
-      .withLabel(imageDarkPartLabel));
+      .withLabel(imagePartLabel));

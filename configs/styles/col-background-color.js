@@ -14,11 +14,11 @@ module.exports = cx.style
             .withCssClass('bsi-column-base')
             .withDomManipulations(
                 cx.domManipulation
-                    .withSelector('div.bsi-column-one-scheme')
+                    .withSelector('div.bsi-column')
                     .withAttribute('style')
                     .withValue('background-color: '+ baseBackground +';'),
                 cx.domManipulation
-                    .withSelector('div.bsi-column-one-scheme')
+                    .withSelector('div.bsi-column')
                     .withAttribute('class')
                     .withValue('bsi-dm-bg-column-color')),
         cx.styleOption
@@ -27,10 +27,10 @@ module.exports = cx.style
             .withCssClass('bsi-column-colored')
             .withDomManipulations(
                 cx.domManipulation
-                    .withSelector('div.bsi-column-one-scheme')
+                    .withSelector('div.bsi-column')
                     .withAttribute('style')
                     .withValue('background-color: '+ coloredBackground +';'),
                 cx.domManipulation
-                    .withSelector('div.bsi-column-one-scheme')
+                    .withSelector('div.bsi-column')
                     .withAttribute('class')
                     .withValue('bsi-dm-bg-column-colored')));
