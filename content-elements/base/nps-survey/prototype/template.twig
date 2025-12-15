@@ -12,12 +12,9 @@
     {% set npsFontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
     {% set npsButtonColor = (buttonTextColor ?: properties.npsButtonTextColor) ?: '#ffff' %}
     {% set npsButtonBackgroundColor = (buttonBackgroundColor ?: properties.npsButtonBackgroundColor) ?: '#2F4E66' %}
-    {% set npsButtonHeight = (height ?: properties.npsButtonHeight) ?: 32 %}
-    {% set npsButtonBorderStyle = (borderStyle ?: properties.npsButtonBorderStyle) ?: 'solid' %}
+    {% set npsButtonHeight = (height ?: properties.npsButtonHeight) ?: npsFontSize %}
+    {% set npsButtonColumnStyle = (npsButtonColumnStyle ?: properties.npsButtonColumnStyle) ?: ''%}
     {% set npsBorderSpacing = (borderSpacing ?: properties.npsBorderSpacing) ?: 5 %}
-    {% set npsButtonBorderWidth = (borderWidth ?: properties.npsButtonBorderWidth) ?: 0 %}
-    {% set npsButtonBorderRadius = (borderRadius ?: properties.npsButtonBorderRadius) ?: 0 %}
-    {% set npsButtonBorderColor = (borderColor ?: properties.npsButtonBorderColor) ?: '#fff' %}
     {% set npsTextColor = (textColor ?: properties.npsBaseTextColor) ?: '#0000' %}
     {% set npsFontWeight = (fontWeight ?: properties.npsButtonFontWeight) ?: 'normal' %}
     {% set npsSkalaMaxWidth = (maxWidth ?: properties.npsSkalaMaxWidth) ?: 668 %}
@@ -37,13 +34,14 @@
 
     <div data-bsi-element="{{ npsElementId }}" class="{{ darkModeClassContent }}" style="max-width: {{ npsSkalaMaxWidth }}px">
         <h3 data-bsi-element-part = "{{ npsTitleElementPartId }}" data-bsi-property="title" class="{{ darkModeClassText }}" style="font-family: {{ npsFontFamily }}; color: {{ npsTextColor }}; font-size: {{ npsFontSize }}px; font-weight: {{ npsFontWeight }}; text-align: center; margin-top: 0;">{{ bsi_cx_lorem(3) }}</h3>
-        <table class="nps-survey-table {{ npsScoreZeroClass }}" border="0" cellpadding="0" cellspacing="0"  width="100%" style="min-width: 100%; border-spacing: {{ npsBorderSpacing }}px !important; border-collapse: separate !important">
+        <table class="nps-survey-table" border="0" cellpadding="0" cellspacing="0"  width="100%" style="min-width: 100%; border-spacing: {{ npsBorderSpacing }}px !important; border-collapse: separate !important">
             <tr>
                 {% for i in range(npsStart, 10) %}
                     {% block npsButton %}
-                        <td width="30" style="background-color: {{ npsButtonBackgroundColor }}; text-align: center; vertical-align: middle; border-style: {{ npsButtonBorderStyle }}; border-width: {{ npsButtonBorderWidth }}px; border-color: {{ npsButtonBorderColor }}; border-radius: {{ npsButtonBorderRadius }}px;">
+                        <td width="30" style="background-color: {{ npsButtonBackgroundColor }}; text-align: center; vertical-align: middle; {{ npsButtonColumnStyle }}">
                             <a href = "[link{{ i }}]" class="{{ darkModeClassButton }}" data-bsi-element-part="link-{{ i }}-part" style="background-color: {{ npsButtonBackgroundColor }}; mso-line-height-rule: exactly; font-size: {{ npsFontSize }}px; line-height: {{ npsButtonHeight }}px; font-family: {{ npsFontFamily }}; color: {{ npsButtonColor }}; font-weight: {{ npsFontWeight }}; text-decoration: none; mso-border-alt: none; display: inline-block; width: 100%; text-align:center; word-break: keep-all; text-underline-color: {{ npsButtonBackgroundColor }};">{{ i }}</a>
                         </td>
+                        <td width="5" style="width: 5px;"></td>
                     {% endblock %}
                 {% endfor %}
             </tr>
