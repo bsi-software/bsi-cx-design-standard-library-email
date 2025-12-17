@@ -24,7 +24,6 @@ module.exports = (
   .withIcon(Icon.ONE_COLUMN)
   .withStyleConfigs(
     require('../../../../configs/styles/layout-footer-background-color'),
-    require('../../../../configs/styles/layout-footer-alignment'),
     require('../../../../configs/styles/layout-footer-vertical-alignment')
   )
   .withDropzones(
