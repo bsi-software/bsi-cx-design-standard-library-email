@@ -21,7 +21,9 @@ module.exports = (
   .withFile(template)
   .withElementId(elementId)
   .withLabel(elementLabel)
-  .withIcon(Icon.ONE_COLUMN)
+  .withIcon(Icon.ONE_COLUMN).withStyleConfigs(
+    require('../../../../configs/styles/layout-footer-alignment')
+  )
   .withDropzones(
     cx.dropzone
       .withDropzone(dropzoneId)

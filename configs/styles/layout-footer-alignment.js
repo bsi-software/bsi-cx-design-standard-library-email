@@ -11,17 +11,13 @@ module.exports = cx.style
             .withCssClass('align-footer-left')
             .withDomManipulations(
                 cx.domManipulation
-                    .withSelector('table.layout-footer-background')
-                    .withAttribute('align')
-                    .withValue('left'),
-                cx.domManipulation
-                    .withSelector('td.bsi-footer-col')
-                    .withAttribute('align')
-                    .withValue('left'),
-                cx.domManipulation
-                    .withSelector('.layout-footer-content')
+                    .withSelector('.bsi-column')
                     .withAttribute('style')
-                    .withValue('margin-left: 0; margin-right: auto;')
+                    .withValue('text-align: left !important;'),
+                cx.domManipulation
+                    .withSelector('.bsi-column')
+                    .withAttribute('align')
+                    .withValue('left')
             ),
        cx.styleOption
             .withStyleId('align-footer-center')
@@ -29,17 +25,13 @@ module.exports = cx.style
             .withCssClass('align-center')
             .withDomManipulations(
                 cx.domManipulation
-                    .withSelector('table.layout-footer-background')
-                    .withAttribute('align')
-                    .withValue('center'),
-                cx.domManipulation
-                    .withSelector('td.bsi-footer-col')
-                    .withAttribute('align')
-                    .withValue('center'),
-                cx.domManipulation
-                    .withSelector('.layout-footer-content')
+                    .withSelector('.bsi-column')
                     .withAttribute('style')
-                    .withValue('margin-left: auto !important; margin-right: auto !important;')
+                    .withValue('text-align: center !important;'),
+                cx.domManipulation
+                    .withSelector('.bsi-column')
+                    .withAttribute('align')
+                    .withValue('center')
             ),
         cx.styleOption
             .withStyleId('align-footer-right')
@@ -47,14 +39,10 @@ module.exports = cx.style
             .withCssClass('align-right')
             .withDomManipulations(
                 cx.domManipulation
-                    .withSelector('table.layout-footer-background')
-                    .withAttribute('align')
-                    .withValue('right'),
-                cx.domManipulation
-                    .withSelector('td.bsi-footer-col')
-                    .withAttribute('align')
-                    .withValue('right'),
-                cx.domManipulation
-                    .withSelector('.layout-footer-content')
+                    .withSelector('.bsi-column')
                     .withAttribute('style')
-                    .withValue('margin-left: auto; margin-right: 0;')));
+                    .withValue('text-align: right !important;'),
+                cx.domManipulation
+                    .withSelector('.bsi-column')
+                    .withAttribute('align')
+                    .withValue('right')));
