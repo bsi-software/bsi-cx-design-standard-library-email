@@ -135,11 +135,11 @@ table.table tr td {
 }
 @media screen and (max-width: 460px) {
 
-  .headerLogo {
+  .header-logo {
     margin: 0 auto !important;
   }
 
-  .headerLogoDarkMode {
+  .header-logo-dark-mode {
     margin: 0 auto !important;
   }
 
@@ -205,10 +205,10 @@ $darkModeActive: bsiProperty('darkModeActive');
 }
 
   @media screen and (prefers-color-scheme: dark) {
-    .headerLogo {
+    .header-logo {
       display: none !important;
     }
-    .headerLogoDarkMode {
+    .header-logo-dark-mode {
       display: block !important;
     }
     .bsi-dm-bg-color {
