@@ -7,6 +7,13 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Next
 
+### Changes
+* Fix button padding for Outlook 365
+* Fix layout cellpadding and cellspacing
+* Add config style background-color for col-one 
+* Add config style alignment for image
+* Add config style alignment for col-one-footer and properties to handle padding and width of the footer
+* Add new config style border for highlighted-content component and allow more elements inside the dropzone
 
 
 ## [1.2.4] - 01.12.2025

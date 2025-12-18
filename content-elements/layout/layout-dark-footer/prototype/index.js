@@ -22,7 +22,10 @@ module.exports = (
   .withElementId(elementId)
   .withLabel(elementLabel)
   .withIcon(Icon.ONE_COLUMN)
-  .withStyleConfigs(require('../../../../configs/styles/layout-footer-background-color'))
+  .withStyleConfigs(
+    require('../../../../configs/styles/layout-footer-background-color'),
+    require('../../../../configs/styles/layout-footer-vertical-alignment')
+  )
   .withDropzones(
     cx.dropzone
       .withDropzone(dropzoneId)
