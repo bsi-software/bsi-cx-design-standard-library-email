@@ -8,17 +8,36 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## Next
 
 ### Changes
+* Fix button padding for Outlook 365
+* Fix layout cellpadding and cellspacing
+* Add config style background-color for col-one 
+* Add config style alignment for image
+* Add config style alignment for col-one-footer and properties to handle padding and width of the footer
+* Add new config style border for highlighted-content component and allow more elements inside the dropzone
+
+
+## [1.2.4] - 01.12.2025
+
+### Changes
+* Add dark mode activation/deactivation using properties.js value
+* Fix possible npm security issues
+* Fix table header alignment
+* Fix button padding for Outlook 365
+
+[1.2.4]: https://github.com/bsi-software/bsi-cx-design-standard-library-email/releases/tag/1.2.4
+
+
+## [1.2.3] - 15.09.2025
+
+### Changes
 * Fix border for buttons with differently colored border and background
 * Fix word-break and spacing between table columns on outlook
 * Update editor styling for images
 * Add dark mode property which is used to enable or disable the dark mode style in the browser
 * Update dependencies
-* Fix button padding for Outlook 365
-* Fix layout cellpadding and cellspacing
-* Add config style background-color for col-one 
-* Add config style alignment for image
-* Add config style alignment for layout-dark-footer and properties to handle padding and width of the footer
-* Add new config style border for highlighted component and add new elements inside the dropzone
+
+[1.2.3]: https://github.com/bsi-software/bsi-cx-design-standard-library-email/releases/tag/1.2.3
+
 
 ## [1.2.2] - 06.12.2024
 
