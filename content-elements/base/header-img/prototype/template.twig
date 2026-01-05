@@ -12,8 +12,7 @@
     {% set headerImgHeightStyle = headerImgHeight > 0 ? "height: #{headerImgHeight}px;" : "" %}
     {% set headerImgWidth = (headerWidth ?: properties.headerWidth) ?: 660 %}
     {% set headerImgBorderRadius = (borderRadius ?: properties.imageBorderRadius) ?: 0 %} {# Progressive enhancement: not supported by Outlook #}
-    {% set marginBottomIsZero = marginBottom == 0 or (not marginBottom and properties.baseMarginBottom == 0 ) %}
-    {% set headerImgMarginBottom = marginBottomIsZero ? 0 : (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
+    {% set headerImgMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
 
     <div data-bsi-element="{{ headerImgElementId }}" class="bsi-header-img">
         <!--[if mso]>
@@ -25,7 +24,7 @@
         <!--[if mso]>
         </td>
         </tr>
-        {% if not marginBottomIsZero %}<tr height="{{ headerImgMarginBottom }}" style="height:{{ headerImgMarginBottom }}px;">&nbsp;</tr>{% endif %}
+        <tr height="{{ headerImgMarginBottom }}" style="height:{{ headerImgMarginBottom }}px;"></tr>
         </table>
         <![endif]-->
     </div>
