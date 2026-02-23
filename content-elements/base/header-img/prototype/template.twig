@@ -16,7 +16,7 @@
 
     <div data-bsi-element="{{ headerImgElementId }}" class="bsi-header-img">
         <!--[if mso]>
-        <table role="presentation" width="100%">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
         <tr>
         <td style="width: 100%;" valign="middle">
         <![endif]-->    
@@ -24,7 +24,9 @@
         <!--[if mso]>
         </td>
         </tr>
-        <tr height="{{ headerImgMarginBottom }}" style="height:{{ headerImgMarginBottom }}px;">&nbsp;</tr>
+        {% if headerImgMarginBottom != "0" %}
+            <tr height="{{ headerImgMarginBottom }}" style="height:{{ headerImgMarginBottom }}px; font-size:{{ headerImgMarginBottom }}px;">&nbsp;</tr>
+        {% endif %}
         </table>
         <![endif]-->
     </div>
