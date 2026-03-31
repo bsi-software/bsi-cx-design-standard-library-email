@@ -1,5 +1,5 @@
 {% macro render(elementId = null, fontSize = null, fontFamily = null, textColor = null, fontWeight = null, minString = null, maxString = null, buttonBackgroundColor =  null) %}{% apply spaceless %}
-    {% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
+{% deprecated 'The usage of "element.render(...)" is deprecated, use "include ... with {...}" instead. For detailed information, visit: https://github.com/bsi-software/bsi-cx-design-master-template-email/blob/main/MIGRATION_GUIDE.md"' %}
     {% include './template.twig' %}
 {% endapply %}{% endmacro %}
 
@@ -32,46 +32,54 @@
     {% set darkModeClassText = properties.darkModeActive ? 'bsi-dm-text-color' : '' %}
 
 
-    <div data-bsi-element="{{ npsElementId }}" class="{{ darkModeClassContent }}" style="max-width: {{ npsSkalaMaxWidth }}px">
-        <h3 data-bsi-element-part = "{{ npsTitleElementPartId }}" data-bsi-property="title" class="{{ darkModeClassText }}" style="font-family: {{ npsFontFamily }}; color: {{ npsTextColor }}; font-size: {{ npsFontSize }}px; font-weight: {{ npsFontWeight }}; text-align: center; margin-top: 0;">{{ bsi_cx_lorem(3) }}</h3>
-        <table class="nps-survey-table" border="0" cellpadding="0" cellspacing="0"  width="100%" style="min-width: 100%; border-spacing: {{ npsBorderSpacing }}px !important; border-collapse: separate !important">
-            <tr>
-                {% for i in range(npsStart, 10) %}
-                    {% block npsButton %}
-                        <td width="30" style="background-color: {{ npsButtonBackgroundColor }}; text-align: center; vertical-align: middle; {{ npsButtonColumnStyle }}">
-                            <a href = "[link{{ i }}]" class="{{ darkModeClassButton }}" data-bsi-element-part="link-{{ i }}-part" style="background-color: {{ npsButtonBackgroundColor }}; mso-line-height-rule: exactly; font-size: {{ npsFontSize }}px; line-height: {{ npsButtonHeight }}px; font-family: {{ npsFontFamily }}; color: {{ npsButtonColor }}; font-weight: {{ npsFontWeight }}; text-decoration: none; mso-border-alt: none; display: inline-block; width: 100%; text-align:center; word-break: keep-all; text-underline-color: {{ npsButtonBackgroundColor }};">{{ i }}</a>
-                        </td>
-                    {% endblock %}
-                {% endfor %}
-            </tr>
-        </table>
+    <table data-bsi-element="{{ npsElementId }}" class="{{ darkModeClassContent }}" width="100%" style="max-width: {{ npsSkalaMaxWidth }}px">
+        <tr>
+            <td>
+                <h3 data-bsi-element-part = "{{ npsTitleElementPartId }}" data-bsi-property="title" class="{{ darkModeClassText }}" style="font-family: {{ npsFontFamily }}; color: {{ npsTextColor }}; font-size: {{ npsFontSize }}px; font-weight: {{ npsFontWeight }}; text-align: center; margin-top: 0;">{{ bsi_cx_lorem(3) }}</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table class="nps-survey-table" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: separate !important">
+                    <tr>
+                        {% for i in range(npsStart, 10) %}
+                            {% set npsButtonPadding = '3px' %}
 
-        <table class="nps-survey-table" border="0" cellpadding="0" cellspacing="0"  width="100%" style="min-width: 100%;">
-            <tr>
-                <td width="60" style="width: 60px; text-align: center; vertical-align: middle;" >
-                    <h3 data-bsi-element-part = "{{ npsMinElementPartId }}" data-bsi-property="title" class="{{ darkModeClassText }}" style="font-family: {{ npsFontFamily }}; color: {{ npsTextColor }}; font-size: {{ npsFontSize }}px; font-weight: {{ npsFontWeight }}; margin-top: 0;">dislike</h3>
-                </td>
-                <td style="text-align: center; vertical-align: middle;">
-                </td>
-                <td width="5" style="width: 5px;">&nbsp;</td>
-                <td style="text-align: center; vertical-align: middle;">
-                </td>
-                <td width="5" style="width: 5px;">&nbsp;</td>
-                <td style="text-align: center; vertical-align: middle;">
-                </td>
-                <td width="5" style="width: 5px;">&nbsp;</td>
-                <td style=" text-align: center; vertical-align: middle;">
-                </td>
-                <td width="5" style="width: 5px;">&nbsp;</td>
-                <td style="text-align: center; vertical-align: middle;">
-                </td>
-                <td width="5" style="width: 5px;">&nbsp;</td>
-                <td  style="text-align: center; vertical-align: middle;">
-                </td>
-                <td width="60"style="width: 60px; text-align: center; vertical-align: middle;">
-                    <h3 data-bsi-element-part = "{{ npsMaxElementPartId }}" data-bsi-property="title" class="{{ darkModeClassText }}" style="font-family: {{ npsFontFamily }}; color: {{ npsTextColor }}; font-size: {{ npsFontSize }}px; font-weight: {{ npsFontWeight }};  margin-top: 0;">like</h3>
-                </td>
-            </tr>
-        </table>
-    </div>
+                            {% if loop.first %}
+                                {% set npsButtonPadding = '3px 3px 3px 0' %}
+                            {% elseif loop.last %}
+                                {% set npsButtonPadding = '3px 0 3px 3px' %}
+                            {% endif %}
+
+                            {% set npsButtonWidth = npsStart == 0 ? '9.09%' : '10%' %}
+
+                            <td width="{{ npsButtonWidth }}" style="padding: {{ npsButtonPadding }};">
+                                <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td align="center"  style="text-align: center; {{ npsButtonColumnStyle }}">
+                                            <a href = "[link{{ i }}]" class="{{ darkModeClassButton }}" data-bsi-element-part="link-{{ i }}-part" style="background-color: {{ npsButtonBackgroundColor }}; mso-line-height-rule: exactly; font-size: {{ npsFontSize }}px; line-height: {{ npsButtonHeight }}px; font-family: {{ npsFontFamily }}; color: {{ npsButtonColor }}; font-weight: {{ npsFontWeight }}; text-decoration: none; mso-border-alt: none; display: inline-block; width: 100%; text-align:center; word-break: keep-all; text-underline-color: {{ npsButtonBackgroundColor }};">{{ i }}</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        {% endfor %}
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table class="nps-survey-table" role="presentation"  width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td align="left">
+                            <h3 data-bsi-element-part = "{{ npsMinElementPartId }}" data-bsi-property="title" class="{{ darkModeClassText }}" style="font-family: {{ npsFontFamily }}; color: {{ npsTextColor }}; font-size: {{ npsFontSize }}px; font-weight: {{ npsFontWeight }}; margin-top: 0;">dislike</h3>
+                        </td>
+                        <td align="right">
+                            <h3 data-bsi-element-part = "{{ npsMaxElementPartId }}" data-bsi-property="title" class="{{ darkModeClassText }}" style="font-family: {{ npsFontFamily }}; color: {{ npsTextColor }}; font-size: {{ npsFontSize }}px; font-weight: {{ npsFontWeight }};  margin-top: 0;">like</h3>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 {% endapply %}
