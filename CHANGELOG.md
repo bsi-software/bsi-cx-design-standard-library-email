@@ -9,7 +9,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
 
-## [1.2.4] - 01.12.2025
+## [1.2.5] - 08.04.2026
 
 ### Changes
 * Add new logo element with light- and darkmode setting
