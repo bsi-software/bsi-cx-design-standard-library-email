@@ -14,7 +14,6 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changes
 * Add new logo element with light- and darkmode setting
 * Add `npsStartWith0` parameter to allow 0..10 NPS scores
-* Update column elements, add style for background colors
 * Update col-one element: add background property
 * Update header-image: add support for margin-bottom=0 and remove outlook padding
 
