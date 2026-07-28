@@ -31,8 +31,6 @@
     {% set npsLabelTextColor = (npsLabelTextColor ?: properties.npsLabelTextColor) ?: npsTextColor %}
     {% set npsLabelFontWeight = (labelFontWeight ?: properties.npsLabelFontWeight) ?: npsFontWeight %}
     {% set npsLabelFontSize = (labelFontSize ?: properties.npsLabelFontSize) ?: npsFontSize %}
-    {% set npsMinString = minString ?: '' %}
-    {% set npsMaxString = maxString ?: '' %}
     {# TODO does this work??? #}
     {% set darkModeClassContent = properties.darkModeActive ? 'nps-dm-content' : '' %}
     {% set darkModeClassButton = properties.darkModeActive ? 'nps-dm-button' : '' %}
