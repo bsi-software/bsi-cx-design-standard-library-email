@@ -12,20 +12,21 @@
     {% set npsTitleElementPartId = "titleText-14fef7" %}
     {% set npsMinElementPartId = 'min-a23f97' %}
     {% set npsMaxElementPartId = 'max-2f63e1' %}
+    {# Question / title #}
+    {% set npsFontSize = (fontSize ?: properties.baseFontSize) ?: 14 %}
+    {% set npsFontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
+    {% set npsTextColor = (textColor ?: properties.npsBaseTextColor) ?: '#000' %}
+    {% set npsFontWeight = (fontWeight ?: properties.npsFontWeight) ?: 'normal' %}
+    {% set npsSkalaMaxWidth = (maxWidth ?: properties.npsSkalaMaxWidth) ?: 668 %}
+    {% set npsTitleAlignment = (titleAlignment ?: properties.npsTitleAlignment) ?: 'center' %}
     {# NPS Buttons #}
     {% set npsButtonColor = (buttonTextColor ?: properties.npsButtonTextColor) ?: '#fff' %}
     {% set npsButtonBackgroundColor = (buttonBackgroundColor ?: properties.npsButtonBackgroundColor) ?: '#2F4E66' %}
     {% set npsButtonHeight = (height ?: properties.npsButtonHeight) ?: npsFontSize %}
     {% set npsButtonColumnStyle = (npsButtonColumnStyle ?: properties.npsButtonColumnStyle) ?: ''%}
     {% set npsBorderSpacing = (borderSpacing ?: properties.npsBorderSpacing) ?: 5 %}
+    {% set npsButtonFontWeight = (buttonFontWeight ?: properties.npsButtonFontWeight) ?: npsFontWeight %}
     {% set npsStart = (npsStartWith0 or properties.npsStartWith0) ? 0 : 1 %}
-    {# Question / title #}
-    {% set npsFontSize = (fontSize ?: properties.baseFontSize) ?: 14 %}
-    {% set npsFontFamily = (fontFamily ?: properties.baseFontFamily) ?: 'Open Sans, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif' %}
-    {% set npsTextColor = (textColor ?: properties.npsBaseTextColor) ?: '#000' %}
-    {% set npsFontWeight = (fontWeight ?: properties.npsButtonFontWeight) ?: 'normal' %}
-    {% set npsSkalaMaxWidth = (maxWidth ?: properties.npsSkalaMaxWidth) ?: 668 %}
-    {% set npsTitleAlignment = (titleAlignment ?: properties.npsTitleAlignment) ?: 'center' %}
     {# Min/max labels #}
     {% set npsLabelFontFamily = (labelFontFamily ?: properties.npsLabelFontFamily) ?: npsFontFamily %}
     {% set npsLabelTextColor = (npsLabelTextColor ?: properties.npsLabelTextColor) ?: npsTextColor %}
@@ -39,6 +40,10 @@
     {# Compute styles for title and labels #}
     {% set npsTitleStyle = "font-family: " ~ npsFontFamily ~ "; color: " ~ npsTextColor ~ "; font-size: " ~ npsFontSize ~ "px; font-weight: " ~ npsFontWeight ~ "; text-align: " ~ npsTitleAlignment ~ "; margin-top: 0;" %}
     {% set npsLabelStyle = "font-family: " ~ npsLabelFontFamily ~ "; color: " ~ npsLabelTextColor ~ "; font-size: " ~ npsLabelFontSize ~ "px; font-weight: " ~ npsLabelFontWeight ~ "; margin-top: 0;" %}
+    {% set npsButtonStyle = "background-color: " ~ npsButtonBackgroundColor ~ "; text-align: center; vertical-align: middle; " ~ npsButtonColumnStyle %}
+    {% set npsButtonTextStyle = "background-color: " ~ npsButtonBackgroundColor ~ "; mso-line-height-rule: exactly; font-size: " ~ npsFontSize ~ "px; line-height: " ~ npsButtonHeight ~ "px; font-family:" ~ npsFontFamily ~ 
+        "; color: " ~ npsButtonColor ~ "; font-weight: " ~ npsButtonFontWeight ~ "; text-decoration: none; mso-border-alt: none; display: inline-block; width: 100%; text-align:center; word-break: keep-all; text-underline-color:" ~ npsButtonBackgroundColor ~ ";" %}
+
 
     <div data-bsi-element="{{ npsElementId }}" class="{{ darkModeClassContent }}" style="max-width: {{ npsSkalaMaxWidth }}px">
         <h3 data-bsi-element-part = "{{ npsTitleElementPartId }}" data-bsi-property="title" class="{{ darkModeClassText }}" style="{{ npsTitleStyle }}">{{ bsi_cx_lorem(3) }}</h3>
@@ -46,8 +51,8 @@
             <tr>
                 {% for i in range(npsStart, 10) %}
                     {% block npsButton %}
-                        <td width="30" style="background-color: {{ npsButtonBackgroundColor }}; text-align: center; vertical-align: middle; {{ npsButtonColumnStyle }}">
-                            <a href = "[link{{ i }}]" class="{{ darkModeClassButton }}" data-bsi-element-part="link-{{ i }}-part" style="background-color: {{ npsButtonBackgroundColor }}; mso-line-height-rule: exactly; font-size: {{ npsFontSize }}px; line-height: {{ npsButtonHeight }}px; font-family: {{ npsFontFamily }}; color: {{ npsButtonColor }}; font-weight: {{ npsFontWeight }}; text-decoration: none; mso-border-alt: none; display: inline-block; width: 100%; text-align:center; word-break: keep-all; text-underline-color: {{ npsButtonBackgroundColor }};">{{ i }}</a>
+                        <td width="30" style="{{ npsButtonStyle }}">
+                            <a href = "[link{{ i }}]" class="{{ darkModeClassButton }}" data-bsi-element-part="link-{{ i }}-part" style="{{ npsButtonTextStyle }}">{{ i }}</a>
                         </td>
                     {% endblock %}
                 {% endfor %}
