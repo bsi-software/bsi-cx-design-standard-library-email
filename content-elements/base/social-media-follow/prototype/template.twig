@@ -7,39 +7,75 @@
     {% set socialMediaElementId = elementId ?: 'social-media-follow-rbGrIr' %}
     {% set socialMediaElementPartId = elementPartId ?: 'social-media-follow-part-2PtqkD' %}
 
+    {% set followLinkedinURL = (linkedinURL ?: properties.followLinkedinURL) ?: 'https://www.linkedin.com/' %}
+    {% set followXURL = (XURL ?: properties.followXURL ?: properties.followTwitterURL) ?: 'https://www.twitter.com/' %}
+    {% set followYoutubeURL = (youtubeURL ?: properties.followYoutubeURL) ?: 'https://www.youtube.com/' %}
+    {% set followFacebookURL = (facebookURL ?: properties.followFacebookURL) ?: 'https://www.facebook.com/' %}
+    {% set followInstagramURL = (instagramURL ?: properties.followInstagramURL) ?: 'https://www.instagram.com/' %}
+    {% set followPinterestURL = (pinterestURL ?: properties.followPinterestURL) ?: 'https://www.pinterest.com/' %}
+    {% set followSnapchatURL = (snapchatURL ?: properties.followSnapchatURL) ?: 'https://www.snapchat.com/' %}
+    {% set followKununuURL = (kununuURL ?: properties.followKununuURL) ?: 'https://www.kununu.com/' %}
+
+    {% set followLinkedinHidden = (linkedinHidden ?: properties.followLinkedinHidden) ?: false %}
+    {% set followXHidden = (XHidden ?: properties.followXHidden ?: properties.followTwitterHidden) ?: false %}
+    {% set followYoutubeHidden = (youtubeHidden ?: properties.followYoutubeHidden) ?: false %}
+    {% set followFacebookHidden = (facebookHidden ?: properties.followFacebookHidden) ?: false %}
+    {% set followInstagramHidden = (instagramHidden ?: properties.followInstagramHidden) ?: false %}
+    {% set followPinterestHidden = (pinterestHidden ?: properties.followPinterestHidden) ?: false %}
+    {% set followSnapchatHidden = (snapchatHidden ?: properties.followSnapchatHidden) ?: false %}
+    {% set followKununuHidden = (kununuHidden ?: properties.followKununuHidden) ?: false %}
+
+    {% set followLinkedinImg = (linkedinImg ?: properties.followLinkedinImg) ?: bsi_cx_asset('../../../../static/linkedin.png') %}
+    {% set followXImg = (XImg ?: properties.followXImg ?: properties.followTwitterImg) ?: bsi_cx_asset('../../../../static/x-twitter.png') %}
+    {% set followYoutubeImg = (youtubeImg ?: properties.followYoutubeImg) ?: bsi_cx_asset('../../../../static/youtube.png') %}
+    {% set followFacebookImg = (facebookImg ?: properties.followFacebookImg) ?: bsi_cx_asset('../../../../static/facebook.png') %}
+    {% set followInstagramImg = (instagramImg ?: properties.followInstagramImg) ?: bsi_cx_asset('../../../../static/instagram.png') %}
+    {% set followPinterestImg = (pinterestImg ?: properties.followPinterestImg) ?: bsi_cx_asset('../../../../static/pinterest.png') %}
+    {% set followSnapchatImg = (snapchatImg ?: properties.followSnapchatImg) ?: bsi_cx_asset('../../../../static/snapchat.png') %}
+    {% set followKununuImg = (kununuImg ?: properties.followKununuImg) ?: bsi_cx_asset('../../../../static/kununu.png') %}
+
     {% set defaultSocialMedia = [{
       name: 'LinkedIn',
-      img: bsi_cx_asset('../../../../static/linkedin.png'),
-      url: 'https://www.linkedin.com/'
+      img: followLinkedinImg,
+      url: followLinkedinURL,
+      hidden: followLinkedinHidden
     }, {
       name: 'X (Twitter)',
-      img: bsi_cx_asset('../../../../static/x-twitter.png'),
-      url: 'https://www.twitter.com/'
+      img: followXImg,
+      url: followXURL,
+      hidden: followXHidden
     }, {
       name: 'YouTube',
-      img: bsi_cx_asset('../../../../static/youtube.png'),
-      url: 'https://www.youtube.com/'
+      img: followYoutubeImg,
+      url: followYoutubeURL,
+      hidden: followYoutubeHidden
     }, {
       name: 'Facebook',
-      img: bsi_cx_asset('../../../../static/facebook.png'),
-      url: 'https://www.facebook.com/'
+      img: followFacebookImg,
+      url: followFacebookURL,
+      hidden: followFacebookHidden
     }, {
       name: 'Instagram',
-      img: bsi_cx_asset('../../../../static/instagram.png'),
-      url: 'https://www.instagram.com/'
+      img: followInstagramImg,
+      url: followInstagramURL,
+      hidden: followInstagramHidden
     }, {
       name: 'Pinterest',
-      img: bsi_cx_asset('../../../../static/pinterest.png'),
-      url: 'https://www.pinterest.com/'
+      img: followPinterestImg,
+      url: followPinterestURL,
+      hidden: followPinterestHidden
     }, {
       name: 'Snapchat',
-      img: bsi_cx_asset('../../../../static/snapchat.png'),
-      url: 'https://www.snapchat.com/'
+      img: followSnapchatImg,
+      url: followSnapchatURL,
+      hidden: followSnapchatHidden
     }, {
       name: 'kununu',
-      img: bsi_cx_asset('../../../../static/kununu.png'),
-      url: 'https://www.kununu.com/'
+      img: followKununuImg,
+      url: followKununuURL,
+      hidden: followKununuHidden
     }] %}
+
     {% set socialMediaFollowList = (socialMediaFollow ?: properties.socialMediaFollow) ?: defaultSocialMedia %}
     {% set socialMediaMarginBottom = ((marginBottom ?: properties.socialMediaMarginBottom) ?: properties.baseMarginBottom) ?: 10 %}
     {% set socialMediaIconHeight = (iconHeight ?: properties.socialMediaIconHeight) ?: 20 %}
@@ -50,12 +86,14 @@
         <tr data-bsi-element-part="{{ socialMediaElementPartId }}" valign="top">
 
             {% for entry in socialMediaFollowList %}
-                {% set imgUrl = entry.img.externalRef ? entry.img.externalRef : entry.img %}
-                <td data-bsi-social-follow="{{ entry.name }}" style="padding-left: {{socialMediaIconPadding}}px; padding-right: {{socialMediaIconPadding}}px;">
-                    <a href="{{ entry.url }}" target="_blank" style="text-decoration: none;">
-                        <img src="{{ imgUrl }}" height="{{ socialMediaIconHeight }}" alt="{{ entry.name }}" border="0" style="display: block; width: auto;"/>
-                    </a>
-                </td>
+                {% if not entry.hidden %}
+                    {% set imgUrl = entry.img.externalRef ? entry.img.externalRef : entry.img %}
+                    <td data-bsi-social-follow="{{ entry.name }}" style="padding-left: {{socialMediaIconPadding}}px; padding-right: {{socialMediaIconPadding}}px;">
+                        <a href="{{ entry.url }}" target="_blank" style="text-decoration: none;">
+                            <img src="{{ imgUrl }}" height="{{ socialMediaIconHeight }}" alt="{{ entry.name }}" border="0" style="display: block; width: auto;"/>
+                        </a>
+                    </td>
+                {% endif %}
             {% endfor %}
         </tr>
         <tr>

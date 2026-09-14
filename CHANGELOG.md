@@ -7,6 +7,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Next
 * NPS-Element: cleanup styles for labels
+* Social-media-follow: add per-network `followXxxURL`/`followXxxHidden`/`followXxxImg` overrides (URL, visibility and icon), so a single network can be customized without redefining the whole list; the existing `socialMediaFollow` full-list override keeps working unchanged
 
 
 
