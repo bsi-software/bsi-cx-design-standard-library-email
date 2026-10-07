@@ -1,0 +1,13 @@
+{% apply spaceless %}
+    {% set iteratorElementId = elementId ?: 'iterator-Hn4sWq' %}
+    {% set iteratorPartId = iteratorPartId ?: 'iterator-part-Zc6yLb' %}
+    {% set iteratorDropzoneId = dropzoneId ?: 'iterator-dropzone-Pk2mVe' %}
+    {% set iteratorName = iteratorName ?: 'Iterator' %}
+
+    <div data-bsi-element="{{ iteratorElementId }}" data-bsi-element-part="{{ iteratorPartId }}" data-bsi-iterator="{{ iteratorName }}" class="bsi-iterator">
+        <div data-bsi-iterator-item="{{ iteratorName }}" data-bsi-dropzone="{{ iteratorDropzoneId }}" class="bsi-iterator-item">
+            {% block iterator_dropzone %}
+            {% endblock %}
+        </div>
+    </div>
+{% endapply %}
