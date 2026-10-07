@@ -10,5 +10,11 @@ const footerLayoutElements = [
   require('./col-two-footer')
 ];
 
+const iteratorElements = [
+  require('./product-iterator'),
+  require('./iterator')
+];
+
 module.exports.layoutElements = layoutElements;
+module.exports.iteratorElements = iteratorElements;
 module.exports.footerLayoutElements = footerLayoutElements;
