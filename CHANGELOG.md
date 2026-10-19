@@ -6,9 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Next
+
+
+
+## [1.2.6] - 19.10.2026
+
+### Changes
 * NPS-Element: cleanup styles for labels
 * Social-media-follow: add per-network `followXxxURL`/`followXxxHidden`/`followXxxImg` overrides (URL, visibility and icon), so a single network can be customized without redefining the whole list; the existing `socialMediaFollow` full-list override keeps working unchanged
 
+[1.2.6]: https://github.com/bsi-software/bsi-cx-design-standard-library-email/releases/tag/1.2.6
 
 
 ## [1.2.5] - 08.04.2026
