@@ -8,6 +8,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## Next
 * NPS-Element: cleanup styles for labels
 * Social-media-follow: add per-network `followXxxURL`/`followXxxHidden`/`followXxxImg` overrides (URL, visibility and icon), so a single network can be customized without redefining the whole list; the existing `socialMediaFollow` full-list override keeps working unchanged
+* Add iterator elements (`cx.part.iterator`), exported as `iteratorElements` from `content-elements/layout`:
+  * `product-iterator`: one row per record with an image dropzone and a content dropzone (2 columns on desktop, stacked on mobile), prefilled with image, title `{Article.Name}`, text `{Article.Description}` and CTA (`{Article.Text}` / `[Article.Link]`); the iterator name can be overridden with `iteratorName`
+  * `iterator`: empty dropzone which is duplicated per record (`data-bsi-iterator-item` on the dropzone container), allows col-one, col-two, col-two-ratio-2-1, col-three, spacer and divider
+* CTA: add optional `ctaText` and `ctaLink` template parameters (defaults unchanged)
 
 
 

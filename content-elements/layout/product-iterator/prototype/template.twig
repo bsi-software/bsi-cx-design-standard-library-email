@@ -1,0 +1,50 @@
+{% apply spaceless %}
+    {% set productIteratorElementId = elementId ?: 'product-iterator-Qm7RtZ' %}
+    {% set productIteratorPartId = iteratorPartId ?: 'product-iterator-part-Vh3kXp' %}
+    {% set productIteratorDropzoneImageId = dropzoneImageId ?: 'product-iterator-dropzone-image-L8wNcd' %}
+    {% set productIteratorDropzoneContentId = dropzoneContentId ?: 'product-iterator-dropzone-content-T2pGfa' %}
+    {% set productIteratorName = iteratorName ?: 'Article' %}
+    {% set productIteratorWidth = (width ?: properties.colTwoWidth) ?: 330 %}
+    {% set productIteratorPadding = (padding ?: properties.columnPadding) ?: 10 %}
+    {% set productIteratorImageWidth = (imageWidth ?: properties.imageWidth50Percent) ?: 310 %}
+    {% set productIteratorMarginBottom = (marginBottom ?: properties.baseMarginBottom) ?: 12 %}
+    {% set productIteratorCtaText = ctaText ?: 'Zum Artikel' %}
+
+    <div data-bsi-element="{{ productIteratorElementId }}" data-bsi-element-part="{{ productIteratorPartId }}" data-bsi-iterator="{{ productIteratorName }}" class="bsi-iterator bsi-product-iterator">
+        <div data-bsi-iterator-item="{{ productIteratorName }}" class="bsi-iterator-item bsi-col-two" style="margin-bottom: {{ productIteratorMarginBottom }}px;">
+            <!--[if mso]>
+            <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+            <td style="width: {{ productIteratorWidth }}px; padding: {{ productIteratorPadding }}px;" valign="middle">
+            <![endif]-->
+            <div class="bsi-column" style="width: 100%; max-width: {{ productIteratorWidth }}px; display: inline-block; vertical-align: middle;">
+                <div class="bsi-product-iterator-image" style="padding: {{ productIteratorPadding }}px;" data-bsi-dropzone="{{ productIteratorDropzoneImageId }}">
+                    {% block product_iterator_dropzone_image %}
+                        {% include '../../../base/image/prototype/template.twig' with {imageWidth: productIteratorImageWidth} only %}
+                    {% endblock %}
+                </div>
+            </div>
+            <!--[if mso]>
+            </td>
+            <td style="width: {{ productIteratorWidth }}px; padding: {{ productIteratorPadding }}px;" valign="middle">
+            <![endif]-->
+            <div class="bsi-column" style="width: 100%; max-width: {{ productIteratorWidth }}px; display: inline-block; vertical-align: middle;">
+                <div class="bsi-product-iterator-content" style="padding: {{ productIteratorPadding }}px;" data-bsi-dropzone="{{ productIteratorDropzoneContentId }}">
+                    {% block product_iterator_dropzone_content %}
+                        {% include '../../../base/title-h1/prototype/template.twig' with {titleText: '{' ~ productIteratorName ~ '.Name}'} only %}
+                        {% include '../../../base/text/prototype/template.twig' with {text: '{' ~ productIteratorName ~ '.Description}'} only %}
+                        {% include '../../../base/cta/prototype/template.twig' with {ctaText: '{' ~ productIteratorName ~ '.Text}', ctaLink: '[' ~ productIteratorName ~ '.Link]'} only %}
+                    {% endblock %}
+                </div>
+            </div>
+            <!--[if mso]>
+            </td>
+            </tr>
+            <tr>
+            <td colspan="2" height="{{ productIteratorMarginBottom }}" style="height: {{ productIteratorMarginBottom }}px; font-size: 0; line-height: 0;">&nbsp;</td>
+            </tr>
+            </table>
+            <![endif]-->
+        </div>
+    </div>
+{% endapply %}
