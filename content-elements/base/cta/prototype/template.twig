@@ -28,6 +28,8 @@
     {% set borderCss = borderAndBackgroundSame ? "" : "border: #{ctaBorderSize}px solid #{ctaBorderColor};" %}
     {% set borderCssOutlook = borderAndBackgroundSame ? "" : "mso-border-alt: #{ctaBorderSize}px solid #{ctaBorderColor};" %}
     {% set ctaLegacyVmlMode = (legacyVml ?: properties.buttonLegacyVml) ?: false %} {# if you set this to true, your buttons will have rounded corners in Outlook as well. The button will have a fixed width though instad of fitting its size to the actual content #}
+    {% set ctaText = ctaText ?: bsi_cx_lorem(2) %}
+    {% set ctaLink = ctaLink ?: 'https://example.org/' %}
 
     <div data-bsi-element="{{ ctaElementId }}">
         <!--[if mso]>
@@ -47,7 +49,7 @@
                         <v:textbox inset="0,0,0,0">
                         <center style="color: {{ ctaTextColor }}; font-family: {{ ctaFontFamily }}">
                         <![endif]-->
-                        <a href="https://example.org/" target="_blank" class="bsi-cta" style="background-color: {{ ctaBackgroundColor }}; border: 2px solid {{ ctaBorderColor }}; color: {{ ctaTextColor }}; font-family: {{ ctaFontFamily }}; font-weight: {{ ctaFontWeight }}; font-size: {{ ctaFontSize }}px; line-height: {{ ctaFontSize }}px; mso-line-height-alt: 40px; padding: {{ ctaVerticalPadding }}px {{ ctaHorizontalPadding }}px; border-radius: {{ ctaBorderRadius }}px; display: inline-block; -webkit-border-radius: {{ ctaBorderRadius }}px; -moz-border-radius: {{ ctaBorderRadius }}px; text-align: center; text-decoration: none; -webkit-text-size-adjust: none; mso-border-alt: none; word-break: keep-all;">{{ bsi_cx_lorem(2)}}</a>
+                        <a href="{{ ctaLink }}" target="_blank" class="bsi-cta" style="background-color: {{ ctaBackgroundColor }}; border: 2px solid {{ ctaBorderColor }}; color: {{ ctaTextColor }}; font-family: {{ ctaFontFamily }}; font-weight: {{ ctaFontWeight }}; font-size: {{ ctaFontSize }}px; line-height: {{ ctaFontSize }}px; mso-line-height-alt: 40px; padding: {{ ctaVerticalPadding }}px {{ ctaHorizontalPadding }}px; border-radius: {{ ctaBorderRadius }}px; display: inline-block; -webkit-border-radius: {{ ctaBorderRadius }}px; -moz-border-radius: {{ ctaBorderRadius }}px; text-align: center; text-decoration: none; -webkit-text-size-adjust: none; mso-border-alt: none; word-break: keep-all;">{{ ctaText }}</a>
                         <!--[if mso]>
                         </center>
                         </v:textbox>
@@ -71,7 +73,7 @@
                                         <!--[if mso]><b style="letter-spacing: {{ ctaHorizontalPadding }}px;mso-font-width:-100%;">&nbsp;</b><![endif]-->
                                     {% endif %}
                                 
-                                    <a href="https://example.org/" target="_blank" data-bsi-element-part="{{ ctaElementPartId }}" class="bsi-cta" style="mso-line-height-rule: exactly; font-size: {{ ctaFontSize }}px; line-height: {{ ctaFontSize }}px; font-family: {{ ctaFontFamily }}; color: {{ ctaTextColor }}; font-weight: {{ ctaFontWeight }}; text-decoration: none; mso-border-alt: none; border-radius: {{ ctaBorderRadius }}px; padding: {{ ctaVerticalPadding }}px {{ ctaHorizontalPadding }}px; display: inline-block; text-align:center; word-break: keep-all;  mso-padding-alt: {{ ctaVerticalPadding }}px {{ ctaHorizontalPadding }}px; text-underline-color: {{ ctaBackgroundColor }};" {{ ctaFullWidthStyle | raw }}>{{ bsi_cx_lorem(2)}}</a>
+                                    <a href="{{ ctaLink }}" target="_blank" data-bsi-element-part="{{ ctaElementPartId }}" class="bsi-cta" style="mso-line-height-rule: exactly; font-size: {{ ctaFontSize }}px; line-height: {{ ctaFontSize }}px; font-family: {{ ctaFontFamily }}; color: {{ ctaTextColor }}; font-weight: {{ ctaFontWeight }}; text-decoration: none; mso-border-alt: none; border-radius: {{ ctaBorderRadius }}px; padding: {{ ctaVerticalPadding }}px {{ ctaHorizontalPadding }}px; display: inline-block; text-align:center; word-break: keep-all;  mso-padding-alt: {{ ctaVerticalPadding }}px {{ ctaHorizontalPadding }}px; text-underline-color: {{ ctaBackgroundColor }};" {{ ctaFullWidthStyle | raw }}>{{ ctaText }}</a>
                                 
                                     {% if ctaFullWidth != true %}
                                         <!--[if mso]><b style="letter-spacing: {{ ctaHorizontalPadding }}px;mso-font-width:-100%;">&nbsp;</b><![endif]-->
