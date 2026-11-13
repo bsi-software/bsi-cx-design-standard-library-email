@@ -4,6 +4,7 @@ const {cx, Icon} = require('@bsi-cx/design-build');
  * @param {string} template
  * @param {string} elementId
  * @param {string} elementLabel
+ * @param {string} elementDescription
  * @param {string} iteratorPartId
  * @param {string} iteratorPartLabel
  * @param {string} dropzoneId
@@ -13,7 +14,10 @@ const {cx, Icon} = require('@bsi-cx/design-build');
 module.exports = (
   template = require('../template.twig'),
   elementId = 'iterator-Hn4sWq',
-  elementLabel = 'Iterator',
+  /*elementLabel = 'Iterator Container',*/
+  elementLabel = 'Iterator Container',
+  /*elementDescription = 'Repeats the contained elements for each entry in a list',*/
+  elementDescription = 'Wiederholt die enthaltenen Elemente für jeden Eintrag einer Liste',
   iteratorPartId = 'iterator-part-Zc6yLb',
   iteratorPartLabel = 'Iterator',
   dropzoneId = 'iterator-dropzone-Pk2mVe',
@@ -29,6 +33,7 @@ module.exports = (
   .withFile(template)
   .withElementId(elementId)
   .withLabel(elementLabel)
+  .withDescription(elementDescription)
   .withIcon(Icon.LIST)
   .withParts(
     cx.part.iterator

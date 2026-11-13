@@ -5,6 +5,7 @@ const {contentElements} = require('../../../base');
  * @param {string} template
  * @param {string} elementId
  * @param {string} elementLabel
+ * @param {string} elementDescription
  * @param {string} iteratorPartId
  * @param {string} iteratorPartLabel
  * @param {string} dropzoneImageId
@@ -16,8 +17,10 @@ const {contentElements} = require('../../../base');
 module.exports = (
   template = require('../template.twig'),
   elementId = 'product-iterator-Qm7RtZ',
-  /*elementLabel = 'Product iterator',*/
-  elementLabel = 'Produkt Iterator',
+  /*elementLabel = 'Product list',*/
+  elementLabel = 'Produktliste',
+  /*elementDescription = 'Product list containing name, description and detail link (includes iterator container)',*/
+  elementDescription = 'Produktliste mit Name, Beschreibung und Detail-Link (inkl. Iterator Container)',
   iteratorPartId = 'product-iterator-part-Vh3kXp',
   iteratorPartLabel = 'Iterator',
   dropzoneImageId = 'product-iterator-dropzone-image-L8wNcd',
@@ -29,6 +32,7 @@ module.exports = (
   .withFile(template)
   .withElementId(elementId)
   .withLabel(elementLabel)
+  .withDescription(elementDescription)
   .withIcon(Icon.TEXT_WITH_IMAGE)
   .withParts(
     cx.part.iterator
