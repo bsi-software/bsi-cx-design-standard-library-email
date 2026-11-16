@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Next
+## [1.2.7] - 16.11.2026
 
 ### Changes
 * Fix button padding for Outlook 365
@@ -14,6 +15,32 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 * Add config style alignment for image
 * Add config style alignment for col-one-footer and properties to handle padding and width of the footer
 * Add new config style border for highlighted-content component and allow more elements inside the dropzone
+
+[1.2.7]: https://github.com/bsi-software/bsi-cx-design-standard-library-email/releases/tag/1.2.7
+
+
+## [1.2.6] - 19.10.2026
+
+### Changes
+* NPS-Element: cleanup styles for labels
+* Social-media-follow: add per-network `followXxxURL`/`followXxxHidden`/`followXxxImg` overrides (URL, visibility and icon), so a single network can be customized without redefining the whole list; the existing `socialMediaFollow` full-list override keeps working unchanged
+* Add iterator elements (`cx.part.iterator`), exported as `iteratorElements` from `content-elements/layout`:
+  * `product-iterator`: one row per record with an image dropzone and a content dropzone (2 columns on desktop, stacked on mobile), prefilled with image, title `{Article.Name}`, text `{Article.Description}` and CTA (`{Article.Text}` / `[Article.Link]`); the iterator name can be overridden with `iteratorName`
+  * `iterator`: empty dropzone which is duplicated per record (`data-bsi-iterator-item` on the dropzone container), allows col-one, col-two, col-two-ratio-2-1, col-three, spacer and divider
+* CTA: add optional `ctaText` and `ctaLink` template parameters (defaults unchanged)
+
+[1.2.6]: https://github.com/bsi-software/bsi-cx-design-standard-library-email/releases/tag/1.2.6
+
+
+## [1.2.5] - 08.04.2026
+
+### Changes
+* Add new logo element with light- and darkmode setting
+* Add `npsStartWith0` parameter to allow 0..10 NPS scores
+* Update col-one element: add background property
+* Update header-image: add support for margin-bottom=0 and remove outlook padding
+
+[1.2.5]: https://github.com/bsi-software/bsi-cx-design-standard-library-email/releases/tag/1.2.5
 
 
 ## [1.2.4] - 01.12.2025
@@ -38,6 +65,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 [1.2.3]: https://github.com/bsi-software/bsi-cx-design-standard-library-email/releases/tag/1.2.3
 
+
+* Fix layout cellpadding and cellspacing
+* Add config style background-color for col-one 
+* Add config style alignment for image
+* Add config style alignment for layout-dark-footer and properties to handle padding and width of the footer
+* Add new config style border for highlighted component and add new elements inside the dropzone
 
 ## [1.2.2] - 06.12.2024
 

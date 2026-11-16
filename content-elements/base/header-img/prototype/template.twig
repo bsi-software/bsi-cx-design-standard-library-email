@@ -24,7 +24,9 @@
         <!--[if mso]>
         </td>
         </tr>
-        <tr height="{{ headerImgMarginBottom }}" style="height:{{ headerImgMarginBottom }}px;">&nbsp;</tr>
+        {% if headerImgMarginBottom != "0" %}
+            <tr height="{{ headerImgMarginBottom }}" style="height:{{ headerImgMarginBottom }}px; font-size:{{ headerImgMarginBottom }}px;">&nbsp;</tr>
+        {% endif %}
         </table>
         <![endif]-->
     </div>
