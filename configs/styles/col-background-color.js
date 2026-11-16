@@ -1,17 +1,17 @@
 const {cx, Version, bsiProperty} = require('@bsi-cx/design-build');
 
-const baseBackground = bsiProperty('layoutBaseBackgroundColor', '#ffffff00');
-const coloredBackground = bsiProperty('layoutColoredBackgroundColor', '#F6F7FB');
+const baseBackground = bsiProperty('colOneBaseBackgroundColor', '#ffffff');
+const coloredBackground = bsiProperty('colOneColoredBackgroundColor', '#f4f4f4');
 
 module.exports = cx.style
-    .withIdentifier('column-background-color-YcsBrW')
+    .withIdentifier('colOne-background-color-mMvJ1q')
     .withMinVersion(Version.CX_23_2)
     .withLabel('Hintergrund')
     .withStyleOptions(
         cx.styleOption
-            .withStyleId('column-background-transparent')
-            .withLabel('Transparent')
-            .withCssClass('bsi-column-base')
+            .withStyleId('colOne-background-white')
+            .withLabel('Weiss')
+            .withCssClass('bsi-col-one-base')
             .withDomManipulations(
                 cx.domManipulation
                     .withSelector('div.bsi-column')
@@ -20,11 +20,16 @@ module.exports = cx.style
                 cx.domManipulation
                     .withSelector('div.bsi-column')
                     .withAttribute('class')
-                    .withValue('bsi-dm-bg-column-color')),
+                    .withValue('bsi-dm-bg-color'),
+                cx.domManipulation
+                    .withSelector('td.bsi-col-one-td-column')
+                    .withAttribute('style')
+                    .withValue('background-color: '+ baseBackground +';'),  
+                ),
         cx.styleOption
-            .withStyleId('column-background-colored')
+            .withStyleId('colOne-background-colored')
             .withLabel('Farbig')
-            .withCssClass('bsi-column-colored')
+            .withCssClass('bsi-col-one-colored')
             .withDomManipulations(
                 cx.domManipulation
                     .withSelector('div.bsi-column')
@@ -33,4 +38,8 @@ module.exports = cx.style
                 cx.domManipulation
                     .withSelector('div.bsi-column')
                     .withAttribute('class')
-                    .withValue('bsi-dm-bg-column-colored')));
+                    .withValue('bsi-dm-colOne-colored'),
+            cx.domManipulation
+                    .withSelector('td.bsi-col-one-td-column')
+                    .withAttribute('style')
+                    .withValue('background-color: '+ coloredBackground +';')));

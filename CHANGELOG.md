@@ -7,6 +7,18 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Next
 
+## [1.2.7] - 16.11.2026
+
+### Changes
+* Fix button padding for Outlook 365
+* Fix layout cellpadding and cellspacing
+* Fix margin-bottom="0" for outlook clients and remove outlook padding
+* Add config style background-color for col-one 
+* Add config style alignment for image
+* Add config style alignment for col-one-footer and properties to handle padding and width of the footer
+* Add new config style border for highlighted-content component and allow more elements inside the dropzone
+
+[1.2.7]: https://github.com/bsi-software/bsi-cx-design-standard-library-email/releases/tag/1.2.7
 
 
 ## [1.2.6] - 19.10.2026
@@ -14,6 +26,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changes
 * NPS-Element: cleanup styles for labels
 * Social-media-follow: add per-network `followXxxURL`/`followXxxHidden`/`followXxxImg` overrides (URL, visibility and icon), so a single network can be customized without redefining the whole list; the existing `socialMediaFollow` full-list override keeps working unchanged
+* Add iterator elements (`cx.part.iterator`), exported as `iteratorElements` from `content-elements/layout`:
+  * `product-iterator`: one row per record with an image dropzone and a content dropzone (2 columns on desktop, stacked on mobile), prefilled with image, title `{Article.Name}`, text `{Article.Description}` and CTA (`{Article.Text}` / `[Article.Link]`); the iterator name can be overridden with `iteratorName`
+  * `iterator`: empty dropzone which is duplicated per record (`data-bsi-iterator-item` on the dropzone container), allows col-one, col-two, col-two-ratio-2-1, col-three, spacer and divider
+* CTA: add optional `ctaText` and `ctaLink` template parameters (defaults unchanged)
 
 [1.2.6]: https://github.com/bsi-software/bsi-cx-design-standard-library-email/releases/tag/1.2.6
 
